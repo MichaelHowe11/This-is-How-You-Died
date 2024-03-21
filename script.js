@@ -1,5 +1,5 @@
 
-
+ 
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -28,7 +28,9 @@ Type 'help' for instructions on how to play.`)
     let y = 0;
     let x = 0;
 
-
+    fetch('asciiart.txt')
+    .then(response => response.text())
+    .then(text => asciimenuart.innerHTML = text)
 
 
 
@@ -45,12 +47,12 @@ Type 'help' for instructions on how to play.`)
 
         if (input === "north") {
             y += 1
-        } else if (input === "west") {
-            x -= 1
-        } else if (input === "east") {
-            x += 1
         } else if (input === "south") {
             y -= 1
+        } else if (input === "east") {
+            x += 1
+        } else if (input === "west") {
+            x -= 1
         }
 
         if (input === "help") {
@@ -90,6 +92,7 @@ Also all text input is NOT case sensitive.`)
 
 
 
-
     });
+    
 });
+
