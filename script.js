@@ -68,7 +68,7 @@ Also all text input is NOT case sensitive.`)
         }
 
         // occupation 1 is high school student, occupation 2 is fast food employee, and occupation 3 is unemployed.
-        if (occupation = 0) {
+        if (occupation === 0) {
             if (input === "high school student") {
                 console.log("Your occupation is a High School Student.")
                 occupation = 1;
@@ -85,7 +85,7 @@ Also all text input is NOT case sensitive.`)
 
         console.log("x: " + x)
         console.log("y: " + y)
-
+        console.log(occupation)
 
 
 
