@@ -81,6 +81,10 @@ Also all text input is NOT case sensitive.`)
             }
         }
 
+        if (occupation === 3) {
+            
+        }
+
 
 
         console.log("x: " + x)
