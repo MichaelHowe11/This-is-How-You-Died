@@ -85,7 +85,17 @@ Also all text input is NOT case sensitive.`)
             
         }
 
+        // prob could be condensed into a function with 2 parameters, do that later.
+        
+        // demonstration of a vertical wall that is 5 units tall and is located at x=1
+        if ((x === 1) && (y >= 1 && y <= 5)) {
+            console.log("vertical wall")
+        }
 
+        // demonstration of a horizontal wall that is 5 units wide and one unit tall. Located at y=1.
+        if ((y === 1) && (x >= 1 && x <= 5)) {
+            console.log("horizontal wall")
+        }
 
         console.log("x: " + x)
         console.log("y: " + y)
