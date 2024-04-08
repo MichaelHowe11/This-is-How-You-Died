@@ -1,5 +1,5 @@
 
- 
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -21,16 +21,14 @@ Fast Food Employee - Spiffo's (An American Fast Food Restaurant)
 Unemployed - A House in Muldraugh
 
 
-Type 'help' for instructions on how to play.`)
+Type 'help' for instructions on how to play.`);
 
     let occupation = 0;
 
     let y = 0;
     let x = 0;
 
-    fetch('asciiart.txt')
-    .then(response => response.text())
-    .then(text => asciimenuart.innerHTML = text)
+    fetch('asciiart.txt').then(response => response.text()).then(text => asciimenuart.innerHTML = text)
 
 
 
@@ -43,6 +41,11 @@ Type 'help' for instructions on how to play.`)
         document.getElementById('userInput').value = '';
         input = input.toLowerCase()
 
+
+
+
+
+
         console.log(input)
 
         if (input === "north") {
@@ -54,6 +57,35 @@ Type 'help' for instructions on how to play.`)
         } else if (input === "west") {
             x -= 1
         }
+
+        function wall(xLoc, yLoc, w, h) {
+            console.log(x)
+            console.log(xLoc)
+            console.log(w)
+            console.log(xLoc + w)
+
+            console.log(input)
+            if ((x >= xLoc && x <= xLoc + w) && (y >= yLoc && y <= yLoc + h)) {
+                console.log('bruh')
+                if (input === "north") {
+                    y -= 1
+                    console.log("bruh")
+                } else if (input === "south") {
+                    y += 1
+                    console.log("bruh")
+
+                } else if (input === "west") {
+                    x += 1
+                    console.log("bruh")
+
+                } else if (input === "east") {
+                    x -= 1
+                    console.log("bruh")
+
+                }
+            }
+        }
+        console.log(wall(1, 1, 4, 4));
 
         if (input === "help") {
             console.log(`Type 'North', 'West', 'East', or 'South' to move.
@@ -82,20 +114,23 @@ Also all text input is NOT case sensitive.`)
         }
 
         if (occupation === 3) {
-            
+
         }
 
-        // prob could be condensed into a function with 2 parameters, do that later.
-        
+
         // demonstration of a vertical wall that is 5 units tall and is located at x=1
-        if ((x === 1) && (y >= 1 && y <= 5)) {
-            console.log("vertical wall")
-        }
+        // if ((x === 1) && (y >= 1 && y <= 5)) {
+        //     console.log("vertical wall")
+        // }
 
         // demonstration of a horizontal wall that is 5 units wide and one unit tall. Located at y=1.
-        if ((y === 1) && (x >= 1 && x <= 5)) {
-            console.log("horizontal wall")
-        }
+        // if ((y === 1) && (x >= 1 && x <= 5)) {
+        //     console.log("horizontal wall")
+        // }
+
+
+
+
 
         console.log("x: " + x)
         console.log("y: " + y)
@@ -107,6 +142,6 @@ Also all text input is NOT case sensitive.`)
 
 
     });
-    
+
 });
 
