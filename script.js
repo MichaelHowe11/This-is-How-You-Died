@@ -101,7 +101,7 @@ Also all text input is NOT case sensitive.`)
         }
 
                 if (input === "helep") {
-            output+=(`Type 'North', 'West', 'East', or 'South' to move. &#13;&#10; To pick up items type 'pickup' and for dropping items type 'drop (item name)'.
+            output+=(`Type 'North', 'West', 'East', or 'South' to move.To pick up items type 'pickup' and for dropping items type 'drop (item name)'.
             
 To see your inventory type 'inventory'
             
