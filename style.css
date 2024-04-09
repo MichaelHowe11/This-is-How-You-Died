@@ -1,5 +1,40 @@
+body {
+    background-color: black;
+}
+#pagewrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 2%;
+    height: 90vh;
+    margin: 1% 20%;
+    text-align: center;
+    background-color: gray;
+}
 #asciimenuart {
+    margin-top: 3%;
     font-family: monospace;
     white-space: pre;
-    font-size: 2px;
+    font-size: 1.95px;
+}
+#title1, #title2 {
+    font-family: monospace;
+    white-space: pre;
+    font-size: 12px;
+}
+.hidden {
+    display: none;
+}
+textarea {
+    overflow-y:scroll;
+    justify-self: flex-end;
+    align-self: center;
+    height: 400px;
+    width: 80%;
+    resize: none;
+    text-align: left;
+}
+.asciiIntro { 
+    white-space: pre;
+    font-family: monospace;
+    font-size: 14px;
 }

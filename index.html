@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,28 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
+    <section id="pagewrapper" class="wrapper">
 
-    <form id="userInputForm">
-    <input type="text" id="userInput">
-    </form>
+        <p id="title1"></p>
 
-    <p id="asciimenuart"></p>
+        <section id="info" class="hidden">
+            <p id="helpOutput"></p>
+        </section>
+        
+        <form class="hidden" id="userInputForm">
+            <input type="text" id="userInput">
+        </form>
 
-    <h2 id="consoleOutput"></h2>
+        <section id="start">
+            <button id="hide" onclick="start()">Start</button>
+            <p id="asciimenuart"></p>
+        </section>
+
+        <textarea class="textarea hidden" id="consoleOutput" readonly>NO</textarea>
+
+    </section>
 </body>
+
 </html>

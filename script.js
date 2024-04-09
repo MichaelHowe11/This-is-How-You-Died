@@ -1,20 +1,21 @@
-
+function start() { 
+    let start = document.getElementById("start");
+    start.classList.add("hidden");
+    let input = document.getElementById("userInputForm");
+    input.classList.remove("hidden");
+    let textarea = document.getElementById("consoleOutput");
+    textarea.classList.remove("hidden");
+    let info = document.getElementById("info");
+    info.classList.remove("hidden");
+}
 
 
 document.addEventListener("DOMContentLoaded", function () {
-
+    let output = "";
 
     // ascii art made with http://www.network-science.de/ascii/
-    const title =
-        `                                                                                                                                                                                        
-     _____ _     _        _        _   _                 __   __             ____  _          _                                                                                      
-    |_   _| |__ (_)___   (_)___   | | | | _____      __  \\ \\ / /__  _   _   |  _ \\(_) ___  __| |                                                                                     
-      | | | '_ \\| / __|  | / __|  | |_| |/ _ \\ \\ /\\ / /   \\ V / _ \\| | | |  | | | | |/ _ \\/ _\` |                                                                                     
-      | | | | | | \\__ \\  | \\__ \\  |  _  | (_) \\ V  V /     | | (_) | |_| |  | |_| | |  __/ (_| |_ _ _                                                                               
-      |_| |_| |_|_|___/  |_|___/  |_| |_|\\___/ \\_/\\_/      |_|\\___/ \\__,_|  |____/|_|\\___|\\__,_(_|_|_)                                                                              
-    `;
 
-    console.log(title + `
+    output += (`
 Choose Your Occupation & Starting Position
 High School Student - Muldraugh High
 Fast Food Employee - Spiffo's (An American Fast Food Restaurant)
@@ -27,6 +28,7 @@ Type 'help' for instructions on how to play.`);
 
     let y = 0;
     let x = 0;
+    fetch('title.txt').then(response => response.text()).then(text => title1.innerHTML = text)
 
     fetch('asciiart.txt').then(response => response.text()).then(text => asciimenuart.innerHTML = text)
 
@@ -86,11 +88,20 @@ Type 'help' for instructions on how to play.`);
             }
         }
         console.log(wall(1, 1, 4, 4));
-
-        if (input === "help") {
-            console.log(`Type 'North', 'West', 'East', or 'South' to move.
-            
+// using an alert for the help would be simple & EZ, unless you have another idea.
+        if (input === "helep") {
+            output+=(`Type 'North', 'West', 'East', or 'South' to move.
 To pick up items type 'pickup' and for dropping items type 'drop (item name)'.
+            
+To see your inventory type 'inventory'
+            
+To attack an enemy type '(weapon of choice) attack (enemy name)'
+
+Also all text input is NOT case sensitive.`)
+        }
+
+                if (input === "helep") {
+            output+=(`Type 'North', 'West', 'East', or 'South' to move. &#13;&#10; To pick up items type 'pickup' and for dropping items type 'drop (item name)'.
             
 To see your inventory type 'inventory'
             
@@ -102,13 +113,13 @@ Also all text input is NOT case sensitive.`)
         // occupation 1 is high school student, occupation 2 is fast food employee, and occupation 3 is unemployed.
         if (occupation === 0) {
             if (input === "high school student") {
-                console.log("Your occupation is a High School Student.")
+                output+=("Your occupation is a High School Student.")
                 occupation = 1;
             } else if (input === "fast food employee") {
-                console.log("Your occupation is a Fast Food Employee")
+                output+=("Your occupation is a Fast Food Employee")
                 occupation = 2;
             } else if (input === "unemployed") {
-                console.log("You are unemployed, you should get a job you lazy bum! I guess it's too late now huh.")
+                output+=("You are unemployed, you should get a job you lazy bum! I guess it's too late now huh.")
                 occupation = 3;
             }
         }
@@ -136,7 +147,7 @@ Also all text input is NOT case sensitive.`)
         console.log("y: " + y)
         console.log(occupation)
 
-
+        document.getElementById("consoleOutput").innerText = output
 
 
 
