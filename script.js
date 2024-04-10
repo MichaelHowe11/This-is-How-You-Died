@@ -15,14 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ascii art made with http://www.network-science.de/ascii/
 
-    output += (`
-Choose Your Occupation & Starting Position
-High School Student - Muldraugh High
-Fast Food Employee - Spiffo's (An American Fast Food Restaurant)
-Unemployed - A House in Muldraugh
 
-
-Type 'help' for instructions on how to play.`);
 
     let occupation = 0;
 
@@ -38,7 +31,12 @@ Type 'help' for instructions on how to play.`);
 
     document.getElementById('userInputForm').addEventListener('submit', function (eventData) {
         eventData.preventDefault();
-
+        output += (`
+Choose Your Occupation & Starting Position
+High School Student - Muldraugh High
+Fast Food Employee - Spiffo's (An American Fast Food Restaurant)
+Unemployed - A House in Muldraugh
+Type 'help' for instructions on how to play.`);
         let input = document.getElementById("userInput").value;
         document.getElementById('userInput').value = '';
         input = input.toLowerCase()
@@ -88,23 +86,12 @@ Type 'help' for instructions on how to play.`);
             }
         }
         console.log(wall(1, 1, 4, 4));
-// using an alert for the help would be simple & EZ, unless you have another idea.
-        if (input === "helep") {
-            output+=(`Type 'North', 'West', 'East', or 'South' to move.
-To pick up items type 'pickup' and for dropping items type 'drop (item name)'.
-            
-To see your inventory type 'inventory'
-            
-To attack an enemy type '(weapon of choice) attack (enemy name)'
 
-Also all text input is NOT case sensitive.`)
-        }
-
-                if (input === "helep") {
+                if (input === "help") {
             output+=(`Type 'North', 'West', 'East', or 'South' to move.To pick up items type 'pickup' and for dropping items type 'drop (item name)'.
-            
+
 To see your inventory type 'inventory'
-            
+
 To attack an enemy type '(weapon of choice) attack (enemy name)'
 
 Also all text input is NOT case sensitive.`)
@@ -146,8 +133,8 @@ Also all text input is NOT case sensitive.`)
         console.log("x: " + x)
         console.log("y: " + y)
         console.log(occupation)
-
-        document.getElementById("consoleOutput").innerText = output
+        console.log(output)
+        document.getElementById("consoleOutput").innerText = output;
 
 
 

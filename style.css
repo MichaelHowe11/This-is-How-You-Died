@@ -25,6 +25,8 @@ body {
     display: none;
 }
 textarea {
+    white-space: pre-wrap;
+
     overflow-y:scroll;
     justify-self: flex-end;
     align-self: center;
