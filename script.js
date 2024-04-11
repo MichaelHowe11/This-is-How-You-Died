@@ -140,7 +140,7 @@ Also all text input is NOT case sensitive.`)
         console.log(idval)
         if ((idval%2) != 0) {
             console.log("white odd")
-            document.getElementById("consoleOutput").innerHTML += `<p style="background-color: white">` + output + `</p>`;
+            document.getElementById("consoleOutput").innerHTML += `<p style="background-color: rgb(210, 208, 208)">` + output + `</p>`;
         } else {
             console.log("grey even")
             document.getElementById("consoleOutput").innerHTML += `<p style="background-color: grey">` + output + `</p>`;
