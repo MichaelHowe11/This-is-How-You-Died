@@ -27,8 +27,8 @@ body {
 
 .textbox {
     display: flex;
+    flex-direction: column;
     text-align: left;
-    justify-content: center;
     overflow-y: scroll;
     background-color: white;
     width: 80%;
@@ -44,8 +44,9 @@ body {
     display: none;
 }
 
-
-
+#consoleOutput p {
+    margin: 0;
+}
 .asciiIntro {
     white-space: pre;
     font-family: monospace;
