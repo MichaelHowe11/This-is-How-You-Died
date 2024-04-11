@@ -1,42 +1,64 @@
 body {
     background-color: black;
 }
+
 #pagewrapper {
     display: flex;
     flex-flow: column nowrap;
-    padding: 2%;
-    height: 90vh;
-    margin: 1% 20%;
+    margin: 5%;
     text-align: center;
     background-color: gray;
 }
+
 #asciimenuart {
     margin-top: 3%;
     font-family: monospace;
     white-space: pre;
-    font-size: 1.95px;
+    font-size: 5.6px;
 }
-#title1, #title2 {
+
+#title1,
+#title2 {
     font-family: monospace;
     white-space: pre;
     font-size: 12px;
+    color: #880808;
 }
+
+.textbox {
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    overflow-y: scroll;
+    background-color: white;
+    width: 80%;
+    height: 50vh;
+}
+.textboxWrapper {
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+}
+
 .hidden {
     display: none;
 }
-textarea {
-    white-space: pre-wrap;
 
-    overflow-y:scroll;
-    justify-self: flex-end;
-    align-self: center;
-    height: 400px;
-    width: 80%;
-    resize: none;
-    text-align: left;
-}
-.asciiIntro { 
+
+
+.asciiIntro {
     white-space: pre;
     font-family: monospace;
     font-size: 14px;
+}
+
+
+@media only screen and (max-width:1640px) {
+    #title1,
+    #title2 {
+        font-family: monospace;
+        white-space: pre;
+        font-size:10px;
+    }
+
 }

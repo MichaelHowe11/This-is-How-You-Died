@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body id="body">
     <section id="pagewrapper" class="wrapper">
 
         <p id="title1"></p>
@@ -18,18 +18,26 @@
         <section id="info" class="hidden">
             <p id="helpOutput"></p>
         </section>
-        
+
         <form class="hidden" id="userInputForm">
             <input type="text" id="userInput">
         </form>
 
         <section id="start">
             <button id="hide" onclick="start()">Start</button>
+            <!-- https://www.pinterest.com/pin/628674429223740996/ -->
             <p id="asciimenuart"></p>
         </section>
 
-        <textarea class="textarea hidden" id="consoleOutput" readonly>NO</textarea>
-
+        <!--<textarea class="textarea hidden" id="consoleOutput" cols='5' readonly>
+            <p>e</p>
+        </textarea> -->
+        <!-- div div div section section section ;( -->
+        <div class="textboxWrapper">
+            <section id="consoleOutput" class="hidden textbox">
+                <p>e</p>
+            </section>
+        </div>
     </section>
 </body>
 
