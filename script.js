@@ -36,11 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         eventData.preventDefault();
         document.getElementById('instr').classList.add('hidden')
         if (occupation === 0) {
-            output = (`Choose Your Occupation & Starting Position
-High School Student - Muldraugh High 
-Fast Food Employee - Spiffo's (An American Fast Food Restaurant)
-Unemployed - A House in Muldraugh 
-Type 'help' for instructions on how to play. `)
+            output = (`Choose Your Occupation & Starting Position<br><br>High School Student - Muldraugh High<br>Fast Food Employee - Spiffo's (An American Fast Food Restaurant)<br>Unemployed - A House in Muldraugh<br>Type 'help' for instructions on how to play. `)
         };
         let input = document.getElementById("userInput").value;
         document.getElementById('userInput').value = '';
@@ -93,10 +89,7 @@ Type 'help' for instructions on how to play. `)
         console.log(wall(1, 1, 4, 4));
 
         if (input === "help") {
-            output = (`Type 'North', 'West', 'East', or 'South' to move.To pick up items type 'pickup' and for dropping items type 'drop (item name)'.\n
-To see your inventory type 'inventory
-To attack an enemy type '(weapon of choice) attack (enemy name)'
-Also all text input is NOT case sensitive.
+            output = (`Type 'North', 'West', 'East', or 'South' to move.To pick up items type 'pickup' and for dropping items type 'drop (item name)'.<br>To see your inventory type 'inventory<br>To attack an enemy type '(weapon of choice) attack (enemy name)'<br>Also all text input is NOT case sensitive.
 `)
         }
 
@@ -143,7 +136,7 @@ Also all text input is NOT case sensitive.
             document.getElementById("consoleOutput").innerHTML = `<p style="background-color: rgb(210, 208, 208)">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
         } else {
             console.log("grey even")
-            document.getElementById("consoleOutput").innerHTML = `<p style="background-color: grey">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
+            document.getElementById("consoleOutput").innerHTML = `<p style="background-color:rgb(150, 150, 150);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
         }
         idval += 1;
 
