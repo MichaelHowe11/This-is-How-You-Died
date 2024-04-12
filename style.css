@@ -1,11 +1,14 @@
 body {
     background-color: black;
+    margin: 0;
+    height: 100%;
+    overflow: hidden
 }
 
 #pagewrapper {
     display: flex;
     flex-flow: column nowrap;
-    margin: 5%;
+    margin: 1%;
     text-align: center;
     background-color: gray;
 }
@@ -36,10 +39,11 @@ body {
     background-color: rgb(48, 47, 47);
 
 }
+
 .textboxWrapper {
     display: flex;
     justify-content: center;
-    margin: 2%;
+    margin: 1%;
 }
 
 .hidden {
@@ -49,19 +53,25 @@ body {
 #consoleOutput p {
     margin: 0;
 }
+
 .asciiIntro {
     white-space: pre;
     font-family: monospace;
     font-size: 14px;
 }
 
+.start {
+    display: flex;
+    justify-content: center;
+}
 
 @media only screen and (max-width:1640px) {
+
     #title1,
     #title2 {
         font-family: monospace;
         white-space: pre;
-        font-size:10px;
+        font-size: 10px;
     }
 
 }

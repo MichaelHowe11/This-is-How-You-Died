@@ -34,12 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById('userInputForm').addEventListener('submit', function (eventData) {
         eventData.preventDefault();
+        document.getElementById('instr').classList.add('hidden')
         if (occupation === 0) {
-        output = (`Choose Your Occupation & Starting Position
-High School Student - Muldraugh High
+            output = (`Choose Your Occupation & Starting Position
+High School Student - Muldraugh High 
 Fast Food Employee - Spiffo's (An American Fast Food Restaurant)
-Unemployed - A House in Muldraugh
-Type 'help' for instructions on how to play.`)};
+Unemployed - A House in Muldraugh 
+Type 'help' for instructions on how to play. `)
+        };
         let input = document.getElementById("userInput").value;
         document.getElementById('userInput').value = '';
         input = input.toLowerCase()
@@ -128,27 +130,24 @@ Also all text input is NOT case sensitive.
         // }
 
 
-        console.log(document.getElementById("consoleOutput").cols)
 
 
-        console.log("x: " + x)
-        console.log("y: " + y)
         console.log(occupation)
         console.log(output)
         output = output + `
         
 `
         console.log(idval)
-        if ((idval%2) != 0) {
+        if ((idval % 2) != 0) {
             console.log("white odd")
-            document.getElementById("consoleOutput").innerHTML += `<p style="background-color: rgb(210, 208, 208)">` + output + `</p>`;
+            document.getElementById("consoleOutput").innerHTML = `<p style="background-color: rgb(210, 208, 208)">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
         } else {
             console.log("grey even")
-            document.getElementById("consoleOutput").innerHTML += `<p style="background-color: grey">` + output + `</p>`;
+            document.getElementById("consoleOutput").innerHTML = `<p style="background-color: grey">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
         }
         idval += 1;
 
-
+        document.getElementById('location').innerHTML = (` X-Position: ` + x + `<br>` + `Y-Position: ` + y)
 
 
     });
