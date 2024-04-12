@@ -21,7 +21,7 @@ body {
 #title2 {
     font-family: monospace;
     white-space: pre;
-    font-size: 12px;
+    font-size: 18px;
     color: #880808;
 }
 
@@ -33,6 +33,8 @@ body {
     background-color: white;
     width: 80%;
     height: 50vh;
+    background-color: rgb(48, 47, 47);
+
 }
 .textboxWrapper {
     display: flex;

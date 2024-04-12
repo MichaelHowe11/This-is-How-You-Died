@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('userInputForm').addEventListener('submit', function (eventData) {
         eventData.preventDefault();
         if (occupation === 0) {
-        output = (`Choose Your Occupation & Starting Position\n\
+        output = (`Choose Your Occupation & Starting Position
 High School Student - Muldraugh High
 Fast Food Employee - Spiffo's (An American Fast Food Restaurant)
 Unemployed - A House in Muldraugh
@@ -94,7 +94,8 @@ Type 'help' for instructions on how to play.`)};
             output = (`Type 'North', 'West', 'East', or 'South' to move.To pick up items type 'pickup' and for dropping items type 'drop (item name)'.\n
 To see your inventory type 'inventory
 To attack an enemy type '(weapon of choice) attack (enemy name)'
-Also all text input is NOT case sensitive.`)
+Also all text input is NOT case sensitive.
+`)
         }
 
         // occupation 1 is high school student, occupation 2 is fast food employee, and occupation 3 is unemployed.
