@@ -15,6 +15,7 @@ function start() {
 document.addEventListener("DOMContentLoaded", function () {
     let output = "";
 
+
     // ascii art made with http://www.network-science.de/ascii/
 
 
@@ -27,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch('title.txt').then(response => response.text()).then(text => title1.innerHTML = text)
 
     fetch('asciiart.txt').then(response => response.text()).then(text => asciimenuart.innerHTML = text)
-
 
 
 
