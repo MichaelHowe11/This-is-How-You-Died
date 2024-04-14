@@ -1,0 +1,9 @@
+{
+    "highSchool": {
+        "age":17,
+        "startAt": [2,3],
+        "dialogue": [
+            "Amidst a desolate road, a school bus lies surrounded by at least three zombies, their twisted forms shuffling ominously. Despite the encroaching decay of the world around them, the buses stand untouched by the chaos, bearing only the scars of time's passage through neglect.<br>Given your circumstances your given two choices, either search for the keys or distract the zombies and hope that the keys are somewhere nearby the buses.<br>Type: 'search for keys' or 'distract the zombies'"
+        ]
+    }
+}

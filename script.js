@@ -14,6 +14,22 @@ function start() {
 
 document.addEventListener("DOMContentLoaded", function () {
     let output = "";
+    
+
+    async function get() {
+        try {
+            const response = await fetch('data.json');
+            const data = await response.json();
+            console.log(data);
+            return data;
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            return null;
+        }
+    }
+    // get().then(data => {
+    //     console.log(data);
+    // });
 
 
     // ascii art made with http://www.network-science.de/ascii/
