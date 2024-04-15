@@ -14,8 +14,6 @@ function start() {
 
 document.addEventListener("DOMContentLoaded", function () {
     let output = "";
-
-
     // ascii art made with http://www.network-science.de/ascii/
 
 
@@ -36,36 +34,56 @@ document.addEventListener("DOMContentLoaded", function () {
         eventData.preventDefault();
         document.getElementById('instr').classList.add('hidden')
         if (occupation === 0) {
-            output = (`Choose Your Occupation & Starting Position<br><br>High School Student - Muldraugh High<br>Fast Food Employee - Spiffo's (An American Fast Food Restaurant)<br>Unemployed - A House in Muldraugh<br>Type 'help' for instructions on how to play. `)
+            output = (`Choose Your Occupation & Starting Position<br><br>Student - Muldraugh High<br>Chef - Spiffo's (An American Fast Food Restaurant)<br>Unemployed - A House in Muldraugh<br>Type 'help' for instructions on how to play. `)
         };
         let input = document.getElementById("userInput").value;
         document.getElementById('userInput').value = '';
         input = input.toLowerCase()
 
-
-
-
-
-
-        console.log(input)
-
         if (input === "north") {
             y += 1
+            output = ("You moved north")
         } else if (input === "south") {
             y -= 1
+            output = ("You moved south")
         } else if (input === "east") {
             x += 1
+            output = ("You moved east")
         } else if (input === "west") {
             x -= 1
+            output = ("You moved west")
+        } else (
+            output = ("You didn't move")
+        )
+        
+        // 
+        if (x === -1 && input === "west") {
+            x += 1
+            output = ("You cannot move west")
+        }
+        if (x === 6 && input === "east") {
+            x -= 1
+            output = ("You cannot move east")
+        }
+        if (y === 6 && input === "north") {
+            y -= 1
+            output = ("You cannot move north")
+        }
+        if (y === -1 && input === "south") {
+            y += 1
+            output = ("You cannot move south")
         }
 
-        function wall(xLoc, yLoc, w, h) {
-            console.log(x)
-            console.log(xLoc)
-            console.log(w)
-            console.log(xLoc + w)
+        console.log(input)
+        console.log('x is ' + x)
+        console.log('y is ' + y)
 
-            console.log(input)
+        function wall(xLoc, yLoc, w, h) {
+            // console.log(x)
+            // console.log(xLoc)
+            // console.log(w)
+            // console.log(xLoc + w)
+
             if ((x >= xLoc && x <= xLoc + w) && (y >= yLoc && y <= yLoc + h)) {
                 console.log('bruh')
                 if (input === "north") {
@@ -86,31 +104,34 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
-        console.log(wall(1, 1, 4, 4));
+        // console.log(wall(1, 1, 4, 4));
 
         if (input === "help") {
-            output = (`Type 'North', 'West', 'East', or 'South' to move.To pick up items type 'pickup' and for dropping items type 'drop (item name)'.<br>To see your inventory type 'inventory<br>To attack an enemy type '(weapon of choice) attack (enemy name)'<br>Also all text input is NOT case sensitive.
+            output = (`Type 'North', 'West', 'East', or 'South' to move.<br>
+            To see your inventory type 'inventory<br>To attack an enemy type '(weapon of choice) attack (enemy name)'<br>
+            Also all text input is NOT case sensitive.
 `)
         }
 
         // occupation 1 is high school student, occupation 2 is fast food employee, and occupation 3 is unemployed.
         if (occupation === 0) {
-            if (input === "high school student") {
-                output = ("Your occupation is a High School Student.")
-                occupation = 1;
-            } else if (input === "fast food employee") {
+            if (input === "student") {
+                output = ("You're a High School Student amidst a desolate road, a school bus lies surrounded by at least three zombies, their twisted forms shuffling ominously. Despite the encroaching decay of the world around them, the buses stand untouched by the chaos, bearing only the scars of time's passage through neglect.")
+                occupation = "student";
+                x += 0;
+                y += 5;
+            } else if (input === "chef") {
                 output = ("Your occupation is a Fast Food Employee")
-                occupation = 2;
+                occupation = "chef";
+                x += 0;
+                y += 0;
             } else if (input === "unemployed") {
                 output = ("You are unemployed, you should get a job you lazy bum! I guess it's too late now huh.")
-                occupation = 3;
+                occupation = "unemployed";
+                x += 2;
+                y += 3;
             }
         }
-
-        if (occupation === 3) {
-
-        }
-
 
         // demonstration of a vertical wall that is 5 units tall and is located at x=1
         // if ((x === 1) && (y >= 1 && y <= 5)) {
@@ -122,20 +143,92 @@ document.addEventListener("DOMContentLoaded", function () {
         //     console.log("horizontal wall")
         // }
 
-
-
-
         console.log(occupation)
         console.log(output)
-        output = output + `
+        output = output + ``
+
+        if (x === 0 && y === 0) {
+    
+        }else if (x === 1 && y === 0) {
+            
+        }else if (x === 2 && y === 0) {
+            
+        }else if (x === 3 && y === 0) {
+            
+        }else if (x === 4 && y === 0) {
+            
+        }else if (x === 5 && y === 0) {
+            
+        }else if (x === 0 && y === 1) {
+            
+        }else if (x === 1 && y === 1) {
+            
+        }else if (x === 2 && y === 1) {
+            
+        }else if (x === 3 && y === 1) {
+            
+        }else if (x === 4 && y === 1) {
+            
+        }else if (x === 5 && y === 1) {
+            
+        }else if (x === 0 && y === 2) {
+            
+        }else if (x === 1 && y === 2) {
+            
+        }else if (x === 2 && y === 2) {
+            
+        }else if (x === 3 && y === 2) {
+            
+        }else if (x === 4 && y === 2) {
+            
+        }else if (x === 5 && y === 2) {
+            
+        }else if (x === 0 && y === 3) {
+            
+        }else if (x === 1 && y === 3) {
+            
+        }else if (x === 2 && y === 3) {
+            
+        }else if (x === 3 && y === 3) {
+            
+        }else if (x === 4 && y === 3) {
+            
+        }else if (x === 5 && y === 3) {
+            
+        }else if (x === 0 && y === 4) {
+            
+        }else if (x === 1 && y === 4) {
+            
+        }else if (x === 2 && y === 4) {
+            
+        }else if (x === 3 && y === 4) {
+            
+        }else if (x === 4 && y === 4) {
+            
+        }else if (x === 5 && y === 4) {
+            
+        }else if (x === 0 && y === 5) {
+            
+        }else if (x === 1 && y === 5) {
+            
+        }else if (x === 2 && y === 5) {
+            
+        }else if (x === 3 && y === 5) {
+            
+        }else if (x === 4 && y === 5) {
+            
+        }else if (x === 5 && y === 5) {
+            
+        }else {
+            output = ("You have been lost to the place between space and time.")
+        }
         
-`
-        console.log(idval)
+        // console.log(idval)
         if ((idval % 2) != 0) {
-            console.log("white odd")
+            // console.log("white odd")
             document.getElementById("consoleOutput").innerHTML = `<p style="background-color: rgb(210, 208, 208)">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
         } else {
-            console.log("grey even")
+            // console.log("grey even")
             document.getElementById("consoleOutput").innerHTML = `<p style="background-color:rgb(150, 150, 150);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
         }
         idval += 1;
