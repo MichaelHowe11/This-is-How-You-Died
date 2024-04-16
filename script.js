@@ -40,22 +40,24 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('userInput').value = '';
         input = input.toLowerCase()
 
-        if (input === "north") {
-            y += 1
-            output = ("You moved north")
-        } else if (input === "south") {
-            y -= 1
-            output = ("You moved south")
-        } else if (input === "east") {
-            x += 1
-            output = ("You moved east")
-        } else if (input === "west") {
-            x -= 1
-            output = ("You moved west")
-        } else (
-            output = ("You didn't move")
-        )
-        
+        if (occupation != 0) {
+            if (input === "north") {
+                y += 1
+                output = ("You moved north")
+            } else if (input === "south") {
+                y -= 1
+                output = ("You moved south")
+            } else if (input === "east") {
+                x += 1
+                output = ("You moved east")
+            } else if (input === "west") {
+                x -= 1
+                output = ("You moved west")
+            } else (
+                output = ("You didn't move")
+            )
+        }
+
         // 
         if (x === -1 && input === "west") {
             x += 1
@@ -147,89 +149,109 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(output)
         output = output + ``
 
+        if (input === "talk") {
+
+        }
+
+        function HSdialogue() {
+
+        }
+        function Mildialogue() {
+            
+        }
+
+        if (occupation != 0) {
         if (x === 0 && y === 0) {
-    
-        }else if (x === 1 && y === 0) {
-            
-        }else if (x === 2 && y === 0) {
-            
-        }else if (x === 3 && y === 0) {
-            
-        }else if (x === 4 && y === 0) {
-            
-        }else if (x === 5 && y === 0) {
-            
-        }else if (x === 0 && y === 1) {
-            
-        }else if (x === 1 && y === 1) {
-            
-        }else if (x === 2 && y === 1) {
-            
-        }else if (x === 3 && y === 1) {
-            
-        }else if (x === 4 && y === 1) {
-            
-        }else if (x === 5 && y === 1) {
-            
-        }else if (x === 0 && y === 2) {
-            
-        }else if (x === 1 && y === 2) {
-            
-        }else if (x === 2 && y === 2) {
-            
-        }else if (x === 3 && y === 2) {
-            
-        }else if (x === 4 && y === 2) {
-            
-        }else if (x === 5 && y === 2) {
-            
-        }else if (x === 0 && y === 3) {
-            
-        }else if (x === 1 && y === 3) {
-            
-        }else if (x === 2 && y === 3) {
-            
-        }else if (x === 3 && y === 3) {
-            
-        }else if (x === 4 && y === 3) {
-            
-        }else if (x === 5 && y === 3) {
-            
-        }else if (x === 0 && y === 4) {
-            
-        }else if (x === 1 && y === 4) {
-            
-        }else if (x === 2 && y === 4) {
-            
-        }else if (x === 3 && y === 4) {
-            
-        }else if (x === 4 && y === 4) {
-            
-        }else if (x === 5 && y === 4) {
-            
-        }else if (x === 0 && y === 5) {
-            
-        }else if (x === 1 && y === 5) {
-            
-        }else if (x === 2 && y === 5) {
-            
-        }else if (x === 3 && y === 5) {
-            
-        }else if (x === 4 && y === 5) {
-            
-        }else if (x === 5 && y === 5) {
-            
-        }else {
+            output = "You are outside of Spiffo's.  There is a main road to the north and a side road to the east."
+        } else if (x === 1 && y === 0) {
+            output = "You are on a side road.  Spiffo's is to the west, a neighborhood is to the east and north."
+        } else if (x === 2 && y === 0) {
+
+        } else if (x === 3 && y === 0) {
+
+        } else if (x === 4 && y === 0) {
+
+        } else if (x === 5 && y === 0) {
+
+        } else if (x === 0 && y === 1) {
+
+        } else if (x === 1 && y === 1) {
+
+        } else if (x === 2 && y === 1) {
+
+        } else if (x === 3 && y === 1) {
+
+        } else if (x === 4 && y === 1) {
+
+        } else if (x === 5 && y === 1) {
+
+        } else if (x === 0 && y === 2) {
+
+        } else if (x === 1 && y === 2) {
+
+        } else if (x === 2 && y === 2) {
+
+        } else if (x === 3 && y === 2) {
+
+        } else if (x === 4 && y === 2) {
+
+        } else if (x === 5 && y === 2) {
+
+        } else if (x === 0 && y === 3) {
+            output = "You see a survivor in lightweight military gear standing outside the police station.  Type 'talk' to talk to them.  To the north of you is a firestation, to the east a mainstreet, and to the south a ballpark."
+            if (input = "talk"){
+                Mildialogue()
+            }
+        } else if (x === 1 && y === 3) {
+
+        } else if (x === 2 && y === 3) {
+
+        } else if (x === 3 && y === 3) {
+
+        } else if (x === 4 && y === 3) {
+
+        } else if (x === 5 && y === 3) {
+
+        } else if (x === 0 && y === 4) {
+
+        } else if (x === 1 && y === 4) {
+
+        } else if (x === 2 && y === 4) {
+
+        } else if (x === 3 && y === 4) {
+
+        } else if (x === 4 && y === 4) {
+
+        } else if (x === 5 && y === 4) {
+
+        } else if (x === 0 && y === 5) {
+            output = "You see a group of people inside of the Muldraugh Highschool.  Type 'Talk' to enter dialogue"
+            if (input === "talk") {
+                x = 5
+                y = 0
+                HSdialogue()
+            }
+        } else if (x === 1 && y === 5) {
+
+        } else if (x === 2 && y === 5) {
+
+        } else if (x === 3 && y === 5) {
+
+        } else if (x === 4 && y === 5) {
+
+        } else if (x === 5 && y === 5) {
+
+        } else {
             output = ("You have been lost to the place between space and time.")
         }
-        
+    }
         // console.log(idval)
         if ((idval % 2) != 0) {
             // console.log("white odd")
-            document.getElementById("consoleOutput").innerHTML = `<p style="background-color: rgb(210, 208, 208)">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
+            document.getElementById("consoleOutput").innerHTML = `<p style="background-color: rgb(222, 222, 222)">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
         } else {
             // console.log("grey even")
-            document.getElementById("consoleOutput").innerHTML = `<p style="background-color:rgb(150, 150, 150);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
+            document.getElementById("consoleOutput").innerHTML = `<p style="background-color:rgb(150, 150, 150); color: rgb(255, 255, 255);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
         }
         idval += 1;
 
