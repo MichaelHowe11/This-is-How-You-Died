@@ -58,23 +58,22 @@ document.addEventListener("DOMContentLoaded", function () {
             )
         }
 
-        // 
-        if (x === -1 && input === "west") {
-            x += 1
-            output = ("You cannot move west")
-        }
-        if (x === 6 && input === "east") {
-            x -= 1
-            output = ("You cannot move east")
-        }
-        if (y === 6 && input === "north") {
-            y -= 1
-            output = ("You cannot move north")
-        }
-        if (y === -1 && input === "south") {
-            y += 1
-            output = ("You cannot move south")
-        }
+        // if (x === -1 && input === "west") {
+        //     x += 1
+        //     output = ("You cannot move west")
+        // }
+        // if (x === 6 && input === "east") {
+        //     x -= 1
+        //     output = ("You cannot move east")
+        // }
+        // if (y === 6 && input === "north") {
+        //     y -= 1
+        //     output = ("You cannot move north")
+        // }
+        // if (y === -1 && input === "south") {
+        //     y += 1
+        //     output = ("You cannot move south")
+        // }
 
         console.log(input)
         console.log('x is ' + x)
@@ -120,18 +119,13 @@ document.addEventListener("DOMContentLoaded", function () {
             if (input === "student") {
                 output = ("You're a High School Student amidst a desolate road, a school bus lies surrounded by at least three zombies, their twisted forms shuffling ominously. Despite the encroaching decay of the world around them, the buses stand untouched by the chaos, bearing only the scars of time's passage through neglect.")
                 occupation = "student";
-                x += 0;
-                y += 5;
             } else if (input === "chef") {
                 output = ("Your occupation is a Fast Food Employee")
                 occupation = "chef";
-                x += 0;
-                y += 0;
             } else if (input === "unemployed") {
-                output = ("You are unemployed, you should get a job you lazy bum! I guess it's too late now huh.")
+                output = (`You are unemployed, you should get a job you lazy bum! I guess it's too late now huh.
+You start at a friends house, your friend hasn't been seen by you in days. You seem suspicous of his sudden dissapearence and go to investigate by steping outside for the first time in weeks. You find that your town is no longer the bustling city it was known for but now a desolate city with nothing but the wind making a noise.`)
                 occupation = "unemployed";
-                x += 2;
-                y += 3;
             }
         }
 
@@ -157,94 +151,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
         function Mildialogue() {
-            
+
         }
 
         if (occupation != 0) {
-        if (x === 0 && y === 0) {
-            output = "You are outside of Spiffo's.  There is a main road to the north and a side road to the east."
-        } else if (x === 1 && y === 0) {
-            output = "You are on a side road.  Spiffo's is to the west, a neighborhood is to the east and north."
-        } else if (x === 2 && y === 0) {
 
-        } else if (x === 3 && y === 0) {
-
-        } else if (x === 4 && y === 0) {
-
-        } else if (x === 5 && y === 0) {
-
-        } else if (x === 0 && y === 1) {
-
-        } else if (x === 1 && y === 1) {
-
-        } else if (x === 2 && y === 1) {
-
-        } else if (x === 3 && y === 1) {
-
-        } else if (x === 4 && y === 1) {
-
-        } else if (x === 5 && y === 1) {
-
-        } else if (x === 0 && y === 2) {
-
-        } else if (x === 1 && y === 2) {
-
-        } else if (x === 2 && y === 2) {
-
-        } else if (x === 3 && y === 2) {
-
-        } else if (x === 4 && y === 2) {
-
-        } else if (x === 5 && y === 2) {
-
-        } else if (x === 0 && y === 3) {
-            output = "You see a survivor in lightweight military gear standing outside the police station.  Type 'talk' to talk to them.  To the north of you is a firestation, to the east a mainstreet, and to the south a ballpark."
-            if (input = "talk"){
-                Mildialogue()
+            if ((y<=2 && y>=-9) && (x===-2)) {
+                console.log("bruh")
             }
-        } else if (x === 1 && y === 3) {
 
-        } else if (x === 2 && y === 3) {
-
-        } else if (x === 3 && y === 3) {
-
-        } else if (x === 4 && y === 3) {
-
-        } else if (x === 5 && y === 3) {
-
-        } else if (x === 0 && y === 4) {
-
-        } else if (x === 1 && y === 4) {
-
-        } else if (x === 2 && y === 4) {
-
-        } else if (x === 3 && y === 4) {
-
-        } else if (x === 4 && y === 4) {
-
-        } else if (x === 5 && y === 4) {
-
-        } else if (x === 0 && y === 5) {
-            output = "You see a group of people inside of the Muldraugh Highschool.  Type 'Talk' to enter dialogue"
-            if (input === "talk") {
-                x = 5
-                y = 0
-                HSdialogue()
-            }
-        } else if (x === 1 && y === 5) {
-
-        } else if (x === 2 && y === 5) {
-
-        } else if (x === 3 && y === 5) {
-
-        } else if (x === 4 && y === 5) {
-
-        } else if (x === 5 && y === 5) {
-
-        } else {
-            output = ("You have been lost to the place between space and time.")
         }
-    }
+
+
+
         // console.log(idval)
         if ((idval % 2) != 0) {
             // console.log("white odd")
