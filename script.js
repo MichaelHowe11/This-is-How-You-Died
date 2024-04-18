@@ -1,3 +1,18 @@
+const dia {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
 function start() {
     let start = document.getElementById("start");
     start.classList.add("hidden");
@@ -19,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     let occupation = 0;
+    let combatstatus = 0;
     let classname = "";
     let idval = 1;
     let y = 0;
@@ -40,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('userInput').value = '';
         input = input.toLowerCase()
 
-        if (occupation != 0) {
+        if (occupation != 0 && combatstatus != 1) {
             if (input === "north") {
                 y += 1
                 output = ("You moved north")
@@ -124,7 +140,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 occupation = "chef";
             } else if (input === "unemployed") {
                 output = (`You are unemployed, you should get a job you lazy bum! I guess it's too late now huh.
-You start at a friends house, your friend hasn't been seen by you in days. You seem suspicous of his sudden dissapearence and go to investigate by steping outside for the first time in weeks. You find that your town is no longer the bustling city it was known for but now a desolate city with nothing but the wind making a noise.`)
+You start at James's house (A friend from highschool), James hasn't been seen by you in days. You seem suspicious of his sudden disappearance and go to investigate by stepping outside for the first time in weeks. You find that your town is no longer the bustling city it was known for but now a desolate city with nothing but the wind making a noise.
+Option 1: Ask around your neighborhood for information about your friend.
+Option 2: Page James.`)
                 occupation = "unemployed";
             }
         }
@@ -156,14 +174,53 @@ You start at a friends house, your friend hasn't been seen by you in days. You s
 
         if (occupation != 0) {
 
-            if ((y<=2 && y>=-9) && (x===-2)) {
-                console.log("bruh")
+            if ((y <= 2 && y >= -9) && (x === -2)) {
+                console.log("road")
             }
+
+        }
+
+        if (occupation === "unemployed") {
+            x = 0;
+            y = 0;
+
+            if (input === "1") {
+
+            }
+
 
         }
 
 
 
+        var playerhp = 20
+        // this is a test for now so that I can try the combat system
+        if (input === "combat") {
+            combat()
+        }
+        function combat() {
+            combatstatus = 1
+            playerhp = 20
+            enemyhp = 10;
+            output = 'You encounter a zombie.  You can either "attack" them or attempt to "defend" yourself.'
+            let enemyhp = 10;
+            let blockstatus = 0;
+            function attack(max) {
+                return Math.floor(Math.random() * max)
+            }
+
+            if (input === "attack") {
+                enemyhp -= attack(6)
+                output = 'You attacked the zombie.  They have ' + enemyhp + ' health left'
+            }
+            if (input === "defend") {
+                blockstatus = 1
+            }
+            let enemyattack
+            enemyattack = attack(9)
+            playerhp -= enemyattack
+            output = `The zombie attacks you dealing ` + enemyattack + ` damage.  You have ` + playerhp + ' health left'
+        }
         // console.log(idval)
         if ((idval % 2) != 0) {
             // console.log("white odd")
