@@ -1,6 +1,41 @@
-const dia {
-    
-}
+const dia = {
+    unem: [`You are unemployed, you should get a job you lazy bum! I guess it's too late now huh.
+    You start at James's house (A friend from highschool), James hasn't been seen by you in days. You seem suspicious of his sudden disappearance and go to investigate by stepping outside for the first time in weeks. You find that your town is no longer the bustling city it was known for but now a desolate city with nothing but the wind making a noise.
+Option 1: Page James.
+Option 2: Ask around your neighborhood for information about your friend.`,
+
+        // option 1
+        "You try to page James using your pager. You wait an hour and don't hear anything from the home phone.",
+        // end of option 1
+
+        
+        // option 2
+        "You go to the house of your neighbor Bill and knock on the door. You feel a very uneasy feeling while doing this. You wait at least three minutes for a response but no one seems to be home.",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ],
+};
 
 
 
@@ -56,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('userInput').value = '';
         input = input.toLowerCase()
 
-        if (occupation != 0 && combatstatus != 1) {
+        if (occupation != 0 && combatstatus != active) {
             if (input === "north") {
                 y += 1
                 output = ("You moved north")
@@ -139,10 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 output = ("Your occupation is a Fast Food Employee")
                 occupation = "chef";
             } else if (input === "unemployed") {
-                output = (`You are unemployed, you should get a job you lazy bum! I guess it's too late now huh.
-You start at James's house (A friend from highschool), James hasn't been seen by you in days. You seem suspicious of his sudden disappearance and go to investigate by stepping outside for the first time in weeks. You find that your town is no longer the bustling city it was known for but now a desolate city with nothing but the wind making a noise.
-Option 1: Ask around your neighborhood for information about your friend.
-Option 2: Page James.`)
+                output = (dia.unem[0])
                 occupation = "unemployed";
             }
         }
@@ -193,34 +225,67 @@ Option 2: Page James.`)
 
 
 
-        var playerhp = 20
         // this is a test for now so that I can try the combat system
         if (input === "combat") {
             combat()
         }
         function combat() {
-            combatstatus = 1
-            playerhp = 20
-            enemyhp = 10;
-            output = 'You encounter a zombie.  You can either "attack" them or attempt to "defend" yourself.'
-            let enemyhp = 10;
-            let blockstatus = 0;
             function attack(max) {
                 return Math.floor(Math.random() * max)
             }
+            combatstatus = 'active'
+            let playerhp = 20
+            let enemyhp = 10;
+            let blockstatus = 0;
+            playerturn()
+            function playerturn() {
+                if (zombiehp > 0) {
 
-            if (input === "attack") {
-                enemyhp -= attack(6)
-                output = 'You attacked the zombie.  They have ' + enemyhp + ' health left'
+                    output = 'You encounter a zombie.  You can either "attack" them or attempt to "defend" yourself.'
+                    if (input === "attack") {
+                        enemyhp -= attack(6);
+                        output = 'You attacked the zombie.  They have ' + enemyhp + ' health left' ;
+                        zombieturn();
+                    }
+                    if (input === "defend") {
+                        blockstatus = 1;
+                        zombieturn();
+                    }
+                    else {
+                        output = "You did nothing!";
+                        zombieturn();
+                    }
+                }
+                else {
+                    output = `The zombie has died, you can now continue on your journey.`;
+                    combatstatus = 0;
+                }
             }
-            if (input === "defend") {
-                blockstatus = 1
+            function zombieturn() {
+                let enemyattack
+                if (playerhp > 0) {
+                    if (blockstatus = 1) {
+                        enemyattack = attack(5);
+                        playerturn();
+                    }
+                    else {
+                        enemyattack = attack(9);
+                        playerturn();
+                    }
+                }
+                else {
+                    output = "You have died.";
+                    occupation = 0;
+                    combatstatus = 0;
+                    x = 0;
+                    y = 0;
+                }
+                playerhp -= enemyattack
+                output = `The zombie attacks you dealing ` + enemyattack + ` damage.  You have ` + playerhp + ' health left';
             }
-            let enemyattack
-            enemyattack = attack(9)
-            playerhp -= enemyattack
-            output = `The zombie attacks you dealing ` + enemyattack + ` damage.  You have ` + playerhp + ' health left'
         }
+
+
         // console.log(idval)
         if ((idval % 2) != 0) {
             // console.log("white odd")
