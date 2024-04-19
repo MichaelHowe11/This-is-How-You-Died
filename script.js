@@ -1,20 +1,42 @@
-const dia = {
+let dia = {
+    // unemployed dialogue
     unem: [`You are unemployed, you should get a job you lazy bum! I guess it's too late now huh.
-    You start at James's house (A friend from highschool), James hasn't been seen by you in days. You seem suspicious of his sudden disappearance and go to investigate by stepping outside for the first time in weeks. You find that your town is no longer the bustling city it was known for but now a desolate city with nothing but the wind making a noise.
-Option 1: Page James.
-Option 2: Ask around your neighborhood for information about your friend.`,
+    You start at James's house (A friend from highschool), James hasn't been seen by you in days. You seem suspicious of his sudden disappearance and go to investigate by stepping outside for the first time in weeks. You find that your town is no longer the bustling city it was known for but now a desolate city with nothing but the wind making a noise.<br>
+    Option 1: Page James.<br>
+    Option 2: Ask around your neighborhood for information about your friend.`,
 
         // option 1
-        "You try to page James using your pager. You wait an hour and don't hear anything from the home phone.",
+        `You try to page James using your pager. You wait an hour and don't hear anything from the home phone.`,
         // end of option 1
 
-        
+
         // option 2
-        "You go to the house of your neighbor Bill and knock on the door. You feel a very uneasy feeling while doing this. You wait at least three minutes for a response but no one seems to be home.",
+        `You go to the house of your neighbor Jared and knock on the door. You feel a very uneasy feeling while doing this. You wait at least three minutes for a response but no one seems to be home.<br>
+        Option 1: Try to open the door.<br>
+        Option 2: Leave`,
+
+        // option 1, forced entry
+        `You're worried about your neighbor Jared, come to think of it you haven't really heard from him in a long time either. This seems serious and your curiosity gets the best of you so you try to force yourself into his house. You get the same uneasy feeling from when you first knocked on the door but this time it's more intense. The house seems quiet, too quiet...<br>
+        Option 1: Investigate<br>
+        Option 2: Leave`,
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+        // option 2
+        `You've watched too many horror movies and are not a fan of dying because of your curiosity so you leave to ask another neighbor.<br>
+        Option 1: Change your mind and go back in the house for your neighbor Jared<br>
+        Option 2: `
 
 
 
@@ -85,7 +107,10 @@ document.addEventListener("DOMContentLoaded", function () {
         eventData.preventDefault();
         document.getElementById('instr').classList.add('hidden')
         if (occupation === 0) {
-            output = (`Choose Your Occupation & Starting Position<br><br>Student - Muldraugh High<br>Chef - Spiffo's (An American Fast Food Restaurant)<br>Unemployed - A House in Muldraugh<br>Type 'help' for instructions on how to play. `)
+            output = (`Choose Your Occupation & Starting Position<br><br>Student - Muldraugh High<br>
+Chef - Spiffo's (An American Fast Food Restaurant)<br>
+Unemployed - A House in Muldraugh<br>
+Type 'help' for instructions on how to play.`)
         };
         let input = document.getElementById("userInput").value;
         document.getElementById('userInput').value = '';
@@ -161,7 +186,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (input === "help") {
             output = (`Type 'North', 'West', 'East', or 'South' to move.<br>
             To see your inventory type 'inventory<br>To attack an enemy type '(weapon of choice) attack (enemy name)'<br>
-            Also all text input is NOT case sensitive.
+            Also all text input is NOT case sensitive so the text 'HELLO' and 'hello' are the same.<br>
+            Everytime you progress in the story there will be options at the bottem of the text, type the number that corresponds with that option. (option 1 would be '1')
 `)
         }
 
@@ -244,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     output = 'You encounter a zombie.  You can either "attack" them or attempt to "defend" yourself.'
                     if (input === "attack") {
                         enemyhp -= attack(6);
-                        output = 'You attacked the zombie.  They have ' + enemyhp + ' health left' ;
+                        output = 'You attacked the zombie.  They have ' + enemyhp + ' health left';
                         zombieturn();
                     }
                     if (input === "defend") {
@@ -286,12 +312,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        // console.log(idval)
+        // makes each seperate output a different color
         if ((idval % 2) != 0) {
-            // console.log("white odd")
             document.getElementById("consoleOutput").innerHTML = `<p style="background-color: rgb(222, 222, 222)">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
         } else {
-            // console.log("grey even")
             document.getElementById("consoleOutput").innerHTML = `<p style="background-color:rgb(150, 150, 150); color: rgb(255, 255, 255);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
         }
         idval += 1;
