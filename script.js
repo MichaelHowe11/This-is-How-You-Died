@@ -17,28 +17,25 @@ let dia = {
 
         // option 1, forced entry
         `You're worried about your neighbor Jared, come to think of it you haven't really heard from him in a long time either. This seems serious and your curiosity gets the best of you so you try to force yourself into his house. You get the same uneasy feeling from when you first knocked on the door but this time it's more intense. The house seems quiet, too quiet...<br>
-        Option 1: Investigate<br>
+        Option 1: Investigate the first floor<br>
         Option 2: Leave`,
 
 
+        // Option 1 investigate the noise upstairs
+
+        `You decide to investigate and see if your neighbor Jared is in trouble. You search the entire first floor but find nothing suspicous but suddenly you hear a noise upstairs.<br>
+        Option 1: Investigate the second floor
+        Option 2: Search for a weapon so your prepared.
+        Option 3: Leave`,
 
 
-
-
-
-
-
-
-
-
-
-
-        // option 2
+        // leave
         `You've watched too many horror movies and are not a fan of dying because of your curiosity so you leave to ask another neighbor.<br>
         Option 1: Change your mind and go back in the house for your neighbor Jared<br>
-        Option 2: `
+        Option 2: Search for another neighbor to ask about your friend James`,
 
-
+        // option 1: Investigate the second floor
+        ``
 
 
 
@@ -252,9 +249,7 @@ Type 'help' for instructions on how to play.`)
 
 
         // this is a test for now so that I can try the combat system
-        if (input === "combat") {
-            combat()
-        }
+
         function combat() {
             function attack(max) {
                 return Math.floor(Math.random() * max)
@@ -265,7 +260,8 @@ Type 'help' for instructions on how to play.`)
             let blockstatus = 0;
             playerturn()
             function playerturn() {
-                if (zombiehp > 0) {
+                
+                if (enemyhp > 0) {
 
                     output = 'You encounter a zombie.  You can either "attack" them or attempt to "defend" yourself.'
                     if (input === "attack") {
@@ -309,6 +305,9 @@ Type 'help' for instructions on how to play.`)
                 playerhp -= enemyattack
                 output = `The zombie attacks you dealing ` + enemyattack + ` damage.  You have ` + playerhp + ' health left';
             }
+        }
+        if (input === "combat") {
+            combat()
         }
 
 
