@@ -65,8 +65,6 @@ let dia = {
 
 
 
-
-
 function start() {
     let start = document.getElementById("start");
     start.classList.add("hidden");
@@ -74,8 +72,6 @@ function start() {
     input.classList.remove("hidden");
     let textarea = document.getElementById("consoleOutput");
     textarea.classList.remove("hidden");
-    let info = document.getElementById("info");
-    info.classList.remove("hidden");
 
     document.getElementById('consoleOutput').classList.remove('hidden')
 }
@@ -260,7 +256,7 @@ Type 'help' for instructions on how to play.`)
             let blockstatus = 0;
             playerturn()
             function playerturn() {
-                
+
                 if (enemyhp > 0) {
 
                     output = 'You encounter a zombie.  You can either "attack" them or attempt to "defend" yourself.'
