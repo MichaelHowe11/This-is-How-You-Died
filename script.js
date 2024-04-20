@@ -1,63 +1,29 @@
-let dia = {
-    // unemployed dialogue
-    unem: [`You are unemployed, you should get a job you lazy bum! I guess it's too late now huh.
-    You start at James's house (A friend from highschool), James hasn't been seen by you in days. You seem suspicious of his sudden disappearance and go to investigate by stepping outside for the first time in weeks. You find that your town is no longer the bustling city it was known for but now a desolate city with nothing but the wind making a noise.<br>
-    Option 1: Page James.<br>
-    Option 2: Ask around your neighborhood for information about your friend.`,
 
-        // option 1
-        `You try to page James using your pager. You wait an hour and don't hear anything from the home phone.`,
-        // end of option 1
+// if u want to mess with json file dm/call me for info
+let jsonData;
 
+function fetchJSONData() {
+    return fetch("./data.json")
+        .then((res) => {
+            if (!res.ok) {
+                throw new Error(`HTTP error! Status: ${res.status}`);
+            }
+            return res.json();
+        })
+        .then((data) => {
+            jsonData = data;
+            console.log("Data fetched successfully:", jsonData);
+            return jsonData;
+        })
+        .catch((error) => {
+            console.error("Unable to fetch data:", error);
+            throw error;
+        });
+}
 
-        // option 2
-        `You go to the house of your neighbor Jared and knock on the door. You feel a very uneasy feeling while doing this. You wait at least three minutes for a response but no one seems to be home.<br>
-        Option 1: Try to open the door.<br>
-        Option 2: Leave`,
-
-        // option 1, forced entry
-        `You're worried about your neighbor Jared, come to think of it you haven't really heard from him in a long time either. This seems serious and your curiosity gets the best of you so you try to force yourself into his house. You get the same uneasy feeling from when you first knocked on the door but this time it's more intense. The house seems quiet, too quiet...<br>
-        Option 1: Investigate the first floor<br>
-        Option 2: Leave`,
-
-
-        // Option 1 investigate the noise upstairs
-
-        `You decide to investigate and see if your neighbor Jared is in trouble. You search the entire first floor but find nothing suspicous but suddenly you hear a noise upstairs.<br>
-        Option 1: Investigate the second floor
-        Option 2: Search for a weapon so your prepared.
-        Option 3: Leave`,
-
-
-        // leave
-        `You've watched too many horror movies and are not a fan of dying because of your curiosity so you leave to ask another neighbor.<br>
-        Option 1: Change your mind and go back in the house for your neighbor Jared<br>
-        Option 2: Search for another neighbor to ask about your friend James`,
-
-        // option 1: Investigate the second floor
-        ``
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ],
-};
-
-
-
+fetchJSONData().then(function(result) {
+    console.log(result)
+ });
 
 
 
@@ -127,32 +93,12 @@ Type 'help' for instructions on how to play.`)
             )
         }
 
-        // if (x === -1 && input === "west") {
-        //     x += 1
-        //     output = ("You cannot move west")
-        // }
-        // if (x === 6 && input === "east") {
-        //     x -= 1
-        //     output = ("You cannot move east")
-        // }
-        // if (y === 6 && input === "north") {
-        //     y -= 1
-        //     output = ("You cannot move north")
-        // }
-        // if (y === -1 && input === "south") {
-        //     y += 1
-        //     output = ("You cannot move south")
-        // }
 
         console.log(input)
         console.log('x is ' + x)
         console.log('y is ' + y)
 
         function wall(xLoc, yLoc, w, h) {
-            // console.log(x)
-            // console.log(xLoc)
-            // console.log(w)
-            // console.log(xLoc + w)
 
             if ((x >= xLoc && x <= xLoc + w) && (y >= yLoc && y <= yLoc + h)) {
                 console.log('bruh')
@@ -174,7 +120,6 @@ Type 'help' for instructions on how to play.`)
                 }
             }
         }
-        // console.log(wall(1, 1, 4, 4));
 
         if (input === "help") {
             output = (`Type 'North', 'West', 'East', or 'South' to move.<br>

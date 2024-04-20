@@ -10,7 +10,7 @@ body {
     flex-flow: column nowrap;
     margin: 1%;
     text-align: center;
-    background-color: #c5e8ffff;
+    background-color: rgb(100, 100, 100);
 }
 
 #asciimenuart {
