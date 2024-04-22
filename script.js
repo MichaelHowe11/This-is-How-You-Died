@@ -146,7 +146,7 @@ Type 'help' for instructions on how to play.`)
                 output = ("Your occupation is a Fast Food Employee")
                 occupation = "chef";
             } else if (input === "unemployed") {
-                output = (dia.unem[0])
+                output = (gdia.unem0)
                 occupation = "unemployed";
             }
         }
