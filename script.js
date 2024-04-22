@@ -1,42 +1,58 @@
 let gdia = {
     "unem0": {
-        "dia":"The date is July 2, 1993. You start at James's house (A friend from highschool), James hasn't been seen by you in days. You seem suspicious of his sudden disappearance and go to investigate by stepping outside for the first time in weeks. You find that your town is no longer the bustling city it was known for but now a desolate city with nothing but the wind making a noise.<br>",
-        "opt":["Option 1: Page James.<br>", "Option 2: Ask around your neighborhood for information about your friend."],
+        "dia": "The date is July 2, 1993. You start at James's house (A friend from highschool), James hasn't been seen by you in days. You seem suspicious of his sudden disappearance and go to investigate by stepping outside for the first time in weeks. You find that your town is no longer the bustling city it was known for but now a desolate city with nothing but the wind making a noise.<br>",
+        "opt": ["Option 1: Page James.<br>", "Option 2: Ask around your neighborhood for information about your friend."],
         "incombat": "false"
     },
     "unem01": {
-        "dia":"You try to page James using your pager. You wait an hour and don't hear anything from the home phone.",
-        "opt":["Option 1: Ask around your neighborhood for information about your friend."],
+        "dia": "You try to page James using your pager. You wait an hour and don't hear anything from the home phone.",
+        "opt": ["Option 1: Ask around your neighborhood for information about your friend."],
         "incombat": "false"
     },
     "unem02": {
-        "dia":"You go to your neighbor, James, and knock on the door. You feel a very uneasy fealing while doing this. You wait at least three minutes for a response but no one seems to be home.",
-        "opt":["Option 1: Try to open the door.<br>", "Option 2: Leave"],
+        "dia": "You go to your neighbor, James, and knock on the door. You feel a very uneasy fealing while doing this. You wait at least three minutes for a response but no one seems to be home.",
+        "opt": ["Option 1: Try to open the door.<br>", "Option 2: Leave"],
         "incombat": "false"
     },
     "unem021": {
-        "dia":"You're worried about your neighbor James, come to think of it you haven't really heard from him in a long time either. This seems serious and your curiosity gets the best of you so you try to force yourself into his house. You get the same uneasy feeling from when you first knocked on the door but this time it's more intense. The house seems quiet, too quiet...",
-        "opt":["Option 1: Investigate<br>", "Option 2: Leave"],
+        "dia": "You're worried about your neighbor James, come to think of it you haven't really heard from him in a long time either. This seems serious and your curiosity gets the best of you so you try to force yourself into his house. You get the same uneasy feeling from when you first knocked on the door but this time it's more intense. The house seems quiet, too quiet...",
+        "opt": ["Option 1: Investigate<br>", "Option 2: Leave"],
         "incombat": "false"
     },
     "unem02leave": {
-        "dia":"You've watched too many horror movies and are not a fan of dying because of your curiosity so you leave to ask another neighbor.",
-        "opt":["Option 1: Change your mind and go back in the house for your neighbor James<br>", "Option 2: Search for another neighbor to ask about your friend James"],
+        "dia": "You've watched too many horror movies and are not a fan of dying because of your curiosity so you leave to ask another neighbor.",
+        "opt": ["Option 1: Change your mind and go back in the house for your neighbor James<br>", "Option 2: Search for another neighbor to ask about your friend James"],
         "incombat": "false"
     },
     "unem0211": {
-        "dia":"You decide to investigate and see if your neighbor James is in trouble. You search the entire first floor but find nothing suspicous but suddenly you hear a noise upstairs.",
-        "opt":["Option 1: Investigate<br>", "Option 2: Search for a weapon so your prepared.", "Option 3: Leave"],
+        "dia": "You decide to investigate and see if your neighbor James is in trouble. You search the entire first floor but find nothing suspicous but suddenly you hear a noise upstairs.",
+        "opt": ["Option 1: Investigate<br>", "Option 2: Search for a weapon so your prepared.", "Option 3: Leave"],
         "incombat": "false"
     },
     "unem02111": {
-        "dia":"As your going upstairs you hear another noise and stop in fear...Something hits you so hard you fall to the ground",
+        "dia": "As your going upstairs you hear another noise and stop in fear...Something hits you so hard you fall to the ground",
         "incombat": "true"
     }
-        
-    
+
+
 }
 
+// first value in list is damage, second value is defense, third value is hit chance
+const itemnames = ["fists", "bat", "knife", "pencil", "katana", "crowbar", "axe"]
+const items = {
+    "fists": [1, 1, 1],
+    "bat": [2, 3, 1],
+    "knife": [1, 2, 1],
+    "pencil": [0.5, 1, 5],
+    "katana": [6, 6, 0],
+    "crowbar": [3, 2, 1],
+    "axe": [3, 2, 1]
+}
+
+let inv = {
+    "space": 0,
+    "items": []
+}
 
 
 function start() {
@@ -131,7 +147,7 @@ Type 'help' for instructions on how to play.`)
 
         if (input === "help") {
             output = (`Type 'North', 'West', 'East', or 'South' to move.<br>
-            To see your inventory type 'inventory<br>To attack an enemy type '(weapon of choice) attack (enemy name)'<br>
+            To see your inventory type 'inventory<br>To attack an enemy type '(weapon of choice) attack'<br>
             Also all text input is NOT case sensitive so the text 'HELLO' and 'hello' are the same.<br>
             Everytime you progress in the story there will be options at the bottem of the text, type the number that corresponds with that option. (option 1 would be '1')
 `)
@@ -186,92 +202,97 @@ Type 'help' for instructions on how to play.`)
 
         if (occupation === "unemployed") {
             x = 0;
+
             y = 0;
+
+
 
             if (input === "1") {
 
+
+
             }
+
+
+
 
 
         }
 
 
 
-        // this is a test for now so that I can try the combat system
+        // player health points
+        let php = 10;
+        // Attack Level
+        let attkLev = 1;
+        // Defense Level
+        let defLev = 1;
+        // miss level
+        let misslev = 1;
+        // amount of turns. Is used to determine who is attacking who.
+        let turnNum = 0;
+        // If incombat is false than combat function will not be executed
+        let incombat = false;
+        function combat(ehp, eattkLev, edefLev, emissLev) {
 
-        function combat() {
-            function attack(max) {
-                return Math.floor(Math.random() * max)
-            }
-            combatstatus = 'active'
-            let playerhp = 20
-            let enemyhp = 10;
-            let blockstatus = 0;
-            playerturn()
-            function playerturn() {
+            input = input.split(' ')
+            if (input[1] === "attack") {
+                turnNum += 1;
 
-                if (enemyhp > 0) {
+                if ((turnNum % 2 === 0) && Math.random() * (emissLev + 1) === 0) {
+                    php -= (eattkLev / defLev).toFixed(2)
+                    output = "The zombid did" + (eattkLev / defLev).toFixed(2) + " damage to you!"
+                } else if (Math.random() * (misslev + 1) === 0) {
+                    output = ("You did " + (attkLev / edefLev).toFixed(2) + " damage on the zombie!")
+                    ehp -= (attkLev / edefLev).toFixed(2)
+                } else if (Math.random() * 101 === 0) {
+                    output = "You missed and damaged yourself!"
+                    php -= 1
+                } else {
+                    output = "You missed."
+                }
 
-                    output = 'You encounter a zombie.  You can either "attack" them or attempt to "defend" yourself.'
-                    if (input === "attack") {
-                        enemyhp -= attack(6);
-                        output = 'You attacked the zombie.  They have ' + enemyhp + ' health left';
-                        zombieturn();
-                    }
-                    if (input === "defend") {
-                        blockstatus = 1;
-                        zombieturn();
-                    }
-                    else {
-                        output = "You did nothing!";
-                        zombieturn();
-                    }
-                }
-                else {
-                    output = `The zombie has died, you can now continue on your journey.`;
-                    combatstatus = 0;
+            }
+            console.log(input)
+            for (let i = 0; i < itemnames.length; i++) {
+                if (input[0] === itemnames[i]) {
+                    attkLev = items.input[0][0]
+                    defLev = items.input[0][1]
+                    misslev = items.input[0][2]
                 }
             }
-            function zombieturn() {
-                let enemyattack
-                if (playerhp > 0) {
-                    if (blockstatus = 1) {
-                        enemyattack = attack(5);
-                        playerturn();
-                    }
-                    else {
-                        enemyattack = attack(9);
-                        playerturn();
-                    }
-                }
-                else {
-                    output = "You have died.";
-                    occupation = 0;
-                    combatstatus = 0;
-                    x = 0;
-                    y = 0;
-                }
-                playerhp -= enemyattack
-                output = `The zombie attacks you dealing ` + enemyattack + ` damage.  You have ` + playerhp + ' health left';
+
+
+
+
+
+
+
+            if (php <= 0) {
+                // php is set to 0 to prevent negative health being shown
+                php = 0
+                output = "You've Lost, womp womp"
             }
+
         }
-        if (input === "combat") {
-            combat()
-        }
+
+    })
+
+
+
 
 
         // makes each seperate output a different color
         if ((idval % 2) != 0) {
-            document.getElementById("consoleOutput").innerHTML = `<p style="background-color: rgb(222, 222, 222)">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
-        } else {
-            document.getElementById("consoleOutput").innerHTML = `<p style="background-color:rgb(150, 150, 150); color: rgb(255, 255, 255);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
-        }
-        idval += 1;
+        document.getElementById("consoleOutput").innerHTML = `<p style="background-color: rgb(222, 222, 222)">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
+    } else {
+        document.getElementById("consoleOutput").innerHTML = `<p style="background-color:rgb(150, 150, 150); color: rgb(255, 255, 255);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
+    }
+    idval += 1;
 
-        document.getElementById('location').innerHTML = (` X-Position: ` + x + `<br>` + `Y-Position: ` + y)
+    document.getElementById('location').innerHTML = (` X-Position: ` + x + `<br>` + `Y-Position: ` + y)
 
-
-    });
 
 });
+
 
