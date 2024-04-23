@@ -114,7 +114,7 @@ Type 'help' for instructions on how to play.`)
                 output = ("Your occupation is a Fast Food Employee")
                 occupation = "chef";
             } else if (input === "unemployed") {
-                output = (gdia.unem0)
+                output = (gdia.unem0.dia)
                 occupation = "unemployed";
             }
         }
@@ -137,16 +137,16 @@ Type 'help' for instructions on how to play.`)
         function combat(ehp, eattkLev, edefLev, emissLev) {
 
             input = input.split(' ')
-            if (input[1] === "attack") {
+            if (input === "attack") {
                 turnNum += 1;
 
-                if ((turnNum % 2 === 0) && Math.random() * (emissLev + 1) === 0) {
+                if ((turnNum % 2 === 0) && Math.floor((Math.random() * (emissLev + 1))) === 0) {
                     php -= (eattkLev / defLev).toFixed(2)
                     output = "The zombid did" + (eattkLev / defLev).toFixed(2) + " damage to you!"
-                } else if (Math.random() * (misslev + 1) === 0) {
+                } else if (Math.floor(Math.random() * (misslev + 1)) === 0) {
                     output = ("You did " + (attkLev / edefLev).toFixed(2) + " damage on the zombie!")
                     ehp -= (attkLev / edefLev).toFixed(2)
-                } else if (Math.random() * 101 === 0) {
+                } else if (Math.random((Math.random() * 101)) === 0) {
                     output = "You missed and damaged yourself!"
                     php -= 1
                 } else {
@@ -154,14 +154,21 @@ Type 'help' for instructions on how to play.`)
                 }
 
             }
+            // damage, defense, hit chance
             console.log(input)
+            let itemusing = "";
             for (let i = 0; i < itemnames.length; i++) {
-                if (input[0] === itemnames[i]) {
-                    attkLev = items.input[0][0]
-                    defLev = items.input[0][1]
-                    misslev = items.input[0][2]
+                if (input[1] === itemnames[i]) {
+                    itemusing = input[1]
+                    attkLev = items[itemusing][0]
+                    defLev = items[itemusing][1]
+                    misslev = items[itemusing][2]
+                    console.log("attack lev: " + attkLev)
+                    console.log("def lev: " + defLev)
+                    console.log("miss lev: " + misslev)
                 }
             }
+
 
             console.log(output)
 
@@ -178,18 +185,18 @@ Type 'help' for instructions on how to play.`)
 
         }
 
+        combat()
 
 
 
 
-
-    // makes each seperate output a different color
-    if ((idval % 2) != 0) {
-        document.getElementById("consoleOutput").innerHTML = `<p style="background-color: rgb(222, 222, 222)">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
-    } else {
-        document.getElementById("consoleOutput").innerHTML = `<p style="background-color:rgb(150, 150, 150); color: rgb(255, 255, 255);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
-    }
-    idval += 1;
+        // makes each seperate output a different color
+        if ((idval % 2) != 0) {
+            document.getElementById("consoleOutput").innerHTML = `<p style="background-color: rgb(222, 222, 222)">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
+        } else {
+            document.getElementById("consoleOutput").innerHTML = `<p style="background-color:rgb(150, 150, 150); color: rgb(255, 255, 255);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
+        }
+        idval += 1;
     })
 
 });
