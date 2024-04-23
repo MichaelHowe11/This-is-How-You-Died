@@ -163,6 +163,7 @@ Type 'help' for instructions on how to play.`)
                 }
             }
 
+            console.log(output)
 
 
 
@@ -177,19 +178,19 @@ Type 'help' for instructions on how to play.`)
 
         }
 
-    })
 
 
 
 
 
-        // makes each seperate output a different color
-        if ((idval % 2) != 0) {
+    // makes each seperate output a different color
+    if ((idval % 2) != 0) {
         document.getElementById("consoleOutput").innerHTML = `<p style="background-color: rgb(222, 222, 222)">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
     } else {
         document.getElementById("consoleOutput").innerHTML = `<p style="background-color:rgb(150, 150, 150); color: rgb(255, 255, 255);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
     }
     idval += 1;
+    })
 
 });
 
