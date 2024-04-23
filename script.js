@@ -1,6 +1,6 @@
 let gdia = {
     "unem0": {
-        "dia": "The date is July 2, 1993. You start at James's house (A friend from highschool), James hasn't been seen by you in days. You seem suspicious of his sudden disappearance and go to investigate by stepping outside for the first time in weeks. You find that your town is no longer the bustling city it was known for but now a desolate city with nothing but the wind making a noise.<br>",
+        "dia": "The date is July 2, 1993. You start at James's house (A friend from high-school), James hasn't been seen by you in days. He said he was going to search for food or other valuables to aid in survival. You seem suspicious of his sudden disappearance and go to investigate by stepping outside for the first time in weeks. You find that your town is no longer the bustling city it was known for but now a desolate city with nothing but the wind making a noise. You're not surprised as the relentless news coverage has already made clear, the city is plagued by creatures that feast on unsuspecting prey. In this grim reality, encountering such a monster only serves to confirm what you already know.<br>",
         "opt": ["Option 1: Page James.<br>", "Option 2: Ask around your neighborhood for information about your friend."],
         "incombat": "false"
     },
@@ -11,7 +11,7 @@ let gdia = {
     },
     "unem02": {
         "dia": "You go to your neighbor, James, and knock on the door. You feel a very uneasy fealing while doing this. You wait at least three minutes for a response but no one seems to be home.",
-        "opt": ["Option 1: Try to open the door.<br>", "Option 2: Leave"],
+        "opt": ["Option 1: Try to open the door."],
         "incombat": "false"
     },
     "unem021": {
@@ -77,8 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let combatstatus = 0;
     let classname = "";
     let idval = 1;
-    let y = 0;
-    let x = 0;
     fetch('title.txt').then(response => response.text()).then(text => title1.innerHTML = text)
 
     fetch('asciiart.txt').then(response => response.text()).then(text => asciimenuart.innerHTML = text)
@@ -99,55 +97,9 @@ Type 'help' for instructions on how to play.`)
         document.getElementById('userInput').value = '';
         input = input.toLowerCase()
 
-        if (occupation != 0 && combatstatus != active) {
-            if (input === "north") {
-                y += 1
-                output = ("You moved north")
-            } else if (input === "south") {
-                y -= 1
-                output = ("You moved south")
-            } else if (input === "east") {
-                x += 1
-                output = ("You moved east")
-            } else if (input === "west") {
-                x -= 1
-                output = ("You moved west")
-            } else (
-                output = ("You didn't move")
-            )
-        }
-
-
-        console.log(input)
-        console.log('x is ' + x)
-        console.log('y is ' + y)
-
-        function wall(xLoc, yLoc, w, h) {
-
-            if ((x >= xLoc && x <= xLoc + w) && (y >= yLoc && y <= yLoc + h)) {
-                console.log('bruh')
-                if (input === "north") {
-                    y -= 1
-                    console.log("bruh")
-                } else if (input === "south") {
-                    y += 1
-                    console.log("bruh")
-
-                } else if (input === "west") {
-                    x += 1
-                    console.log("bruh")
-
-                } else if (input === "east") {
-                    x -= 1
-                    console.log("bruh")
-
-                }
-            }
-        }
 
         if (input === "help") {
-            output = (`Type 'North', 'West', 'East', or 'South' to move.<br>
-            To see your inventory type 'inventory<br>To attack an enemy type '(weapon of choice) attack'<br>
+            output = (`To see your inventory type 'inventory<br>To attack an enemy type '(weapon of choice) attack'<br>
             Also all text input is NOT case sensitive so the text 'HELLO' and 'hello' are the same.<br>
             Everytime you progress in the story there will be options at the bottem of the text, type the number that corresponds with that option. (option 1 would be '1')
 `)
@@ -167,57 +119,6 @@ Type 'help' for instructions on how to play.`)
             }
         }
 
-        // demonstration of a vertical wall that is 5 units tall and is located at x=1
-        // if ((x === 1) && (y >= 1 && y <= 5)) {
-        //     console.log("vertical wall")
-        // }
-
-        // demonstration of a horizontal wall that is 5 units wide and one unit tall. Located at y=1.
-        // if ((y === 1) && (x >= 1 && x <= 5)) {
-        //     console.log("horizontal wall")
-        // }
-
-        console.log(occupation)
-        console.log(output)
-        output = output + ``
-
-        if (input === "talk") {
-
-        }
-
-        function HSdialogue() {
-
-        }
-        function Mildialogue() {
-
-        }
-
-        if (occupation != 0) {
-
-            if ((y <= 2 && y >= -9) && (x === -2)) {
-                console.log("road")
-            }
-
-        }
-
-        if (occupation === "unemployed") {
-            x = 0;
-
-            y = 0;
-
-
-
-            if (input === "1") {
-
-
-
-            }
-
-
-
-
-
-        }
 
 
 
@@ -289,9 +190,6 @@ Type 'help' for instructions on how to play.`)
         document.getElementById("consoleOutput").innerHTML = `<p style="background-color:rgb(150, 150, 150); color: rgb(255, 255, 255);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
     }
     idval += 1;
-
-    document.getElementById('location').innerHTML = (` X-Position: ` + x + `<br>` + `Y-Position: ` + y)
-
 
 });
 
