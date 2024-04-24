@@ -190,7 +190,7 @@ Type 'help' for instructions on how to play.`)
                     combatOutput = "This is how you died..."
                     setTimeout(function () {
                         location.reload();
-                    }, 5001);
+                    }, 5000);
                 }
 
             }
