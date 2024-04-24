@@ -232,24 +232,16 @@ Type 'help' for instructions on how to play.`)
                         if (input === "1") {
                             output = unem.unem02111.dia
                             spot = "unem02111";
-                            incombat = true;
+                            incombat = true; // Activate combat mode
                         } else if (input === "2") {
                             output = "You search for a weapon and find a " + unem.unem02111.dia
                             spot = "unem02111";
                         }
                     } else if (spot === "unem02111") {
-                        incombat = true;
-                        if (incombat === true) {
-                            let attacklist = combat(1, 1, 1, input);
-                            console.log(attacklist[0])
-                            console.log(attacklist[1])
-
-
+                        if (incombat === true) { // Check if in combat
+                            let attacklist = combat(attkLev, defLev, misslev, input);
                             php -= attacklist[0];
                             ehp -= attacklist[1];
-                            console.log('php: ' + php)
-                            console.log('ehp: ' + ehp)
-
 
                             if (php <= 0) {
                                 output = "You were defeated...";
@@ -259,6 +251,8 @@ Type 'help' for instructions on how to play.`)
                                 incombat = false;
                             }
 
+                            // Append combat output to console
+                            document.getElementById("consoleOutput").innerHTML = `<p style="background-color: rgb(150, 150, 150); color: rgb(255, 255, 255);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
                         } else {
                             output = unem.unem021110.dia + unem.unem021110.opt.join("<br>");
                             spot = "unem021110";
