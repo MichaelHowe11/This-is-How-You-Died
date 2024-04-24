@@ -166,29 +166,28 @@ Type 'help' for instructions on how to play.`)
                         misslev = items[itemusing][2]
                     }
                 }
-                // if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else 
                 if ((turnNum % 2 === 0) && Math.floor((Math.random() * (emissLev + 1))) === 0) {
                     damagedealtp = (eattkLev / defLev).toFixed(2)
                     console.log(eattkLev / defLev)
-                    output = "The zombie did " + (eattkLev / defLev).toFixed(2) + " damage to you!"
+                    combatOutput = "The zombie did " + (eattkLev / defLev).toFixed(2) + " damage to you!"
                 } else if (turnNum % 2 === 0) {
-                    output = "Zombie Missed!"
+                    combatOutput = "Zombie Missed!"
                 } else if ((Math.floor(Math.random() * (misslev + 1)) === 0)) {
-                    output = ("You did " + (attkLev / edefLev).toFixed(2) + " damage on the zombie!<br>The zombie now has " + ehp + " health!")
                     damagedealte = (attkLev / edefLev).toFixed(2)
+                    combatOutput = ("You did " + (attkLev / edefLev).toFixed(2) + " damage on the zombie!<br>The zombie now has " + ehp-damagedealte + " health!")
                 } else if (Math.random((Math.random() * 101)) === 0) {
-                    output = "You missed and damaged yourself!"
+                    combatOutput = "You missed and damaged yourself!"
                     damagedealtp = 1
                 } else {
-                    output = "You missed."
+                    combatOutput = "You missed."
                 }
 
 
                 if (ehp <= 0) {
-                    output = "You've defeated the zombie!"
+                    combatOutput = "You've defeated the zombie!"
                     incombat = false
                 } else if (php <= 0) {
-                    output = "This is how you died..."
+                    combatOutput = "This is how you died..."
                     setTimeout(function () {
                         location.reload();
                     }, 5001);
@@ -197,8 +196,27 @@ Type 'help' for instructions on how to play.`)
             }
             console.log(ehp)
 
-            return ([damagedealtp, damagedealte])
+            return ([damagedealtp, damagedealte, combatOutput])
         }
+
+        // updates combat so it works and stuff
+        function updateCombat(combatfunc, outputvar) {
+            console.log(combatfunc)
+            php -= combatfunc[0];
+            ehp -= combatfunc[1];
+            output = outputvar
+            if (php <= 0) {
+                output = "You were defeated...";
+                incombat = false;
+            } else if (ehp <= 0) {
+                output = "You've defeated the zombie!";
+                incombat = false;
+            }
+
+        }
+
+
+        // if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else 
 
         if (occupation === 1) {
 
@@ -241,12 +259,8 @@ Type 'help' for instructions on how to play.`)
                         incombat = true;
                         if (incombat === true) {
                             let attacklist = combat(1, 1, 1, input);
-                            console.log(attacklist[0])
-                            console.log(attacklist[1])
+                            updateCombat(attacklist, attacklist[2])
 
-
-                            php -= attacklist[0];
-                            ehp -= attacklist[1];
                             console.log('php: ' + php)
                             console.log('ehp: ' + ehp)
 
@@ -289,10 +303,11 @@ Type 'help' for instructions on how to play.`)
 
 
         if ((idval % 2) != 0) {
-            document.getElementById("consoleOutput").innerHTML = `<p style="background-color: rgb(222, 222, 222)">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
-        } else {
-            document.getElementById("consoleOutput").innerHTML = `<p style="background-color:rgb(150, 150, 150); color: rgb(255, 255, 255);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
-        }
+            document.getElementById("consoleOutput").innerHTML = `<p style="background-color: #294652 ; color: rgb(255, 255, 255);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
+        } /* white and black */
+        else {
+            document.getElementById("consoleOutput").innerHTML = `<p style="background-color: #713535; color: rgb(255, 255, 255);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
+        }   /* dark red & white */
         idval += 1;
     })
 });
