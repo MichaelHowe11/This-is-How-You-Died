@@ -275,13 +275,21 @@ function start() {
 
     document.getElementById('consoleOutput').classList.remove('hidden')
 }
-let php = 12;
+
+function rng(min, max) {
+    let result = Math.floor(Math.random() * (max - min + 1) + min);
+    return result
+}
+//rng(6,10) = a randome number from 6 to 10
+
+let php = 10;
 let attkLev = 1;
+let attlLevmax = 3;
 let defLev = 1;
 let misslev = 1;
 let turnNum = 0;
 let incombat = false;
-let ehp = 6;
+let ehp = rng(8, 12);
 let spot = "unem0";
 let ismissE = false;
 let ismissP = false;
@@ -323,6 +331,7 @@ Type 'help' for instructions on how to play.`)
             outuput = (unem)
         }
         function combat(eattkLev, edefLev, emissLev, userInput) {
+            ehp === rng(8, 12)
             let combatOutput = ""
             let damagedealtp = 0;
             let damagedealte = 0;
@@ -336,6 +345,7 @@ Type 'help' for instructions on how to play.`)
                     if (inputArray[1] === itemnames[i]) {
                         itemusing = inputArray[1]
                         attkLev = items[itemusing][0]
+                        attkLevmax = attkLev + 2
                         defLev = items[itemusing][1]
                         misslev = items[itemusing][2]
                     }
@@ -349,7 +359,7 @@ Type 'help' for instructions on how to play.`)
                     output = "Zombie Missed!"
                     ismissE = true;
                 } else if ((Math.floor(Math.random() * (misslev + 1)) === 0)) {
-                    damagedealte = (attkLev / edefLev).toFixed(2)
+                    damagedealte = (rng(attkLev, attkLevmax) / edefLev).toFixed(2)
                     combatOutput = ("You did " + damagedealte + " damage on the zombie!<br>The zombie now has " + ehp + " health!")
                     ismissP = false
                 } else {
