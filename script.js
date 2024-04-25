@@ -94,7 +94,7 @@ let home = {
     // all the continues above should lead to home
     "home": {
         "dia": `You arrive back at home, you can't stay here though.  You look at your map and four locations stand out to you.  Where do you go?`,
-        "opt": ["Option 1: Go to the school","Option 2: Go to your friend James' house", "Option 3: Go to the local diner, Spiffo's"]
+        "opt": ["Option 1: Go to the school", "Option 2: Go to your friend James' house", "Option 3: Go to the local diner, Spiffo's"]
     },//1 ->gostu    2 ->gounem          3 -> gospif
     "gostu": {
         "dia": ` You enter the school cafeteria, ""Hey, you!" a student exclaims, their voice tinged with desperation. "We need your help. The bus, it's out there and we can escape, but it's surrounded by those... things."
@@ -265,6 +265,16 @@ let inv = {
     "items": []
 }
 
+function randomItem() {
+    let item = "";
+    for (let i = 0; i < Math.floor(Math.random() * itemnames.length); i++) {
+        item = itemnames[i]
+        console.log(i)
+    }
+    return item
+}
+
+
 function start() {
     let start = document.getElementById("start");
     start.classList.add("hidden");
@@ -288,6 +298,8 @@ let ismissP = false;
 let issleep = true;
 
 document.addEventListener("DOMContentLoaded", function () {
+    console.log(randomItem())
+
     let output = "";
     let occupation = 0;
     let combatstatus = 0;
