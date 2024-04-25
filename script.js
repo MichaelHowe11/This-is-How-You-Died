@@ -143,7 +143,7 @@ let student = {
     },
     "stu01121": {
         "dia": `After you finish off the zombie you notice that he must've passed while trying to get in his car as the keys are still in the door.  You open the door and rig the horn to continuously honk before sneaky away again back to the others.  One of them says "What about the gate? It's still closed."`,
-        "opt": [`Option 1: "I guess I'll go open it"``, "Option 2:"We can slam through it with the bus" `]
+        "opt": ["Option 1: I guess I'll go open it", "Option 2: We can slam through it with the bus"]
     },//1 goes to stu7 2 goes to stu8, both go to stu9 after
     "stu011211": {
         "dia": `You sneak over to the gate and lift the latch, possible inviting more undead in.  You then return to the bus and are last to climb aboard.`,
@@ -409,16 +409,46 @@ Type 'help' for instructions on how to play.`)
                         output = unem.unem02111011.dia + "<br>" + unem.unem02111011.opt.join("<br>");
                         spot = "unem02111011";
                     } else if (input === "2") {
-                        output = unemp.unem0.dia + "<br>" + unemp.unem0.opt.join("<br>")
+                        output = unemp.unemp0.dia + "<br>" + unemp.unemp0.opt.join("<br>")
                         spot = "unemp0"
                     }
                 } else if (spot === "unemp0") {
                     if (input === "1") {
-                        output = unem.unem02111011.dia + "<br>" + unem.unem02111011.opt.join("<br>");
-                        spot = "unemp020";
+                        output = unemp.unemp01.dia + "<br>" + unemp.unemp01.opt.join("<br>");
+                        spot = "unemp01";
                     } else if (input === "2") {
-                        issleep = false;
-                        spot = "unemp020"
+                        output = unemp.unemp02.dia + "<br>" + unemp.unemp02.opt.join("<br>");
+                        spot = "unemp02";
+                    }
+                } else if (spot === "unemp01") {
+                    if (input === "1") {
+                        output = unemp.unemp01.dia + "<br>" + unemp.unemp01.opt.join("<br>");
+                        spot = "unemp020";
+                    }
+                } else if (spot === "unemp02") {
+                    if (input === "1") {
+                        output = unemp.unemp02.dia + "<br>" + unemp.unemp02.opt.join("<br>");
+                        spot = "unemp020";
+                    }
+                } else if (spot === "unemp020") {
+                    if (input === "1") {
+                        output = unemp.unemp020.dia + "<br>" + unemp.unemp020.opt.join("<br>");
+                        spot = "unemp0201";
+                    } else if (input === "2") {
+                        output = "Option 2 selected"; // Provide appropriate message or action
+                    }
+                } else if (spot === "unemp0201") {
+                    if (input === "1") {
+                        output = unemp.unemp0201.dia + "<br>" + unemp.unemp0201.opt.join("<br>");
+                        spot = "unemp02011";
+                    }
+                } else if (spot === "unemp02011") {
+                    if (input === "1") {
+                        output = unemp.unemp02011.dia + "<br>" + unemp.unemp02011.opt.join("<br>");
+                        spot = "unemp020111";
+                    } else if (input === "2") {
+                        output = unemp.unemp020112.dia + "<br>" + unemp.unemp020112.opt.join("<br>");
+                        spot = "unemp020112";
                     }
                 }
             }
