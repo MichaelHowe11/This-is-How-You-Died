@@ -112,16 +112,16 @@ let home = {
     },
 }
 
-let spiffo = {
+let spif = {
     "spif0": {
         "dia": `"The date is July 2, 1993. Your day begins like any other as you set out for your job at Spiffo's, the local diner. However, as you walk, an eerie silence pervades the streets, broken only by the sight of abandoned cars lining the roads. No signs of life are to be found anywhere.
         Approaching Spiffo's, you enter through the backdoor, expecting the usual bustling activity. Instead, you find the diner eerily deserted, with not a soul in sight. Your attention is drawn to a hanging TV, flickering with the image of a news reporter.
         "Good morning, Kentucky. This is Veronica Hayes reporting for Channel 7 News. We are receiving unconfirmed reports of an airborne virus infecting the city of Louisville. Those infected are said to be exhibiting violent behavior," the reporter's voice fades as the channel turns to static. You stand still thinking about what the reporter just said before looking out the front window and seeing a car pull into the handicap stall.  You aren't sure whether you should hide or try to approach the stranger.`,
-        "opt": ["Option 1: Go outside", "Option 2: Hide in the freezer", "Option 3: You've seen enough, run back home"]
+        "opt": ["Option 1: Go outside" , "Option 2: Hide in the freezer" , "Option 3: You've seen enough, run back home"]
     },//3 goes to spifhome
     "spif01": {
         "dia": `You walk outside to talk to the only person you've seen today.  As you open the front door you see a man step out of the car in camo military clothes and an old gas mask.  He's quick to walk over and place another gas mask in your hand and say "Put this on, I don't know how you've managed to survive without one."  You rub the lens of the mask before strapping it around your head.`,
-        "opt": ["Option 1: Ask where everyone went", "Option 2: Ask if you can ride along with him"],
+        "opt": ["Option 1: Ask where everyone went" , "Option 2: Ask if you can ride along with him"],
     },
     "spif02": {
         "dia": `As you walk inside of the freezer the door slams behind you, locking from the outside.  Your co-workers can't help you this time.  As you sit down and fall asleep you wonder what could've been if you made better choices.`,
@@ -141,7 +141,7 @@ let spiffo = {
     },
     "spif01211": {
         "dia": `I see three different ways.  We can enter through the front which will likely require fighting some of those freaks.  We could enter through the back which might save us some trouble.  Or finally, we could take the ladder and enter through the roof.  It's your choice, so choose wisely.`,
-        "opt": ["Option 1: Why not, let's fight through the front.","Option 2: I'll bet the back will be safe.","Option 3: The roof seems like the smartest choice."]
+        "opt": ["Option 1: Why not, let's fight through the front." ,"Option 2: I'll bet the back will be safe." ,"Option 3: The roof seems like the smartest choice."]
     },
     "spif012111": {
         "dia": `"Might be a dumb choice but I respect your decision."  You and the man walk towards the front entrance, you open the door to see multiple zombies in your way.  Hopefully your partner puts that knife to good work.`,
@@ -170,7 +170,7 @@ let spiffo = {
         "opt": ["Option 1: "],
     },
 }
-let student = {
+let stu = {
     "stu0": {
         "dia": `The date is July 2, 1993. You find yourself trudging towards Muldraugh High, the local high school, where you're enrolled in a summer math class, a consequence of not quite making the grade to graduate. The morning air feels heavier today, devoid of the usual chatter and bustle of a typical summer morning. Abandoned cars litter the streets, their once-shiny surfaces now dulled by neglect.
         Entering the school's cafeteria to grab a quick breakfast, you notice a small gathering near the TV in the corner. Your classmates and teacher are huddled around, their faces etched with concern. You catch the tail end of a news report, the reporter's voice tinged with urgency.
@@ -181,11 +181,11 @@ let student = {
         "dia": `Your teacher, Mr. White, wears a puzzled expression as he gathers his thoughts before addressing the class. "Class is canceled," he announces, his voice betraying his unease. "I can't possibly focus on teaching with this hanging over us. I'll see you all on Monday." With a heavy sigh, he heads towards the exit leading to the parking lot.
         As Mr. White reaches for the door handle, a sudden commotion erupts. An undead creature lunges at him, its grip tight around his arm. Panic fills the room as your classmates react, one rushing to intervene. With a swift stomp, they dispatch the attacker, but it's too late. Mr. White lies on the floor, his breaths labored.
         Summoning his last ounces of strength, Mr. White directs his words to the nearest student. "Take the bus," he urges, his voice strained. "Get out of here while you still can." Using his last bit of strength he reaches into his pocket and grabs a set of keys offering them to the student.`,
-        "opt": ["Option 1: Look outside to the parking lot", `Option 2: "I'm not dying with the rest of you" (leave)`] //leave should lead to stuhome
+        "opt": ["Option 1: Look outside to the parking lot" , `Option 2: "I'm not dying with the rest of you" (leave)`] //leave should lead to stuhome
     },
     "stu011": {
         "dia": `The Bus outside is surrounded by zombies, clearly too many for your small group to take out`,
-        "opt": [`Option 1: "I'll distract the zombies, the rest of you can get into the bus and escape"`, `Option 2: Look for another car to trigger the alarm on`, `Option 3: "There's way too many of them, my chances are better alone" (leave)`]
+        "opt": [`Option 1: "I'll distract the zombies, the rest of you can get into the bus and escape"` , `Option 2: Look for another car to trigger the alarm on`, `Option 3: "There's way too many of them, my chances are better alone" (leave)`]
     }, // 0113 should go to stuhome
     "stu0111": {
         "dia": `With a mixture of heroism and recklessness, you burst through the door, drawing the attention of the encroaching zombies with your shouts. Swiftly, you make your way to the parking lot gate, urging your classmates to follow as you open it for them, adrenaline coursing through your veins.
@@ -214,7 +214,7 @@ let student = {
     "stu0112111": {
         "dia": `As you board the bus you take a seat next to your classmates, Peyton, his eyes wide with fear and urgency.  "My grandpa's got this ranch out in the countryside," Peyton continues, his words rushed. "He's been talking about it for ages, saying he's got this bunker stocked with supplies. We could head there, hunker down until all this blows over."
         The idea of safety and supplies is enticing, but uncertainty clouds your mind. `,
-        "opt": [`Option 1: "Lets go for it"`, `Option 2:"I think It'd be best if we left town" `]
+        "opt": [`Option 1: "Lets go for it"` , `Option 2:"I think It'd be best if we left town" `]
     },
     "stu01121111": {
         "dia": `As the bus rattles down the desolate streets, the sight of abandoned cars and scattered wreckage serves as a grim reminder of the chaos that has consumed the city. Undead figures roam the sidewalks, their relentless groans echoing through the empty thoroughfares.  As the driver pulls into the ranch everyone sees the police car sitting in the middle of the ranch with its sirens wailing, undead shambling towards it.  The students quickly get off the bus and run inside the building, with just you and Peyton remaining near the exit.  Scrambling for an idea Peyton remarks "the bunkers behind the barn, we have to get past without those zombies seeing us, and it looks like the others won't be joining."`,
@@ -303,23 +303,44 @@ document.addEventListener("DOMContentLoaded", function () {
         if (occupation === 0) {
             output = (`Choose Your Occupation & Starting Position<br><br>Student - Muldraugh High<br>
 Chef - Spiffo's (An American Fast Food Restaurant)<br>
-Unemployed - A House in Muldraugh<br>
-Type 'help' for instructions on how to play.`)
+Unemployed - A House in Muldraugh<br><br>
+
+To attack an enemy type 'attack (weapon)'<br>
+Text input is not case sensitive<br>
+Making choices in the story can be done by typing the number associated with them. <br>
+For example, if the text says "Choice 1: Go home" you would enter "1" to go home.<br><br>
+
+Type 'help' to see these instructions again.`)
         };
         let input = document.getElementById("userInput").value;
         document.getElementById('userInput').value = '';
         input = input.toLowerCase()
 
+        // if (input === "help") {
+        //     output = (`To see your inventory type 'inventory<br>To attack an enemy type '(weapon of choice) attack'<br>
+        //     Also all text input is NOT case sensitive so the text 'HELLO' and 'hello' are the same.<br>
+        //     Everytime you progress in the story there will be options at the bottem of the text, type the number that corresponds with that option. (option 1 would be '1')`)
+        // }
         if (input === "help") {
-            output = (`To see your inventory type 'inventory<br>To attack an enemy type '(weapon of choice) attack'<br>
-            Also all text input is NOT case sensitive so the text 'HELLO' and 'hello' are the same.<br>
-            Everytime you progress in the story there will be options at the bottem of the text, type the number that corresponds with that option. (option 1 would be '1')`)
+            output = (`To attack an enemy type 'attack (weapon)'<br>
+            Text input is not case sensitive<br>
+            Making choices in the story can be done by typing the number associated with them. <br>
+            For example, if the text says "Choice 1: Go home" you would enter "1" to go home.`)
         }
 
-        if (input === "unemployed" && occupation === 0) {
+        if (input == "unemployed" && occupation === 0) {
             output = (unem.unem0.dia) + "<br>" + (unem.unem0.opt)
             occupation = 1;
         }
+        if (input == "chef" && occupation === 0) {
+            output = (spif.spif0.dia) + "<br>" + (spif.spif0.opt)
+            occupation = 2;
+        }
+        if (input == "student" && occupation === 0) {
+            output = (stu.stu0.dia) + "<br>" + (stu.stu0.opt)
+            occupation = 3;
+        }
+        
         function combat(eattkLev, edefLev, emissLev, userInput) {
             let combatOutput = ""
             let damagedealtp = 0;
