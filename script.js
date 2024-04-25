@@ -79,6 +79,65 @@ let unemp2 = {
     }
 }
 
+let home = {
+
+    "home": {
+        "dia": `You arrive back at home, you can't stay here though.  You look at your map and four locations stand out to you.  Where do you go?`,
+        "opt": ["Option 1: Go to the school", "Option 2: Go to the Police Department", "Option 3: Go to your friend James' house", "Option 4: Go to the local diner, Spiffo's"]
+    }
+}
+
+let student = {
+    "stu1": {
+        "dia": `The date is July 2, 1993. You find yourself trudging towards Muldraugh High, the local high school, where you're enrolled in a summer math class, a consequence of not quite making the grade to graduate. The morning air feels heavier today, devoid of the usual chatter and bustle of a typical summer morning. Abandoned cars litter the streets, their once-shiny surfaces now dulled by neglect.
+        Entering the school's cafeteria to grab a quick breakfast, you notice a small gathering near the TV in the corner. Your classmates and teacher are huddled around, their faces etched with concern. You catch the tail end of a news report, the reporter's voice tinged with urgency.
+        "Good morning, Kentucky. This is Veronica Hayes reporting for Channel 7 News. We are receiving unconfirmed reports of an airborne virus infecting the city of Louisville. Those infected are said to be exhibiting violent behavior," the news anchor's words hang in the air before the screen abruptly switches to static, leaving a palpable sense of unease in the room.`,
+        "opt": ["Option 1: Continue"]
+    },
+    "stu2": {
+        "dia": `Your teacher, Mr. White, wears a puzzled expression as he gathers his thoughts before addressing the class. "Class is canceled," he announces, his voice betraying his unease. "I can't possibly focus on teaching with this hanging over us. I'll see you all on Monday." With a heavy sigh, he heads towards the exit leading to the parking lot.
+        As Mr. White reaches for the door handle, a sudden commotion erupts. An undead creature lunges at him, its grip tight around his arm. Panic fills the room as your classmates react, one rushing to intervene. With a swift stomp, they dispatch the attacker, but it's too late. Mr. White lies on the floor, his breaths labored.
+        Summoning his last ounces of strength, Mr. White directs his words to the nearest student. "Take the bus," he urges, his voice strained. "Get out of here while you still can." Using his last bit of strength he reaches into his pocket and grabs a set of keys offering them to the student.`,
+        "opt": ["Option 1: Look outside to the parking lot", `Option 2: "I'm not dying with the rest of you" (leave)`] //leave should lead to home
+    },
+    "stu3": {
+        "dia": ``,
+        "opt": ["Option 1: ", "Option 2: "]
+    },
+    "stu4": {
+        "dia": ``,
+        "opt": ["Option 1: ", "Option 2: "]
+    },
+    "stu5": {
+        "dia": ``,
+        "opt": ["Option 1: ", "Option 2: "]
+    },
+    "stu6": {
+        "dia": ``,
+        "opt": ["Option 1: ", "Option 2: "]
+    },
+    "stu7": {
+        "dia": ``,
+        "opt": ["Option 1: ", "Option 2: "]
+    },
+    "stu8": {
+        "dia": ``,
+        "opt": ["Option 1: ", "Option 2: "]
+    },
+    "stu9": {
+        "dia": ``,
+        "opt": ["Option 1: ", "Option 2: "]
+    },
+    "stu10": {
+        "dia": ``,
+        "opt": ["Option 1: ", "Option 2: "]
+    },
+    "stu11": {
+        "dia": ``,
+        "opt": ["Option 1: ", "Option 2: "]
+    },
+
+}
 // first value in list is damage, second value is defense, third value is hit chance
 const itemnames = ["fists", "bat", "knife", "pencil", "katana", "crowbar", "axe"]
 const items = {
