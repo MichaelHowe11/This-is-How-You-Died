@@ -45,35 +45,35 @@ let unem = {
 }
 
 let unemp2 = {
-    "unem0": {
+    "unemp0": {
         "dia": "After your hours long search for Jack's Storage you need sleep, if you don't sleep you will start to lose defense levels, attack levels, and eventually health points until you find another chance to sleep again. It's also getting late so visibility is decreasing and so are your defense and accuracy with it. If you are low on health it is highly advised to sleep to replenish your health points. If you need an even more in depth explanation of the sleeping system than type 'helpsleep' for more info.",
         "opt": ["Option 1: Sleep", "Option 2: Don't Sleep and keep searching."]
     },
-    "unem01": {
+    "unemp01": {
         "dia": "You decide to sleep, although James could be in trouble you want to also protect yourself from getting in trouble as well. If you die than James could die with you. The continuation of your search begins now...",
         "opt": ["Option 1: Continue"]
     },
-    "unem02": {
+    "unemp02": {
         "dia": "You decide not to sleep, James is more important than sleep. Sleeping could be between James surviving a potential danger or not surviving it. You've lost ",
         "opt": ["Option 1: Continue"]
     },
-    "unem020": {
+    "unemp020": {
         "dia": "You've finally found it, Jack's storage. Your eyes lay upon a massive warehouse, Jack's Storage dwarfs even a Home Depot in size. You wonder why James wanted such a ginormous base if it brought all of the dangers of killing so many zombies in such a big building like this.",
         "opt": ["Option 1: Enter Jack's Storage", "Option 2: Search the surrounding area"]
     },
-    "unem0201": {
+    "unemp0201": {
         "dia": "As you enter it feels like your still outside, the building is ginormous. It has obvious signs of decay due to neglect but its original glory still shines within.",
         "opt": ["Option 1: Search Jack's Storage"]
     },
-    "unem02011": {
+    "unemp02011": {
         "dia": "You found James! However it's not sunshine and rainbows. He's on the ground showing signs of exhaustion and physical injuries. There are a couple of dead zombies around him. You yell his name and hear no response. He seems to show no signs of zombification but there is still a chance...",
         "opt": ["Option 1: See if you can help James", "Option 2: Leave him there"]
     },
-    "unem020111": {
+    "unemp020111": {
         "dia": `You go up to James and see if he is still alive. To your surprise James wakes up in confusion. You ask him what happened and he says "The last thing I remember was fighting some zombies and being really tired." You evaluate his injuries and deem them non life threatening. You explain how yourself and James need to leave Kentucky because of a radio signal explaining how there is a military base on the outskirts of Muldraugh. You and James leave happily ever after in the military base of Muldraugh :).`,
         "opt": ["Option 1: See if you can help James", "Option 2: Leave him there"]
     },
-    "unem020112": {
+    "unemp020112": {
         "dia": `You decide to leave James there because you fear that he might be a zombie, James is a tall muscular man and if he were to be a zombie you would be in a lot of danger. After you leave Jack's Storage you head to the military base on the outskirts of Muldraugh to seek refuge from the ongoing apocalypse`,
         "opt": ["Option 1: See if you can help James", "Option 2: Leave him there"]
     }
@@ -180,10 +180,6 @@ Type 'help' for instructions on how to play.`)
                     damagedealte = (attkLev / edefLev).toFixed(2)
                     combatOutput = ("You did " + damagedealte + " damage on the zombie!<br>The zombie now has " + ehp + " health!")
                     ismissP = false
-                } else if (Math.random((Math.random() * 101)) === 0) {
-                    output = "You missed and damaged yourself!"
-                    damagedealtp = 1
-                    ismissP = true
                 } else {
                     output = "You missed."
                     ismissP = true
@@ -213,7 +209,7 @@ Type 'help' for instructions on how to play.`)
             ehp -= combatfunc[1];
             output = outputvar
             if (php <= 0) {
-                output = "You were defeated...";
+                output = "This is how you died...";
                 incombat = false;
             } else if (ehp <= 0) {
                 output = "You've defeated the zombie!";
@@ -221,98 +217,98 @@ Type 'help' for instructions on how to play.`)
             }
 
         }
+        function startcombat(eattkLev, edefLev, emissLev, goto, enddia) {
+            if (incombat === true) {
+                let attacklist = combat(eattkLev, edefLev, emissLev, input);
+                updateCombat(attacklist, attacklist[2])
+                console.log(attacklist)
+
+                console.log('php: ' + php)
+                console.log('ehp: ' + ehp)
+
+                console.log(ehp - parseInt(attacklist[1]))
+
+                if ((turnNum % 2 != 0) && ismissP === false) {
+                    output = ("You did " + attacklist[1] + " damage on the zombie!<br>The zombie now has " + (ehp - attacklist[1]) + " health!"); 3
+                } else if ((turnNum % 2 === 0) && ismissE === false) {
+                    output = "The zombie did " + attacklist[0] + " damage to you! You now have " + php + " health!"
+                } else if (ismissE === true) {
+                    output = "The zombie missed."
+                } else if (ismissP === true) {
+                    output = "You missed."
+                }
 
 
+                if (php <= 0) {
+                    output = "You were defeated...";
+                    incombat = false;
+                } else if (ehp - attacklist[1] <= 0) {
+                    output = "You've defeated the zombie. " + enddia;
+                    incombat = false;
+                    spot = goto
+                }
+            }
+        }
         // if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else 
 
         if (occupation === 1) {
-
-
             if (occupation === 1) {
-                if (occupation === 1) {
-                    if (spot === "unem0") {
-                        if (input === "1") {
-                            output = unem.unem01.dia + "<br>" + unem.unem01.opt.join("<br>");
-                            spot = "unem01";
-                        } else if (input === "2") {
-                            output = unem.unem02.dia + "<br>" + unem.unem02.opt.join("<br>");
-                            spot = "unem02";
-                        }
-                    } else if (spot === "unem01") {
-                        if (input === "1") {
-                            output = unem.unem021.dia + "<br>" + unem.unem021.opt.join("<br>");
-                            spot = "unem021";
-                        }
-                    } else if (spot === "unem02") {
-                        if (input === "1") {
-                            output = unem.unem021.dia + "<br>" + unem.unem021.opt.join("<br>");
-                            spot = "unem021";
-                        }
-                    } else if (spot === "unem021") {
-                        if (input === "1") {
-                            output = unem.unem0211.dia + "<br>" + unem.unem0211.opt.join("<br>");
-                            spot = "unem0211";
-                        }
-                    } else if (spot === "unem0211") {
-                        if (input === "1") {
-                            output = unem.unem02111.dia
-                            spot = "unem02111";
-                            incombat = true;
-                        } else if (input === "2") {
-                            output = "You search for a weapon and find a " + unem.unem02111.dia
-                            spot = "unem02111";
-                        }
-                    } else if (spot === "unem02111") {
+                if (spot === "unem0") {
+                    if (input === "1") {
+                        output = unem.unem01.dia + "<br>" + unem.unem01.opt.join("<br>");
+                        spot = "unem01";
+                    } else if (input === "2") {
+                        output = unem.unem02.dia + "<br>" + unem.unem02.opt.join("<br>");
+                        spot = "unem02";
+                    }
+                } else if (spot === "unem01") {
+                    if (input === "1") {
+                        output = unem.unem021.dia + "<br>" + unem.unem021.opt.join("<br>");
+                        spot = "unem021";
+                    }
+                } else if (spot === "unem02") {
+                    if (input === "1") {
+                        output = unem.unem021.dia + "<br>" + unem.unem021.opt.join("<br>");
+                        spot = "unem021";
+                    }
+                } else if (spot === "unem021") {
+                    if (input === "1") {
+                        output = unem.unem0211.dia + "<br>" + unem.unem0211.opt.join("<br>");
+                        spot = "unem0211";
+                    }
+                } else if (spot === "unem0211") {
+                    if (input === "1") {
+                        output = unem.unem02111.dia
+                        spot = "unem02111";
                         incombat = true;
-                        if (incombat === true) {
-                            let attacklist = combat(1, 1, 1, input);
-                            updateCombat(attacklist, attacklist[2])
-                            console.log(attacklist)
-
-                            console.log('php: ' + php)
-                            console.log('ehp: ' + ehp)
-
-                            console.log(ehp - parseInt(attacklist[1]))
-
-                            if ((turnNum % 2 != 0) && ismissP === false) {
-                                output = ("You did " + attacklist[1] + " damage on the zombie!<br>The zombie now has " + (ehp) + " health!");
-                            }
-
-
-                            if (php <= 0) {
-                                output = "You were defeated...";
-                                incombat = false;
-                            } else if (ehp <= 0) {
-                                output = "You've defeated the zombie!";
-                                incombat = false;
-                            }
-
-                        } else {
-                            output = unem.unem021110.dia + unem.unem021110.opt.join("<br>");
-                            spot = "unem021110";
-                        }
-                    } else if (spot === "unem021110") {
-                        if (input === "1") {
-                            output = unem.unem0211101.dia + "<br>" + unem.unem0211101.opt.join("<br>");
-                            spot = "unem0211101";
-                        }
-                    } else if (spot === "unem0211101") {
-                        if (input === "1") {
-                            output = unem.unem02111011.dia + "<br>" + unem.unem02111011.opt.join("<br>");
-                            spot = "unem02111011";
-                        }
-                    } else if (spot === "unem02111011") {
+                    } else if (input === "2") {
+                        output = "You search for a weapon and find a " + unem.unem02111.dia
+                        spot = "unem02111";
+                    }
+                } else if (spot === "unem02111") {
+                    incombat = true;
+                    startcombat(1, 1, 1, "unem021110", unem.unem021110.opt.join("<br>"));
+                } else if (spot === "unem021110") {
+                    if (input === "1") {
+                        output = unem.unem0211101.dia + "<br>" + unem.unem0211101.opt.join("<br>");
+                        spot = "unem0211101";
+                    }
+                } else if (spot === "unem0211101") {
+                    if (input === "1") {
                         output = unem.unem02111011.dia + "<br>" + unem.unem02111011.opt.join("<br>");
                         spot = "unem02111011";
+                    } else if (input === "2") {
+                        output = unemp2.unem0.dia + "<br>" + unemp2.unem0.opt.join("<br>")
+                        spot = unemp0
                     }
                 }
             }
-
-
-
-
-
         }
+
+
+
+
+
         console.log(spot)
 
 
