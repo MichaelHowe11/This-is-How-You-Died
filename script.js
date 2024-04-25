@@ -94,7 +94,7 @@ let home = {
     // all the continues above should lead to home
     "home": {
         "dia": `You arrive back at home, you can't stay here though.  You look at your map and four locations stand out to you.  Where do you go?`,
-        "opt": ["Option 1: Go to the school","Option 2: Go to your friend James' house", "Option 3: Go to the local diner, Spiffo's"]
+        "opt": ["Option 1: Go to the school", "Option 2: Go to your friend James' house", "Option 3: Go to the local diner, Spiffo's"]
     },//1 ->gostu    2 ->gounem          3 -> gospif
     "gostu": {
         "dia": ` You enter the school cafeteria, ""Hey, you!" a student exclaims, their voice tinged with desperation. "We need your help. The bus, it's out there and we can escape, but it's surrounded by those... things."
@@ -141,7 +141,7 @@ let spiffo = {
     },
     "spif01211": {
         "dia": `I see three different ways.  We can enter through the front which will likely require fighting some of those freaks.  We could enter through the back which might save us some trouble.  Or finally, we could take the ladder and enter through the roof.  It's your choice, so choose wisely.`,
-        "opt": ["Option 1: Why not, let's fight through the front.","Option 2: I'll bet the back will be safe.","Option 3: The roof seems like the smartest choice."]
+        "opt": ["Option 1: Why not, let's fight through the front.", "Option 2: I'll bet the back will be safe.", "Option 3: The roof seems like the smartest choice."]
     },
     "spif012111": {
         "dia": `"Might be a dumb choice but I respect your decision."  You and the man walk towards the front entrance, you open the door to see multiple zombies in your way.  Hopefully your partner puts that knife to good work.`,
@@ -275,13 +275,13 @@ function start() {
 
     document.getElementById('consoleOutput').classList.remove('hidden')
 }
-let php = 10;
+let php = 12;
 let attkLev = 1;
 let defLev = 1;
 let misslev = 1;
 let turnNum = 0;
 let incombat = false;
-let ehp = 18;
+let ehp = 6;
 let spot = "unem0";
 let ismissE = false;
 let ismissP = false;
@@ -312,13 +312,15 @@ Type 'help' for instructions on how to play.`)
 
         if (input === "help") {
             output = (`To see your inventory type 'inventory<br>To attack an enemy type '(weapon of choice) attack'<br>
-            Also all text input is NOT case sensitive so the text 'HELLO' and 'hello' are the same.<br>
-            Everytime you progress in the story there will be options at the bottem of the text, type the number that corresponds with that option. (option 1 would be '1')`)
+ Also all text input is NOT case sensitive so the text 'HELLO' and 'hello' are the same.<br>
+ Everytime you progress in the story there will be options at the bottem of the text, type the number that corresponds with that option. (option 1 would be '1')`)
         }
 
         if (input === "unemployed" && occupation === 0) {
             output = (unem.unem0.dia) + "<br>" + (unem.unem0.opt)
             occupation = 1;
+        } else if (input === "student") {
+            outuput = (unem)
         }
         function combat(eattkLev, edefLev, emissLev, userInput) {
             let combatOutput = ""
@@ -404,8 +406,10 @@ Type 'help' for instructions on how to play.`)
                     output = "The zombie did " + attacklist[0] + " damage to you! You now have " + php + " health!"
                 } else if (ismissE === true) {
                     output = "The zombie missed."
+                    ismissE = false
                 } else if (ismissP === true) {
                     output = "You missed."
+                    ismissP = false
                 }
 
 
@@ -500,7 +504,7 @@ Type 'help' for instructions on how to play.`)
                     }
                 } else if (spot === "unemp02011") {
                     if (input === "1") {
-                        output = unemp.unemp020111.dia;
+                        output = unemp.unemp020111.dia
                         spot = "unemp020111";
                     } else if (input === "2") {
                         output = unemp.unemp020112.dia;
@@ -510,7 +514,9 @@ Type 'help' for instructions on how to play.`)
             }
         }
 
+        if (occupation === 2) {
 
+        }
 
 
 
@@ -522,7 +528,7 @@ Type 'help' for instructions on how to play.`)
         } /* white and black */
         else {
             document.getElementById("consoleOutput").innerHTML = `<p style="background-color: #713535; color: rgb(255, 255, 255);">` + output + `</p>` + document.getElementById("consoleOutput").innerHTML;
-        }   /* dark red & white */
+        } /* dark red & white */
         idval += 1;
     })
 });
