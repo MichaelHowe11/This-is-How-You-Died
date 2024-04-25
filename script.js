@@ -80,61 +80,113 @@ let unemp2 = {
 }
 
 let home = {
+    "spifhome": {
+        "dia": `You realized that you don't get paid enough to deal with the zombie uprising.`,
+        'opt': ["Option 1: Continue"]
+    },
 
+    "stuhome": {
+        "dia": `You think your chance of survival is better on your own and walk back to your house.  The streets are now sparsely populated with undead shambling mindlessly.  When you  get home you open your map and decide where to go.`,
+        "opt": ["Option 1: Continue"]
+    },
+    // all the continues above should lead to home
     "home": {
         "dia": `You arrive back at home, you can't stay here though.  You look at your map and four locations stand out to you.  Where do you go?`,
         "opt": ["Option 1: Go to the school", "Option 2: Go to the Police Department", "Option 3: Go to your friend James' house", "Option 4: Go to the local diner, Spiffo's"]
     }
 }
 
+let spiffo = {
+    "spif0": {
+        "dia": `"The date is July 2, 1993. Your day begins like any other as you set out for your job at Spiffo's, the local diner. However, as you walk, an eerie silence pervades the streets, broken only by the sight of abandoned cars lining the roads. No signs of life are to be found anywhere.
+        Approaching Spiffo's, you enter through the backdoor, expecting the usual bustling activity. Instead, you find the diner eerily deserted, with not a soul in sight. Your attention is drawn to a hanging TV, flickering with the image of a news reporter.
+        "Good morning, Kentucky. This is Veronica Hayes reporting for Channel 7 News. We are receiving unconfirmed reports of an airborne virus infecting the city of Louisville. Those infected are said to be exhibiting violent behavior," the reporter's voice fades as the channel turns to static. You stand still thinking about what the reporter just said before looking out the front window and seeing a car pull into the handicap stall.  You aren't sure whether you should hide or try to approach the stranger.`,
+        "opt": ["Option 1: Go outside", "Option 2: Hide in the freezer", "Option 3: You've seen enough, run back home"]
+    },//3 goes to spifhome
+    "spif01": {
+        "dia": ``,
+        "opt": ["Option 1: ", "Option 2: "],
+    },
+    "spif02": {
+        "dia": ``,
+        "opt": ["Option 1: ", "Option 2: "],
+    },
+}
 let student = {
-    "stu1": {
+    "stu0": {
         "dia": `The date is July 2, 1993. You find yourself trudging towards Muldraugh High, the local high school, where you're enrolled in a summer math class, a consequence of not quite making the grade to graduate. The morning air feels heavier today, devoid of the usual chatter and bustle of a typical summer morning. Abandoned cars litter the streets, their once-shiny surfaces now dulled by neglect.
         Entering the school's cafeteria to grab a quick breakfast, you notice a small gathering near the TV in the corner. Your classmates and teacher are huddled around, their faces etched with concern. You catch the tail end of a news report, the reporter's voice tinged with urgency.
         "Good morning, Kentucky. This is Veronica Hayes reporting for Channel 7 News. We are receiving unconfirmed reports of an airborne virus infecting the city of Louisville. Those infected are said to be exhibiting violent behavior," the news anchor's words hang in the air before the screen abruptly switches to static, leaving a palpable sense of unease in the room.`,
         "opt": ["Option 1: Continue"]
     },
-    "stu2": {
+    "stu01": {
         "dia": `Your teacher, Mr. White, wears a puzzled expression as he gathers his thoughts before addressing the class. "Class is canceled," he announces, his voice betraying his unease. "I can't possibly focus on teaching with this hanging over us. I'll see you all on Monday." With a heavy sigh, he heads towards the exit leading to the parking lot.
         As Mr. White reaches for the door handle, a sudden commotion erupts. An undead creature lunges at him, its grip tight around his arm. Panic fills the room as your classmates react, one rushing to intervene. With a swift stomp, they dispatch the attacker, but it's too late. Mr. White lies on the floor, his breaths labored.
         Summoning his last ounces of strength, Mr. White directs his words to the nearest student. "Take the bus," he urges, his voice strained. "Get out of here while you still can." Using his last bit of strength he reaches into his pocket and grabs a set of keys offering them to the student.`,
-        "opt": ["Option 1: Look outside to the parking lot", `Option 2: "I'm not dying with the rest of you" (leave)`] //leave should lead to home
+        "opt": ["Option 1: Look outside to the parking lot", `Option 2: "I'm not dying with the rest of you" (leave)`] //leave should lead to stuhome
     },
-    "stu3": {
-        "dia": ``,
-        "opt": ["Option 1: ", "Option 2: "]
+    "stu011": {
+        "dia": `The Bus outside is surrounded by zombies, clearly too many for your small group to take out`,
+        "opt": [`Option 1: "I'll distract the zombies, the rest of you can get into the bus and escape"`, `Option 2: Look for another car to trigger the alarm on`, `Option 3: "There's way too many of them, my chances are better alone" (leave)`]
+    }, // 0113 should go to stuhome
+    "stu0111": {
+        "dia": `With a mixture of heroism and recklessness, you burst through the door, drawing the attention of the encroaching zombies with your shouts. Swiftly, you make your way to the parking lot gate, urging your classmates to follow as you open it for them, adrenaline coursing through your veins.
+        As the others scramble towards safety, you turn to glance behind you, catching a glimpse of the survivors starting up the bus. But your moment of triumph is short-lived as you lose your footing, stumbling in your haste. The zombies close in swiftly, their grasping hands reaching out for you.
+        With a sinking feeling, you realize the inevitable as the undead swarm around you, overwhelming your defenses. The world fades into darkness as you succumb to their grasp. Yet, in your final moments, a sense of bittersweet satisfaction washes over you as you catch sight of the bus escaping to safety, knowing that your sacrifice was not in vain`,
+        //ending
     },
-    "stu4": {
-        "dia": ``,
-        "opt": ["Option 1: ", "Option 2: "]
+    "stu0112": {
+        "dia": `As you cautiously approach a solitary sedan nestled in the far corner of the parking lot, your heart skips a beat as you spot a motionless figure sprawled next to the car door. A sense of dread washes over you as you realize it's a zombie lying in wait, ready to pounce at any moment.
+        With no other choice but to confront the undead threat, you steel yourself for the impending battle. Adrenaline surges through your veins as you prepare to face the creature head-on, knowing that your survival depends on your ability to fight off this unexpected foe.`,
+        "opt": ["Option 1: Fight the zombie"],
+        "incombat": "true"
     },
-    "stu5": {
-        "dia": ``,
-        "opt": ["Option 1: ", "Option 2: "]
+    "stu01121": {
+        "dia": `After you finish off the zombie you notice that he must've passed while trying to get in his car as the keys are still in the door.  You open the door and rig the horn to continuously honk before sneaky away again back to the others.  One of them says "What about the gate? It's still closed."`,
+        "opt": [`Option 1: "I guess I'll go open it"``, "Option 2:"We can slam through it with the bus" `]
+    },//1 goes to stu7 2 goes to stu8, both go to stu9 after
+    "stu011211": {
+        "dia": `You sneak over to the gate and lift the latch, possible inviting more undead in.  You then return to the bus and are last to climb aboard.`,
+        "opt": ["Option 1: Continue"]
+    },//goes to 0112111
+    "stu011212": {
+        "dia": `Everyone climbs inside the school bus.  The driver shouts "SEATBELTS!" before starting the engine and pressing the gas and breaking down the gate.`,
+        "opt": ["Option 1: Continue"]
+    },//goes to 0112111
+    "stu0112111": {
+        "dia": `As you board the bus you take a seat next to your classmates, Peyton, his eyes wide with fear and urgency.  "My grandpa's got this ranch out in the countryside," Peyton continues, his words rushed. "He's been talking about it for ages, saying he's got this bunker stocked with supplies. We could head there, hunker down until all this blows over."
+        The idea of safety and supplies is enticing, but uncertainty clouds your mind. `,
+        "opt": [`Option 1: "Lets go for it"`, `Option 2:"I think It'd be best if we left town" `]
     },
-    "stu6": {
-        "dia": ``,
-        "opt": ["Option 1: ", "Option 2: "]
+    "stu01121111": {
+        "dia": `As the bus rattles down the desolate streets, the sight of abandoned cars and scattered wreckage serves as a grim reminder of the chaos that has consumed the city. Undead figures roam the sidewalks, their relentless groans echoing through the empty thoroughfares.  As the driver pulls into the ranch everyone sees the police car sitting in the middle of the ranch with its sirens wailing, undead shambling towards it.  The students quickly get off the bus and run inside the building, with just you and Peyton remaining near the exit.  Scrambling for an idea Peyton remarks "the bunkers behind the barn, we have to get past without those zombies seeing us, and it looks like the others won't be joining."`,
+        "opt": ["Option 1: Walk Behind the barn"]
     },
-    "stu7": {
-        "dia": ``,
-        "opt": ["Option 1: ", "Option 2: "]
+    "stu011211111": {
+        "dia": `As you cautiously approach the bunker door, Peyton swiftly moves to unlock it, his hands deftly spinning the wheel in an urgent rhythm. However, the sound of metal against metal echoes through the air, drawing the attention of nearby zombies. With a sinking feeling, you realize that you must defend Jake while he works to open the bunker, or risk being overwhelmed by the advancing undead horde.`,
+        "opt": ["Option 1: Fight for your life"],
+        "incombat": "true"
     },
-    "stu8": {
-        "dia": ``,
-        "opt": ["Option 1: ", "Option 2: "]
+    "stu0112111111": {
+        "dia": `As the solitary zombie crumples to the ground, defeated, you catch your breath, relief flooding your senses. But the moment of calm is short-lived as the sound of hurried footsteps echoes from the house behind you. Your classmates emerge, drawn by the commotion, their eyes wide with fear and determination.
+        With a shared sense of purpose, you rally together, standing as a united front against the encroaching horde. With each swing of your weapons and every well-placed strike, you push back the relentless tide of undead, your classmates fighting fiercely by your side.
+        As the last zombie falls, you share a collective sigh of relief, the air thick with exhaustion and adrenaline. But there's no time to dwell on victory as you hastily make your way towards the bunker entrance, your classmates following close behind.
+        Inside the bunker, a wave of relief washes over you as you take in the sight of shelves stocked with supplies, enough to sustain you and your companions for at least a month. The tension that had gripped your shoulders eases, replaced by a sense of cautious optimism for the days ahead.
+        Gathering together in the safety of the bunker, you find solace in each other's company, knowing that you are not alone in this fight for survival. As you settle in for the night, the faint hum of the bunker's generators lulling you into a restless sleep, you can't help but feel a glimmer of hope amidst the darkness that surrounds you.`,
+    },//ending
+    "stu01121112": {
+        "dia": `Shortly after you respond, the bus driver shouts "I don't know how to operate this thing! Does anyone have a licence?"  You watch for a moment as no one offers, so you're forced to take up the mantle.`,
+        "opt": ["Option 1: Drive to the main road", "Option 2: rethink your decision and head to Peyton's ranch"]
+    },//2 -> stu01121111
+    "stu011211121": {
+        "dia": `As you maneuver down the main street, you can't ignore the sight of abandoned cars littering the road, creating a tangled mess. Military tents are scattered around an intersection, adding to the chaos. As you carefully navigate around the rubble, a sudden impact rocks the bus, sending it lurching to the side. The screeching of metal fills the air as a military pickup truck slams into the bus, flipping it onto its side with a jolt that sends everyone inside reeling.  Everything around you fades to black as your ears start ringing.  You wake up to see everyone around you missing, however the military truck sits empty next to you.`,
+        "opt": ["Option 1: Walk Away", "Option 2: Search the truck"]
+    },//1 -> 15 2->16
+    "stu0112111211": {
+        "dia": `You shamble away, still effected by your wounds.  You don't know how you'll do it but your still determined to get out of town with your life intact, however without your strength or any tools this goal seems unlikely.`,
     },
-    "stu9": {
-        "dia": ``,
-        "opt": ["Option 1: ", "Option 2: "]
-    },
-    "stu10": {
-        "dia": ``,
-        "opt": ["Option 1: ", "Option 2: "]
-    },
-    "stu11": {
-        "dia": ``,
-        "opt": ["Option 1: ", "Option 2: "]
+    "stu0112111212": {
+        "dia": `You pry open the back door of the truck, revealing a stash of weapons and medical supplies. Amid the chaos, you quickly assess your options and select the best weaponry available, ensuring you're armed for the challenges ahead. After grabbing some much-needed bandages, you tend to your wounds, patching yourself up as best as you can. With newfound determination, you set out once more on your journey to escape the town, ready to face whatever lies ahead.`,
     },
 
 }
