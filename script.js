@@ -280,7 +280,7 @@ function rng(min, max) {
     let result = Math.floor(Math.random() * (max - min + 1) + min);
     return result
 }
-//rng(6,10) = a randome number from 6 to 10
+//rng(6,10) = a random number from 6 to 10
 
 let php = 10;
 let attkLev = 1;
@@ -289,7 +289,7 @@ let defLev = 1;
 let misslev = 1;
 let turnNum = 0;
 let incombat = false;
-let ehp = rng(8, 12);
+let ehp = rng(8, 10);
 let spot = "unem0";
 let ismissE = false;
 let ismissP = false;
@@ -327,11 +327,11 @@ Type 'help' for instructions on how to play.`)
         if (input === "unemployed" && occupation === 0) {
             output = (unem.unem0.dia) + "<br>" + (unem.unem0.opt)
             occupation = 1;
-        } else if (input === "student") {
-            outuput = (unem)
+        } else if (input === "student" ) {
+            output = (unem)
         }
         function combat(eattkLev, edefLev, emissLev, userInput) {
-            ehp === rng(8, 12)
+            ehp === rng(8, 10)
             let combatOutput = ""
             let damagedealtp = 0;
             let damagedealte = 0;
@@ -359,7 +359,7 @@ Type 'help' for instructions on how to play.`)
                     output = "Zombie Missed!"
                     ismissE = true;
                 } else if ((Math.floor(Math.random() * (misslev + 1)) === 0)) {
-                    damagedealte = (rng(attkLev, attkLevmax) / edefLev).toFixed(2)
+                    damagedealte = (attkLev / defLev).toFixed(2)
                     combatOutput = ("You did " + damagedealte + " damage on the zombie!<br>The zombie now has " + ehp + " health!")
                     ismissP = false
                 } else {
