@@ -25,7 +25,7 @@ let unem = {
         "incombat": "false"
     },
     "unem02111": {
-        "dia": "As your going upstairs you hear another noise and stop in fear...Something hits you so hard you fall to the ground<br>You are now in combat! Type help for info on how to combat.",
+        "dia": "As your going upstairs you hear another noise and stop in fear...Something hits you so hard you fall to the ground<br>You are now in combat! Do 'attack fists' to use your attack with your fists!",
         "incombat": "true"
     },
     "unem021110": {
@@ -171,7 +171,7 @@ let student = {
     },
     "stu01121": {
         "dia": `After you finish off the zombie you notice that he must've passed while trying to get in his car as the keys are still in the door.  You open the door and rig the horn to continuously honk before sneaky away again back to the others.  One of them says "What about the gate? It's still closed."`,
-        "opt": [`Option 1: "I guess I'll go open it"``, "Option 2:"We can slam through it with the bus" `]
+        "opt": [`Option 1: I guess I'll go open it`, `Option 2:We can slam through it with the bus`]
     },
     "stu011211": {
         "dia": `You sneak over to the gate and lift the latch, possible inviting more undead in.  You then return to the bus and are last to climb aboard.`,
