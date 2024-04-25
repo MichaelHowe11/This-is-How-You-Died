@@ -38,8 +38,8 @@ let unem = {
         "opt": ["Option 1: Search 'empty' houses in your neighborhood", "Option 2: Go to find Jack's Storage"]
     },
     "unem02111011": {
-        "dia": `You search empty houses near your area`,
-        "opt": ["Option 1: Search 'empty' houses in your neighborhood", "Option 2: Go to find Jack's Storage"]
+        "dia": `You search empty houses near your area and find nothing but already looted houses with nothing of value to hold`,
+        "opt": ["Option 1: Continue"]
     }
 
 }
@@ -71,11 +71,9 @@ let unemp = {
     },
     "unemp020111": {
         "dia": `You go up to James and see if he is still alive. To your surprise James wakes up in confusion. You ask him what happened and he says "The last thing I remember was fighting some zombies and being really tired." You evaluate his injuries and deem them non life threatening. You explain how yourself and James need to leave Kentucky because of a radio signal explaining how there is a military base on the outskirts of Muldraugh. You and James leave happily ever after in the military base of Muldraugh :).`,
-        "opt": ["Option 1: See if you can help James", "Option 2: Leave him there"]
     },
     "unemp020112": {
         "dia": `You decide to leave James there because you fear that he might be a zombie, James is a tall muscular man and if he were to be a zombie you would be in a lot of danger. After you leave Jack's Storage you head to the military base on the outskirts of Muldraugh to seek refuge from the ongoing apocalypse`,
-        "opt": ["Option 1: See if you can help James", "Option 2: Leave him there"]
     }
 }
 
@@ -406,8 +404,8 @@ Type 'help' for instructions on how to play.`)
                     }
                 } else if (spot === "unem0211101") {
                     if (input === "1") {
-                        output = unem.unem02111011.dia + "<br>" + unem.unem02111011.opt.join("<br>");
-                        spot = "unem02111011";
+                        output = unemp.unemp0.dia + "<br>" + unemp.unemp0.opt.join("<br>")
+                        spot = "unemp0";
                     } else if (input === "2") {
                         output = unemp.unemp0.dia + "<br>" + unemp.unemp0.opt.join("<br>")
                         spot = "unemp0"
@@ -434,20 +432,18 @@ Type 'help' for instructions on how to play.`)
                     if (input === "1") {
                         output = unemp.unemp020.dia + "<br>" + unemp.unemp020.opt.join("<br>");
                         spot = "unemp0201";
-                    } else if (input === "2") {
-                        output = "Option 2 selected"; // Provide appropriate message or action
                     }
                 } else if (spot === "unemp0201") {
                     if (input === "1") {
-                        output = unemp.unemp0201.dia + "<br>" + unemp.unemp0201.opt.join("<br>");
+                        output = unemp.unemp02011.dia + "<br>" + unemp.unemp02011.opt.join("<br>");
                         spot = "unemp02011";
                     }
                 } else if (spot === "unemp02011") {
                     if (input === "1") {
-                        output = unemp.unemp02011.dia + "<br>" + unemp.unemp02011.opt.join("<br>");
+                        output = unemp.unemp020111.dia;
                         spot = "unemp020111";
                     } else if (input === "2") {
-                        output = unemp.unemp020112.dia + "<br>" + unemp.unemp020112.opt.join("<br>");
+                        output = unemp.unemp020112.dia;
                         spot = "unemp020112";
                     }
                 }
