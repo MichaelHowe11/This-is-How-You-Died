@@ -125,20 +125,50 @@ let spiffo = {
     },
     "spif02": {
         "dia": `As you walk inside of the freezer the door slams behind you, locking from the outside.  Your co-workers can't help you this time.  As you sit down and fall asleep you wonder what could've been if you made better choices.`,
-        "opt": ["Option 2: "],
+        //ending
     },
     "spif011": {
         "dia": `"Ever since the event in Louisville yesterday most people were quarantining inside their homes, didn't seem to help though." He pauses for a moment before pulling out a photo card showing a man who looks like a corpse with parts of his skin falling off, "You see, almost everyone exposed to the air here passed away but their bodies stayed alive.  They're feral instincts must've kicked in because they try to eat anything they see, including us.`,
         "opt": ["Option 1: Ask if you can ride along with him"],
     },//goes to 012
     "spif012": {
-        "dia": `""`,
-        "opt": ["Option 1: ", "Option 2: "],
+        "dia": `"Well our chances are probably better together.  I can't think too well on an empty stomach so lets load up and I'll share my story in the car." The man walks inside of spiffo's and grabs some food out of the fridge before walking back to the car and gesturing for you to get in.`,
+        "opt": ["Option 1: Get in the car"],
     },
     "spif0121": {
-        "dia": `As you walk inside of the freezer the door slams behind you, locking from the outside.  Your co-workers can't help you this time.  As you sit down and fall asleep you wonder what could've been if you made better choices.`,
-        "opt": ["Option 2: "],
-    }
+        "dia": `"Were headed to the police station, before all of this the military set up a research camp to develop a cure, which we want.  Long story short someone got infected inside and it rapidly spread.  I was actually the only survivor thanks to this here." He points as his mask then continues, "It seems that some people are also just immune to it such as yourself.  The only others that  I saw were surrounded by a horde in Muldraugh High." The car comes to a halt on the side of the road, you see that you stopped right before the police station.  "Here's our stop." He says before grabbing a combat knife out of the glovebox and stepping out of the car.`,
+        "opt": ["Option 1: How are we going to get in?"],
+    },
+    "spif01211": {
+        "dia": `I see three different ways.  We can enter through the front which will likely require fighting some of those freaks.  We could enter through the back which might save us some trouble.  Or finally, we could take the ladder and enter through the roof.  It's your choice, so choose wisely.`,
+        "opt": ["Option 1: Why not, let's fight through the front.","Option 2: I'll bet the back will be safe.","Option 3: The roof seems like the smartest choice."]
+    },
+    "spif012111": {
+        "dia": `"Might be a dumb choice but I respect your decision."  You and the man walk towards the front entrance, you open the door to see multiple zombies in your way.  Hopefully your partner puts that knife to good work.`,
+        "opt": ["Option 1: Fight"],
+        "incombat": "true"
+    },
+    "spif0121111": {
+        "dia": `After you barely end a single zombie you see that the man flawlessly executed 2 others.  "Not ideal, but it's alright.  The cures in the room to the right, search for the vial number 1.81 and I'll radio the helicopter in.`,
+        "opt": ["Option 1: Search for the vial"],
+        "incombat": "false"
+    },//goes to 0121121
+    "spif012112": {
+        "dia": `"Alright I'll take the lead" You follow the man as he sneaks behind the building without drawing the attention of any undead, you get to the back door and he pulls a key off his belt and opens it.  "The research is in this room to the left" the man whispers to you before discreetly turning the handle and entering the room. "Look for the vial number 1.81 I'll radio in for the helicopter`,
+        "opt": ["Option 1: Search for the vial"],
+    },
+    "spif012113": {
+        "dia": `You stick with your gut and deside to scale the building.  You seem to almost forget your fear of heights until you reach the top of the ladder.  You look down and feel intense nausia before losing your grip and falling. unfortunely your chances of surviving a zombie apocalypse don't seem very high with a broken leg, especially when you don't have any crutches or a cast.`,
+    },
+    "spif0121121": {
+        "dia": `You search through the cupboard filled with vials realizing that their ordered in a pattern.  You look to row 8 and grab the first vial, numbered 1.81.  You hear the man say something into the police radio across the room.  He then walks over and confidently shares "The helicopter'll be here in 10 minutes, we gotta get up to the helipad on the roof.`,
+        "opt": ["Option 1: Let's get moving"],
+    },
+    // I'm too tired to complete this. It's almost done though so we aight
+    "spif01211211": {
+        "dia": `You go to the helipad and have a spiritual awakening.  You hear the voice of god tell you "Go to bed, buddy.  You need your 8 hours so you can playtest other people's games tommorow"`,
+        "opt": ["Option 1: "],
+    },
 }
 let student = {
     "stu0": {
