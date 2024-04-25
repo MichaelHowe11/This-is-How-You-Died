@@ -6,9 +6,9 @@ let unem = {
     },
     "unem01": {
         "dia": "You try to page James using your pager. You wait an hour and don't hear anything from the home phone.",
-        "opt": ["Option 1: Ask around your neighborhood for information about your friend."],
+        "opt": ["Option 1: Ask around your neighborhood for information about your friend.", "Option 2: Go Back Home"],
         "incombat": "false"
-    },
+    },//option 2 needs to go to homeunem
     "unem02": {
         "dia": "You go to your neighbor, James, and knock on the door. You feel a very uneasy fealing while doing this. You wait at least three minutes for a response but no one seems to be home.",
         "opt": ["Option 1: Try to open the door."],
@@ -80,6 +80,10 @@ let unemp = {
 }
 
 let home = {
+    "unemhome": {
+        "dia": "after recieving radio silence from James you decide it would be best to go back home.",
+        'opt': ["Option 1: Continue"]
+    },
     "spifhome": {
         "dia": `You realized that you don't get paid enough to deal with the zombie uprising.`,
         'opt': ["Option 1: Continue"]
@@ -92,8 +96,22 @@ let home = {
     // all the continues above should lead to home
     "home": {
         "dia": `You arrive back at home, you can't stay here though.  You look at your map and four locations stand out to you.  Where do you go?`,
-        "opt": ["Option 1: Go to the school", "Option 2: Go to the Police Department", "Option 3: Go to your friend James' house", "Option 4: Go to the local diner, Spiffo's"]
-    }
+        "opt": ["Option 1: Go to the school","Option 2: Go to your friend James' house", "Option 3: Go to the local diner, Spiffo's"]
+    },//1 ->gostu    2 ->gounem          3 -> gospif
+    "gostu": {
+        "dia": ` You enter the school cafeteria, ""Hey, you!" a student exclaims, their voice tinged with desperation. "We need your help. The bus, it's out there and we can escape, but it's surrounded by those... things."
+        Their eyes flicker towards the exit, fear evident in their gaze. "We can't make it out there alone. We need someone to cover us while we make a run for it. Please, we don't stand a chance without you."
+        Their plea is desperate, and you can sense the gravity of the situation weighing heavily on them. It's clear that the safety of everyone depends on your decision to assist them in this perilous task.`,
+        "opt": ["Option 1: Look outside to the parking lot", `Option 2: "I'm not dying with the rest of you" (leave)`],
+    },
+    "gounem": {
+        "dia": `James hasn't been seen by you in days. Last you heard of him he said he was stockpiling because he heard of a deadly virus spreading in Loiusville, it seems he was right. You are suspicious of his sudden disappearance and enter his house using the key under his potted plant to enter.`,
+        "opt": ["Option 1: Page James", "Option 2: Ask around your neighborhood for information about your friend."],
+    },
+    "gospif": {
+        "dia": `"You walk into spiffo's through the front door then walk behind the counter viewing their selection of food.  After grabbing a combo  that was left in a to go bag you sit down and enjoy your cold meal before hearing a car pull into the parking lot.  What will you do?"`,
+        "opt": ["Option 1: Go outside", "Option 2: Hide in the freezer", "Option 3: You've seen enough, run back home"]
+    },
 }
 
 let spiffo = {
@@ -104,13 +122,25 @@ let spiffo = {
         "opt": ["Option 1: Go outside", "Option 2: Hide in the freezer", "Option 3: You've seen enough, run back home"]
     },//3 goes to spifhome
     "spif01": {
-        "dia": ``,
-        "opt": ["Option 1: ", "Option 2: "],
+        "dia": `You walk outside to talk to the only person you've seen today.  As you open the front door you see a man step out of the car in camo military clothes and an old gas mask.  He's quick to walk over and place another gas mask in your hand and say "Put this on, I don't know how you've managed to survive without one."  You rub the lens of the mask before strapping it around your head.`,
+        "opt": ["Option 1: Ask where everyone went", "Option 2: Ask if you can ride along with him"],
     },
     "spif02": {
-        "dia": ``,
+        "dia": `As you walk inside of the freezer the door slams behind you, locking from the outside.  Your co-workers can't help you this time.  As you sit down and fall asleep you wonder what could've been if you made better choices.`,
+        "opt": ["Option 2: "],
+    },
+    "spif011": {
+        "dia": `"Ever since the event in Louisville yesterday most people were quarantining inside their homes, didn't seem to help though." He pauses for a moment before pulling out a photo card showing a man who looks like a corpse with parts of his skin falling off, "You see, almost everyone exposed to the air here passed away but their bodies stayed alive.  They're feral instincts must've kicked in because they try to eat anything they see, including us.`,
+        "opt": ["Option 1: Ask if you can ride along with him"],
+    },//goes to 012
+    "spif012": {
+        "dia": `""`,
         "opt": ["Option 1: ", "Option 2: "],
     },
+    "spif0121": {
+        "dia": `As you walk inside of the freezer the door slams behind you, locking from the outside.  Your co-workers can't help you this time.  As you sit down and fall asleep you wonder what could've been if you made better choices.`,
+        "opt": ["Option 2: "],
+    }
 }
 let student = {
     "stu0": {
@@ -143,8 +173,8 @@ let student = {
     },
     "stu01121": {
         "dia": `After you finish off the zombie you notice that he must've passed while trying to get in his car as the keys are still in the door.  You open the door and rig the horn to continuously honk before sneaky away again back to the others.  One of them says "What about the gate? It's still closed."`,
-        "opt": ["Option 1: I guess I'll go open it", "Option 2: We can slam through it with the bus"]
-    },//1 goes to stu7 2 goes to stu8, both go to stu9 after
+        "opt": [`Option 1: "I guess I'll go open it"``, "Option 2:"We can slam through it with the bus" `]
+    },
     "stu011211": {
         "dia": `You sneak over to the gate and lift the latch, possible inviting more undead in.  You then return to the bus and are last to climb aboard.`,
         "opt": ["Option 1: Continue"]
@@ -181,7 +211,7 @@ let student = {
     "stu011211121": {
         "dia": `As you maneuver down the main street, you can't ignore the sight of abandoned cars littering the road, creating a tangled mess. Military tents are scattered around an intersection, adding to the chaos. As you carefully navigate around the rubble, a sudden impact rocks the bus, sending it lurching to the side. The screeching of metal fills the air as a military pickup truck slams into the bus, flipping it onto its side with a jolt that sends everyone inside reeling.  Everything around you fades to black as your ears start ringing.  You wake up to see everyone around you missing, however the military truck sits empty next to you.`,
         "opt": ["Option 1: Walk Away", "Option 2: Search the truck"]
-    },//1 -> 15 2->16
+    },
     "stu0112111211": {
         "dia": `You shamble away, still effected by your wounds.  You don't know how you'll do it but your still determined to get out of town with your life intact, however without your strength or any tools this goal seems unlikely.`,
     },
