@@ -44,17 +44,17 @@ let unem = {
 
 }
 
-let unemp2 = {
+let unemp = {
     "unemp0": {
         "dia": "After your hours long search for Jack's Storage you need sleep, if you don't sleep you will start to lose defense levels, attack levels, and eventually health points until you find another chance to sleep again. It's also getting late so visibility is decreasing and so are your defense and accuracy with it. If you are low on health it is highly advised to sleep to replenish your health points. If you need an even more in depth explanation of the sleeping system than type 'helpsleep' for more info.",
         "opt": ["Option 1: Sleep", "Option 2: Don't Sleep and keep searching."]
     },
     "unemp01": {
-        "dia": "You decide to sleep, although James could be in trouble you want to also protect yourself from getting in trouble as well. If you die than James could die with you. The continuation of your search begins now...",
+        "dia": "You decide to sleep, although James could be in trouble you want to also protect yourself from getting in trouble as well. If you die than James could die with you. The continuation of your search begins now ... Press Enter to continue",
         "opt": ["Option 1: Continue"]
     },
     "unemp02": {
-        "dia": "You decide not to sleep, James is more important than sleep. Sleeping could be between James surviving a potential danger or not surviving it. You've lost ",
+        "dia": "You decide not to sleep, James is more important than sleep. Sleeping could be between James surviving a potential danger or not surviving it. Press Enter to continue",
         "opt": ["Option 1: Continue"]
     },
     "unemp020": {
@@ -175,6 +175,7 @@ let ehp = 18;
 let spot = "unem0";
 let ismissE = false;
 let ismissP = false;
+let issleep = true;
 
 document.addEventListener("DOMContentLoaded", function () {
     let output = "";
@@ -339,7 +340,6 @@ Type 'help' for instructions on how to play.`)
                     if (input === "1") {
                         output = unem.unem02111.dia
                         spot = "unem02111";
-                        incombat = true;
                     } else if (input === "2") {
                         output = "You search for a weapon and find a " + unem.unem02111.dia
                         spot = "unem02111";
@@ -357,8 +357,16 @@ Type 'help' for instructions on how to play.`)
                         output = unem.unem02111011.dia + "<br>" + unem.unem02111011.opt.join("<br>");
                         spot = "unem02111011";
                     } else if (input === "2") {
-                        output = unemp2.unem0.dia + "<br>" + unemp2.unem0.opt.join("<br>")
-                        spot = unemp0
+                        output = unemp.unem0.dia + "<br>" + unemp.unem0.opt.join("<br>")
+                        spot = "unemp0"
+                    }
+                } else if (spot === "unemp0") {
+                    if (input === "1") {
+                        output = unem.unem02111011.dia + "<br>" + unem.unem02111011.opt.join("<br>");
+                        spot = "unemp020";
+                    } else if (input === "2") {
+                        issleep = false;
+                        spot = "unemp020"
                     }
                 }
             }
