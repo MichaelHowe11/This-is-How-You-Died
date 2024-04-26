@@ -1,84 +1,119 @@
-let unem = {
+let story = {
     "unem0": {
         "dia": "The date is July 2, 1993. You start at James's house (A friend from high-school), James hasn't been seen by you in days. He said he was going to search for food or other valuables to aid in survival. You seem suspicious of his sudden disappearance and go to investigate by stepping outside for the first time in weeks. You find that your town is no longer the bustling city it was known for but now a desolate city with nothing but the wind making a noise. You're not surprised as the relentless news coverage has already made clear, the city is plagued by creatures that feast on unsuspecting prey. In this grim reality, encountering such a monster only serves to confirm what you already know.<br>",
         "opt": ["Option 1: Page James.<br>", "Option 2: Ask around your neighborhood for information about your friend."],
-        "incombat": "false"
+        "incombat": false,
+        "spot": ["unem01", "unem02"],
+        "isending": false
     },
     "unem01": {
         "dia": "You try to page James using your pager. You wait an hour and don't hear anything from the home phone.",
         "opt": ["Option 1: Ask around your neighborhood for information about your friend.", "Option 2: Go Back Home"],
+        "incombat": false,
         "spot": ["unem02", "unemhome"],
-        "incombat": "false"
-    },//option 2 needs to go to homeunem
+        "isending": false
+    },
     "unem02": {
-        "dia": "You go to your neighbor, James, and knock on the door. You feel a very uneasy fealing while doing this. You wait at least three minutes for a response but no one seems to be home.",
+        "dia": "You go to your neighbor, James, and knock on the door. You feel a very uneasy feeling while doing this. You wait at least three minutes for a response but no one seems to be home.",
         "opt": ["Option 1: Try to open the door."],
-        "incombat": "false"
+        "incombat": false,
+        "spot": ["unem021"],
+        "isending": false
     },
     "unem021": {
         "dia": "You're worried about your neighbor James, come to think of it you haven't really heard from him in a long time either. This seems serious and your curiosity gets the best of you so you try to force yourself into his house. You get the same uneasy feeling from when you first knocked on the door but this time it's more intense. The house seems quiet, too quiet...",
         "opt": ["Option 1: Investigate<br>"],
-        "incombat": "false"
+        "incombat": false,
+        "spot": ["unem0211"],
+        "isending": false
     },
     "unem0211": {
-        "dia": "You decide to investigate and see if your neighbor James is in trouble. You search the entire first floor but find nothing suspicous but suddenly you hear a noise upstairs.",
-        "opt": ["Option 1: Investigate", "Option 2: Search for a weapon so your prepared."],
-        "incombat": "false"
+        "dia": "You decide to investigate and see if your neighbor James is in trouble. You search the entire first floor but find nothing suspicious but suddenly you hear a noise upstairs.",
+        "opt": ["Option 1: Investigate", "Option 2: Search for a weapon so you're prepared."],
+        "incombat": false,
+        "spot": ["unem02111", "unem021110"],
+        "isending": false
     },
     "unem02111": {
-        "dia": "As your going upstairs you hear another noise and stop in fear...Something hits you so hard you fall to the ground<br>You are now in combat! Do 'attack fists' to use your attack with your fists!",
-        "incombat": "true"
+        "dia": "As you're going upstairs you hear another noise and stop in fear...Something hits you so hard you fall to the ground<br>You are now in combat! Do 'attack fists' to use your attack with your fists!",
+        "incombat": true,
+        "opt": [],
+        "spot": ["unem021110"],
+        "isending": false
     },
     "unem021110": {
         "dia": "In the aftermath of your victory, a stark truth sinks in, the creature you defeated was no mere mortal. Its grotesque form, barely resembling anything human.",
         "opt": ["Option 1: Search the house for valuables"],
-        "incombat": "false"
+        "incombat": false,
+        "spot": ["unem0211101"],
+        "isending": false
     },
     "unem0211101": {
-        "dia": `You search the house for valuables but find nothing of use to defend yourself but you did find a note that looked to be in James' handwriting. You read it and it says, "I'm leaving to go to the Jack's Storage, I will not be back. I want to be alone." You're perplexed on this very short note, your also confused on why he didn't tell you either.`,
-        "opt": ["Option 1: Search 'empty' houses in your neighborhood", "Option 2: Go to find Jack's Storage"]
+        "dia": `You search the house for valuables but find nothing of use to defend yourself but you did find a note that looked to be in James' handwriting. You read it and it says, "I'm leaving to go to the Jack's Storage, I will not be back. I want to be alone." You're perplexed on this very short note, you're also confused about why he didn't tell you either.`,
+        "opt": ["Option 1: Search 'empty' houses in your neighborhood", "Option 2: Go to find Jack's Storage"],
+        "incombat": false,
+        "spot": ["unem02111011", "unem02111012"],
+        "isending": false
     },
     "unem02111011": {
         "dia": `You search empty houses near your area and find nothing but already looted houses with nothing of value to hold`,
-        "opt": ["Option 1: Continue"]
-    }
+        "opt": ["Option 1: Continue"],
+        "incombat": false,
+        "spot": ["unemp0"],
+        "isending": false
+    },
 
-}
+    // unem part 2
 
-let unemp = {
     "unemp0": {
-        "dia": "After your hours long search for Jack's Storage you need sleep, if you don't sleep you will start to lose defense levels, attack levels, and eventually health points until you find another chance to sleep again. It's also getting late so visibility is decreasing and so are your defense and accuracy with it. If you are low on health it is highly advised to sleep to replenish your health points. If you need an even more in depth explanation of the sleeping system then type 'helpsleep' for more info.",
-        "opt": ["Option 1: Sleep", "Option 2: Don't Sleep and keep searching."]
+        "dia": "After your hours long search for Jack's Storage you need sleep, if you don't sleep you will start to lose defense levels, attack levels, and eventually health points until you find another chance to sleep again. It's also getting late so visibility is decreasing and so are your defense and accuracy with it. If you are low on health it is highly advised to sleep to replenish your health points. If you need an even more in-depth explanation of the sleeping system then type 'helpsleep' for more info.",
+        "opt": ["Option 1: Sleep", "Option 2: Don't Sleep and keep searching."],
+        "spot": ["unemp01", "unemp02"],
+        "isending": false
     },
     "unemp01": {
         "dia": "You decide to sleep, although James could be in trouble you want to also protect yourself from getting in trouble as well. If you die than James could die with you. The continuation of your search begins now ... Press Enter to continue",
-        "opt": ["Option 1: Continue"]
+        "opt": ["Option 1: Continue"],
+        "spot": ["unemp020"],
+        "isending": false
     },
     "unemp02": {
         "dia": "You decide not to sleep, James is more important than sleep. Sleeping could be between James surviving a potential danger or not surviving it. Press Enter to continue",
-        "opt": ["Option 1: Continue"]
+        "opt": ["Option 1: Continue"],
+        "spot": ["unemp020"],
+        "isending": false
     },
     "unemp020": {
         "dia": "You've finally found it, Jack's storage. Your eyes lay upon a massive warehouse, Jack's Storage dwarfs even a Home Depot in size. You wonder why James wanted such a ginormous base if it brought all of the dangers of killing so many zombies in such a big building like this.",
-        "opt": ["Option 1: Enter Jack's Storage", "Option 2: Search the surrounding area"]
+        "opt": ["Option 1: Enter Jack's Storage", "Option 2: Search the surrounding area"],
+        "spot": ["unemp0201", "unemp02011"],
+        "isending": false
     },
     "unemp0201": {
-        "dia": "As you enter it feels like your still outside, the building is ginormous. It has obvious signs of decay due to neglect but its original glory still shines within.",
-        "opt": ["Option 1: Search Jack's Storage"]
+        "dia": "As you enter it feels like you're still outside, the building is ginormous. It has obvious signs of decay due to neglect but its original glory still shines within.",
+        "opt": ["Option 1: Search Jack's Storage"],
+        "spot": ["unemp02011"],
+        "isending": false
     },
     "unemp02011": {
         "dia": "You found James! However it's not sunshine and rainbows. He's on the ground showing signs of exhaustion and physical injuries. There are a couple of dead zombies around him. You yell his name and hear no response. He seems to show no signs of zombification but there is still a chance...",
-        "opt": ["Option 1: See if you can help James", "Option 2: Leave him there"]
+        "opt": ["Option 1: See if you can help James", "Option 2: Leave him there"],
+        "spot": ["unemp020111", "unemp020112"],
+        "isending": false
     },
     "unemp020111": {
-        "dia": `You go up to James and see if he is still alive. To your surprise James wakes up in confusion. You ask him what happened and he says "The last thing I remember was fighting some zombies and being really tired." You evaluate his injuries and deem them non life threatening. You explain how yourself and James need to leave Kentucky because of a radio signal explaining how there is a military base on the outskirts of Muldraugh. You and James leave happily ever after in the military base of Muldraugh :).`,
+        "dia": `You go up to James and see if he is still alive. To your surprise James wakes up in confusion. You ask him what happened and he says "The last thing I remember was fighting some zombies and being really tired." You evaluate his injuries and deem them non-life threatening. You explain how yourself and James need to leave Kentucky because of a radio signal explaining how there is a military base on the outskirts of Muldraugh. You and James leave happily ever after in the military base of Muldraugh :).`,
+        "opt": [],
+        "spot": [],
+        "isending": true
     },
     "unemp020112": {
         "dia": `You decide to leave James there because you fear that he might be a zombie, James is a tall muscular man and if he were to be a zombie you would be in a lot of danger. After you leave Jack's Storage you head to the military base on the outskirts of Muldraugh to seek refuge from the ongoing apocalypse`,
-    }
-}
+        "opt": [],
+        "spot": [],
+        "isending": true
+    },
 
-let story = {
     "unemhome": {
         "dia": "after recieving radio silence from James you decide it would be best to go back home.",
         'opt': ["Option 1: Continue"],
@@ -98,8 +133,8 @@ let story = {
     // all the continues above should lead to home
     "home": {
         "dia": `You arrive back at home, you can't stay here though.  You look at your map and four locations stand out to you.  Where do you go?`,
-        "opt": ["Option 1: Go to the school", "Option 2: Go to the local diner, Spiffo's"],
-        "spot": ["stualt", "spifalt"]
+        "opt": ["Option 1: Go to the school", "Option 2: Go to the local diner, Spiffo's", "Option 3: Head to your stockpiling friend James' House"],
+        "spot": ["stualt", "spifalt", "unem02"]
     },//1 ->gostu    2 spifalt
 
     // spif
@@ -126,7 +161,8 @@ let story = {
     "spif02": {
         "dia": `As you walk inside of the freezer the door slams behind you, locking from the outside.  Your co-workers can't help you this time.  As you sit down and fall asleep you wonder what could've been if you made better choices.`,
         "spot": [],
-        "isending": true
+        "isending": true,
+        "opt": []
     },
     "spif011": {
         "dia": `"Ever since the event in Louisville yesterday most people were quarantining inside their homes, didn't seem to help though." He pauses for a moment before pulling out a photo card showing a man who looks like a corpse with parts of his skin falling off, "You see, almost everyone exposed to the air here passed away but their bodies stayed alive.  They're feral instincts must've kicked in because they try to eat anything they see, including us.`,
@@ -156,14 +192,14 @@ let story = {
         "dia": `"Might be a dumb choice, but I respect your decision."  You and the man walk towards the front entrance, you open the door to see multiple zombies in your way.  Hopefully your partner puts that knife to good work.`,
         "opt": ["Option 1: Fight"],
         "spot": ["spif0121111"],
-        "incombat": "true",
+        "incombat": true,
         "isending": false
     },
     "spif0121111": {
         "dia": `After you barely end a single zombie you see that the man flawlessly executed 2 others.  "Not ideal, but it's alright.  The cures in the room to the right, search for the vial number 1.81 and I'll radio the helicopter in.`,
         "opt": ["Option 1: Search for the vial"],
         "spot": ["spif0121121"],
-        "incombat": "false",
+        "incombat": false,
         "isending": false
     },
     "spif012112": {
@@ -198,7 +234,7 @@ let story = {
         "dia": `The undead quickly rise the stairs and throw themselves against the door.  The lock doesn't hold very long and the door swings open and multiple zombies flood out.  You can hear the whirl of the helicopter blades getting closer behind you but first these zombies will have to be dealt with.`,
         "opt": [`Climb aboard the helicopter`],
         "spot": ["spif0121121111"],
-        "incombat": "true",
+        "incombat": true,
         "isending": false
     },// leads to spif0121121111
     "spif0121121111": {
@@ -245,7 +281,10 @@ let story = {
         "dia": `With a mixture of heroism and recklessness, you burst through the door, drawing the attention of the encroaching zombies with your shouts. Swiftly, you make your way to the parking lot gate, urging your classmates to follow as you open it for them, adrenaline coursing through your veins.
         As the others scramble towards safety, you turn to glance behind you, catching a glimpse of the survivors starting up the bus. But your moment of triumph is short-lived as you lose your footing, stumbling in your haste. The zombies close in swiftly, their grasping hands reaching out for you.
         With a sinking feeling, you realize the inevitable as the undead swarm around you, overwhelming your defenses. The world fades into darkness as you succumb to their grasp. Yet, in your final moments, a sense of bittersweet satisfaction washes over you as you catch sight of the bus escaping to safety, knowing that your sacrifice was not in vain`,
-        "isending": "true",
+        "opt": [],
+        "spot": [],
+        "incombat": false,
+        "isending": true
         //ending
     },
     "stu0112": {
@@ -253,40 +292,53 @@ let story = {
         With no other choice but to confront the undead threat, you steel yourself for the impending battle. Adrenaline surges through your veins as you prepare to face the creature head-on, knowing that your survival depends on your ability to fight off this unexpected foe.`,
         "opt": ["Option 1: Fight the zombie"],
         "spot": ["stu01121"],
-        "incombat": "true"
+        "incombat": false,
+        "isending": false
     },
     "stu01121": {
         "dia": `After you finish off the zombie you notice that he must've passed while trying to get in his car as the keys are still in the door.  You open the door and rig the horn to continuously honk before sneaky away again back to the others.  One of them says "What about the gate? It's still closed."`,
         "opt": [`Option 1: I guess I'll go open it`, `Option 2:We can slam through it with the bus`],
         "spot": ["stu011211", "stu011212"],
+        "incombat": false,
+        "isending": false
     },
     "stu011211": {
         "dia": `You sneak over to the gate and lift the latch, possible inviting more undead in.  You then return to the bus and are last to climb aboard.`,
         "opt": ["Option 1: Continue"],
         "spot": ["stu0112111"],
+        "incombat": false,
+        "isending": false
+
     },//goes to 0112111
     "stu011212": {
         "dia": `Everyone climbs inside the school bus.  The driver shouts "SEATBELTS!" before starting the engine and pressing the gas and breaking down the gate.`,
         "opt": ["Option 1: Continue"],
         "spot": ["stu0112111"],
+        "incombat": false,
+        "isending": false
     },//goes to 0112111
     "stu0112111": {
         "dia": `As you board the bus you take a seat next to your classmates, Peyton, his eyes wide with fear and urgency.  "My grandpa's got this ranch out in the countryside," Peyton continues, his words rushed. "He's been talking about it for ages, saying he's got this bunker stocked with supplies. We could head there, hunker down until all this blows over."
         The idea of safety and supplies is enticing, but uncertainty clouds your mind. `,
-        "opt": [`Option 1: "Lets go for it"`, `Option 2:"I think It'd be best if we left town" `],
+        "opt": [`Option 1: "Lets go for it"`, `Option 2:"I think It'd be best if we left town"`],
         "spot": ["stu01121111", "stu01121112"],
+        "incombat": false,
+        "isending": false
     },
     "stu01121111": {
         "dia": `As the bus rattles down the desolate streets, the sight of abandoned cars and scattered wreckage serves as a grim reminder of the chaos that has consumed the city. Undead figures roam the sidewalks, their relentless groans echoing through the empty thoroughfares.  As the driver pulls into the ranch everyone sees the police car sitting in the middle of the ranch with its sirens wailing, undead shambling towards it.  The students quickly get off the bus and run inside the building, with just you and Peyton remaining near the exit.  Scrambling for an idea Peyton remarks "the bunkers behind the barn, we have to get past without those zombies seeing us, and it looks like the others won't be joining."`,
         "opt": ["Option 1: Walk Behind the barn"],
-        "spot": ["stu011211111"]
-        
+        "spot": ["stu011211111"],
+        "incombat": false,
+        "isending": false
+
     },
     "stu011211111": {
         "dia": `As you cautiously approach the bunker door, Peyton swiftly moves to unlock it, his hands deftly spinning the wheel in an urgent rhythm. However, the sound of metal against metal echoes through the air, drawing the attention of nearby zombies. With a sinking feeling, you realize that you must defend Jake while he works to open the bunker, or risk being overwhelmed by the advancing undead horde.`,
         "opt": ["Option 1: Fight for your life"],
-        "incombat": "true",
-        "spot": ["stu0112111111"]
+        "spot": ["stu0112111111"],
+        "incombat": false,
+        "isending": false
     },
     "stu0112111111": {
         "dia": `As the solitary zombie crumples to the ground, defeated, you catch your breath, relief flooding your senses. But the moment of calm is short-lived as the sound of hurried footsteps echoes from the house behind you. Your classmates emerge, drawn by the commotion, their eyes wide with fear and determination.
@@ -294,7 +346,10 @@ let story = {
         As the last zombie falls, you share a collective sigh of relief, the air thick with exhaustion and adrenaline. But there's no time to dwell on victory as you hastily make your way towards the bunker entrance, your classmates following close behind.
         Inside the bunker, a wave of relief washes over you as you take in the sight of shelves stocked with supplies, enough to sustain you and your companions for at least a month. The tension that had gripped your shoulders eases, replaced by a sense of cautious optimism for the days ahead.
         Gathering together in the safety of the bunker, you find solace in each other's company, knowing that you are not alone in this fight for survival. As you settle in for the night, the faint hum of the bunker's generators lulling you into a restless sleep, you can't help but feel a glimmer of hope amidst the darkness that surrounds you.`,
-        "isending": true
+        "isending": true,
+        "incombat": false,
+        "opt": [],
+        "spot": []
     },//ending
     "stu01121112": {
         "dia": `Shortly after you respond, the bus driver shouts "I don't know how to operate this thing! Does anyone have a licence?"  You watch for a moment as no one offers, so you're forced to take up the mantle.`,
@@ -304,7 +359,7 @@ let story = {
     "stu011211121": {
         "dia": `As you maneuver down the main street, you can't ignore the sight of abandoned cars littering the road, creating a tangled mess. Military tents are scattered around an intersection, adding to the chaos. As you carefully navigate around the rubble, a sudden impact rocks the bus, sending it lurching to the side. The screeching of metal fills the air as a military pickup truck slams into the bus, flipping it onto its side with a jolt that sends everyone inside reeling.  Everything around you fades to black as your ears start ringing.  You wake up to see everyone around you missing, however the military truck sits empty next to you.`,
         "opt": ["Option 1: Walk Away", "Option 2: Search the truck"],
-        "spot": ["stu0112111211","stu0112111212"]
+        "spot": ["stu0112111211", "stu0112111212"]
     },
     "stu0112111211": {
         "dia": `You shamble away, still effected by your wounds.  You don't know how you'll do it but your still determined to get out of town with your life intact, however without your strength or any tools this goal seems unlikely.`,
@@ -313,7 +368,7 @@ let story = {
     "stu0112111212": {
         "dia": `You pry open the back door of the truck, revealing a stash of weapons and medical supplies. Amid the chaos, you quickly assess your options and select the best weaponry available, ensuring you're armed for the challenges ahead. After grabbing some much-needed bandages, you tend to your wounds, patching yourself up as best as you can. With newfound determination, you set out once more on your journey to escape the town, ready to face whatever lies ahead.`,
         "isending": true
-        },
+    },
 
 }
 // first value in list is damage, second value is defense, third value is hit chance
@@ -365,7 +420,8 @@ let ismissE = false;
 let ismissP = false;
 let diae;
 let ischef = false;
-let isstudent = false;
+let isstu = false;
+let isunem = false;
 
 let issleep = true;
 
@@ -412,16 +468,19 @@ Type 'help' to see these instructions again.`)
         }
 
         if (input == "unemployed" && occupation === 0) {
-            output = (unem.unem0.dia) + "<br>" + (unem.unem0.opt)
+            output = (story.unem0.dia) + "<br>" + (story.unem0.opt)
             occupation = 1;
+            isunem = true
         }
         if (input == "chef" && occupation === 0) {
             output = (story.spif0.dia) + "<br>" + (story.spif0.opt)
             occupation = 2;
+            ischef === true
         }
         if (input == "student" && occupation === 0) {
             output = (story.stu0.dia) + "<br>" + (story.stu0.opt)
             occupation = 3;
+            isstu === true
         }
 
         function combat(eattkLev, edefLev, emissLev, userInput) {
@@ -525,92 +584,6 @@ Type 'help' to see these instructions again.`)
         }
         // if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else if else 
         // unemployed
-        if (occupation === 1) {
-            if (spot === "unem0") {
-                if (input === "1") {
-                    output = unem.unem01.dia + "<br>" + unem.unem01.opt.join("<br>");
-                    spot = "unem01";
-                } else if (input === "2") {
-                    output = unem.unem02.dia + "<br>" + unem.unem02.opt.join("<br>");
-                    spot = "unem02";
-                }
-            } else if (spot === "unem01") {
-                if (input === "1") {
-                    output = unem.unem021.dia + "<br>" + unem.unem021.opt.join("<br>");
-                    spot = "unem021";
-                }
-            } else if (spot === "unem02") {
-                if (input === "1") {
-                    output = unem.unem021.dia + "<br>" + unem.unem021.opt.join("<br>");
-                    spot = "unem021";
-                }
-            } else if (spot === "unem021") {
-                if (input === "1") {
-                    output = unem.unem0211.dia + "<br>" + unem.unem0211.opt.join("<br>");
-                    spot = "unem0211";
-                }
-            } else if (spot === "unem0211") {
-                if (input === "1") {
-                    output = unem.unem02111.dia
-                    spot = "unem02111";
-                } else if (input === "2") {
-                    output = "You search for a weapon and find a " + unem.unem02111.dia
-                    spot = "unem02111";
-                }
-            } else if (spot === "unem02111") {
-                incombat = true;
-                startcombat(1, 1, 1, "unem021110", unem.unem021110.opt.join("<br>"));
-            } else if (spot === "unem021110") {
-                if (input === "1") {
-                    output = unem.unem0211101.dia + "<br>" + unem.unem0211101.opt.join("<br>");
-                    spot = "unem0211101";
-                }
-            } else if (spot === "unem0211101") {
-                if (input === "1") {
-                    output = unemp.unemp0.dia + "<br>" + unemp.unemp0.opt.join("<br>")
-                    spot = "unemp0";
-                } else if (input === "2") {
-                    output = unemp.unemp0.dia + "<br>" + unemp.unemp0.opt.join("<br>")
-                    spot = "unemp0"
-                }
-            } else if (spot === "unemp0") {
-                if (input === "1") {
-                    output = unemp.unemp01.dia + "<br>" + unemp.unemp01.opt.join("<br>");
-                    spot = "unemp01";
-                } else if (input === "2") {
-                    output = unemp.unemp02.dia + "<br>" + unemp.unemp02.opt.join("<br>");
-                    spot = "unemp02";
-                }
-            } else if (spot === "unemp01") {
-                if (input === "1") {
-                    output = unemp.unemp01.dia + "<br>" + unemp.unemp01.opt.join("<br>");
-                    spot = "unemp020";
-                }
-            } else if (spot === "unemp02") {
-                if (input === "1") {
-                    output = unemp.unemp02.dia + "<br>" + unemp.unemp02.opt.join("<br>");
-                    spot = "unemp020";
-                }
-            } else if (spot === "unemp020") {
-                if (input === "1") {
-                    output = unemp.unemp020.dia + "<br>" + unemp.unemp020.opt.join("<br>");
-                    spot = "unemp0201";
-                }
-            } else if (spot === "unemp0201") {
-                if (input === "1") {
-                    output = unemp.unemp02011.dia + "<br>" + unemp.unemp02011.opt.join("<br>");
-                    spot = "unemp02011";
-                }
-            } else if (spot === "unemp02011") {
-                if (input === "1") {
-                    output = unemp.unemp020111.dia;
-                    spot = "unemp020111";
-                } else if (input === "2") {
-                    output = unemp.unemp020112.dia;
-                    spot = "unemp020112";
-                }
-            }
-        }
         // chef
         function isend(spot1, innum) {
             output = story[story[spot1].spot[innum - 1]]
@@ -624,11 +597,19 @@ Type 'help' to see these instructions again.`)
             }
         }
 
-        if (occupation === 2) {
-            if (ischef === false) {
+        if (occupation != 0) {
+            if (isunem === false && occupation === 1) {
+                spot = "unem0"
+                isunem = true
+            } else if (ischef === false && occupation === 2) {
                 spot = "spif0"
-                ischef = true;
+                ischef = true
+            } else if (isstu === false && occupation === 3) {
+                spot = "stu0"
+                isstu = true
             }
+
+            console.log(spot)
 
             if (input === "1") {
                 console.log(story[spot])
@@ -675,55 +656,16 @@ Type 'help' to see these instructions again.`)
                 console.log(spot)
                 output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
 
-
-
             }
-
+            if (story[spot].incombat === true) {
+                output = story[story[spot].spot[0]].dia
+                incombat = true;
+                startcombat(1, 1, 1, story[spot].spot[0], story[spot].dia)
+                console.log("bruh")
+            }
         }
-        if (occupation === 3) {
-            if (isstudent === false) {
-                spot = "stu0"
-                isstudent = true;
-            }
-
-            if (input === "1") {
-                console.log(story[spot])
-                isend(spot, 1)
 
 
-                spot = story[spot].spot[0]
-
-                console.log(spot)
-
-                output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
-
-            } else if (input === "2") {
-                console.log(story[spot])
-                isend(spot, 2)
-                console.log(output)
-
-                spot = story[spot].spot[1]
-
-                console.log(spot)
-                output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
-
-
-
-            } else if (input === "3") {
-                console.log(story[spot])
-                isend(spot, 3)
-                console.log(output)
-
-                spot = story[spot].spot[2]
-
-                console.log(spot)
-                output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
-
-
-
-            }
-
-        }
 
         console.log(spot)
 
