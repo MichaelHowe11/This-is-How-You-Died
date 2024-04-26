@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Creepster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(165, 148, 137);
     margin: 0;
     height: 100%;
@@ -74,7 +77,7 @@ body {
 }
 
 button {
-    width: 10%;
+    width: 180px;
     height: 80px;
     font-size: 60px;
     font-family: "Creepster", system-ui;
@@ -93,11 +96,44 @@ button:hover {
 
 @media only screen and (max-width:1640px) {
 
+    #body {
+        display: flex;
+        align-items: center;
+    } 
+    
     #title1,
     #title2 {
         font-family: monospace;
         white-space: pre;
         font-size: 10px;
     }
+}
+@media only screen and (max-width: 900px) {
 
+    #body {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    } 
+    button {
+        width: 25%;
+        height: 100px;
+    }
+    #userInput {
+        width: 25%;
+        height: 40px;
+        font-size: 24px;
+    }
+    #consoleOutput {
+        font-size: 28px;
+        height: 80%;
+        
+    }
+    .textboxWrapper {
+    
+        height: 80%;
+    }
+    #instr {
+        font-size: 48px;
+    }
 }
