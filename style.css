@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 body {
     background-color: rgb(165, 148, 137);
     margin: 0;
     height: 100%;
     overflow: hidden;
-    color: white;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
 }
 
 #pagewrapper {
@@ -68,6 +73,24 @@ body {
     justify-content: center;
 }
 
+button {
+    width: 10%;
+    height: 80px;
+    font-size: 60px;
+    font-family: "Creepster", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 5px;
+    border-color: #880808;
+    background-color: rgb(184, 165, 153);
+    border-width: 5px;
+}
+button:hover {
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color:rgb(148, 132, 121);
+}
+
 @media only screen and (max-width:1640px) {
 
     #title1,
@@ -77,7 +100,4 @@ body {
         font-size: 10px;
     }
 
-}
-.fake {
-    color: #000000;
 }

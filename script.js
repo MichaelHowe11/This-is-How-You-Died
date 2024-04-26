@@ -122,7 +122,7 @@ let spif = {
     "spif01": {
         "dia": `You walk outside to talk to the only person you've seen today.  As you open the front door you see a man step out of the car in camo military clothes and an old gas mask.  He's quick to walk over and place another gas mask in your hand and say "Put this on, I don't know how you've managed to survive without one."  You rub the lens of the mask before strapping it around your head.`,
         "opt": ["Option 1: Ask where everyone went", "Option 2: Ask if you can ride along with him"],
-        "spot": ["spif011"],
+        "spot": ["spif011","spif012"],
         "isending": false
     },
     "spif02": {
@@ -151,11 +151,11 @@ let spif = {
     "spif01211": {
         "dia": `I see three different ways.  We can enter through the front which will likely require fighting some of those freaks.  We could enter through the back which might save us some trouble.  Or finally, we could take the ladder and enter through the roof.  It's your choice, so choose wisely.`,
         "opt": ["Option 1: Why not, let's fight through the front.", "Option 2: I'll bet the back will be safe.", "Option 3: The roof seems like the smartest choice."],
-        "spot": ["spif012111"],
+        "spot": ["spif012111","spif012112","spif012113"],
         "isending": false
     },
     "spif012111": {
-        "dia": `"Might be a dumb choice but I respect your decision."  You and the man walk towards the front entrance, you open the door to see multiple zombies in your way.  Hopefully your partner puts that knife to good work.`,
+        "dia": `"Might be a dumb choice, but I respect your decision."  You and the man walk towards the front entrance, you open the door to see multiple zombies in your way.  Hopefully your partner puts that knife to good work.`,
         "opt": ["Option 1: Fight"],
         "spot": [],
         "incombat": "true",
@@ -164,7 +164,7 @@ let spif = {
     "spif0121111": {
         "dia": `After you barely end a single zombie you see that the man flawlessly executed 2 others.  "Not ideal, but it's alright.  The cures in the room to the right, search for the vial number 1.81 and I'll radio the helicopter in.`,
         "opt": ["Option 1: Search for the vial"],
-        "spot": [],
+        "spot": ["spif0121121"],
         "incombat": "false",
         "isending": false
     },
@@ -187,7 +187,7 @@ let spif = {
     "spif01211211": {
         "dia": `As you and the man rush to the rooftop helipad, the silence of the deserted building is broken by the sound of growls and screams. The infected have caught your scent and are in closing in. You both sprint up the stairs, the vial gripped in your hand.  Reaching the roof, you can hear the distant whirl of the helicopter blades cutting through the air. But the infected are closing in fast, their sound almost drowning out that of the helicopter as they swarm the building.`,
         "opt": ["Option 1: Block the door ", "Option 2: Prepare to fight"],
-        "spot": [],
+        "spot": ["spif012112111", "pif012112112"],
         "isending": false
     },
     "spif012112111": {
@@ -204,7 +204,8 @@ let spif = {
     "spif0121121111": {
         "dia": `As the helicopter lands, you and the man rush to meet it, the relentless pounding of the infected against the door intensifying with each moment. The pilot beckons you aboard, his expression one of urgency. You quickly scramble into the helicopter, the man right behind you.
         With the door sealed shut, the pilot lifts off just as the door bursts open, and the rooftop becomes overrun with the infected. You watch as the rooftop falls away, your heart pounding in relief and fear. The city below, once familiar, now looks like a war zone, the infected spreading like a dark cloud.
-        You grip the vial tightly, knowing that the fate of countless lives rests in your hands. The man pats your shoulder reassuringly, and you exchange a determined glance. Together, you face the uncertain future, hopeful that the potential cure you carry can bring an end to the horror that has befallen your world.`
+        You grip the vial tightly, knowing that the fate of countless lives rests in your hands. The man pats your shoulder reassuringly, and you exchange a determined glance. Together, you face the uncertain future, hopeful that the potential cure you carry can bring an end to the horror that has befallen your world.`,
+        "isending": true
     },
 }
 
