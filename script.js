@@ -124,7 +124,7 @@ let spif = {
         "dia": `You walk outside to talk to the only person you've seen today.  As you open the front door you see a man step out of the car in camo military clothes and an old gas mask.  He's quick to walk over and place another gas mask in your hand and say "Put this on, I don't know how you've managed to survive without one."  You rub the lens of the mask before strapping it around your head.`,
         "opt": ["Option 1: Ask where everyone went", "Option 2: Ask if you can ride along with him"],
         "spot": ["spif011"]
-    },
+      },
     "spif02": {
         "dia": `As you walk inside of the freezer the door slams behind you, locking from the outside.  Your co-workers can't help you this time.  As you sit down and fall asleep you wonder what could've been if you made better choices.`,
         //ending
@@ -134,8 +134,8 @@ let spif = {
         "dia": `"Ever since the event in Louisville yesterday most people were quarantining inside their homes, didn't seem to help though." He pauses for a moment before pulling out a photo card showing a man who looks like a corpse with parts of his skin falling off, "You see, almost everyone exposed to the air here passed away but their bodies stayed alive.  They're feral instincts must've kicked in because they try to eat anything they see, including us.`,
         "opt": ["Option 1: Ask if you can ride along with him"],
         "spot": ["spif012"]
-    },
-    "spif012": {
+    },   
+     "spif012": { 
         "dia": `"Well our chances are probably better together.  I can't think too well on an empty stomach so lets load up and I'll share my story in the car." The man walks inside of spiffo's and grabs some food out of the fridge before walking back to the car and gesturing for you to get in.`,
         "opt": ["Option 1: Get in the car"],
         "spot": ["spif0121"]
@@ -144,12 +144,12 @@ let spif = {
         "dia": `"We're headed to the police station, before all of this the military set up a research camp to develop a cure, which we want.  Long story short someone got infected inside and it rapidly spread.  I was actually the only survivor thanks to this here." He points as his mask then continues, "It seems that some people are also just immune to it such as yourself.  The only others that I saw were surrounded by a horde in Muldraugh High." The car comes to a halt on the side of the road, you see that you stopped right before the police station.  "Here's our stop." He says before grabbing a combat knife out of the glovebox and stepping out of the car.`,
         "opt": ["Option 1: How are we going to get in?"],
         "spot": ["spif01211"]
-    },
+       },
     "spif01211": {
         "dia": `I see three different ways.  We can enter through the front which will likely require fighting some of those freaks.  We could enter through the back which might save us some trouble.  Or finally, we could take the ladder and enter through the roof.  It's your choice, so choose wisely.`,
         "opt": ["Option 1: Why not, let's fight through the front.", "Option 2: I'll bet the back will be safe.", "Option 3: The roof seems like the smartest choice."],
-        "spot": ["spif012111"]
-    },
+        "spot": ["spif012111"]   
+     },
     "spif012111": {
         "dia": `"Might be a dumb choice but I respect your decision."  You and the man walk towards the front entrance, you open the door to see multiple zombies in your way.  Hopefully your partner puts that knife to good work.`,
         "opt": ["Option 1: Fight"],
@@ -175,13 +175,27 @@ let spif = {
         "opt": ["Option 1: Let's get moving"],
         "spot": ["spif01211211"]
     },
+
     "spif01211211": {
-        "dia": `You go to the helipad and have a spiritual awakening.  You hear the voice of god tell you "Go to bed, buddy.  You need your 8 hours so you can playtest other people's games tommorow"`,
-        "opt": [],
+        "dia": `As you and the man rush to the rooftop helipad, the silence of the deserted building is broken by the sound of growls and screams. The infected have caught your scent and are in closing in. You both sprint up the stairs, the vial gripped in your hand.  Reaching the roof, you can hear the distant whirl of the helicopter blades cutting through the air. But the infected are closing in fast, their sound almost drowning out that of the helicopter as they swarm the building.`,
+        "opt": ["Option 1: Block the door ", "Option 2: Prepare to fight"],
         "spot": []
     },
-};
-
+    "spif012112111": {
+        "dia": `You look around for anything to barricade the door and decide to grab the conveniently positioned sand bags that they military positioned around the roof.  After stacking the last bag onto the door you hear the roars of the undead on the other side as they begin throwing them selves against the door.  The helicopter swiftly descends onto the roof.`,
+        "opt": [`Climb aboard the helicopter`],
+    },
+    "spif012112112": {
+        "dia": `The undead quickly rise the stairs and throw themselves against the door.  The lock doesn't hold very long and the door swings open and multiple zombies flood out.  You can hear the whirl of the helicopter blades getting closer behind you but first these zombies will have to be dealth with.`, 
+        "opt": [`Climb aboard the helicopter`],
+        "incombat": "true"
+    },// leads to spif0121121111
+    "spif0121121111": {
+        "dia": `As the helicopter lands, you and the man rush to meet it, the relentless pounding of the infected against the door intensifying with each moment. The pilot beckons you aboard, his expression one of urgency. You quickly scramble into the helicopter, the man right behind you.
+        With the door sealed shut, the pilot lifts off just as the door bursts open, and the rooftop becomes overrun with the infected. You watch as the rooftop falls away, your heart pounding in relief and fear. The city below, once familiar, now looks like a war zone, the infected spreading like a dark cloud.
+        You grip the vial tightly, knowing that the fate of countless lives rests in your hands. The man pats your shoulder reassuringly, and you exchange a determined glance. Together, you face the uncertain future, hopeful that the potential cure you carry can bring an end to the horror that has befallen your world.`,
+    },
+}
 let stu = {
     "stu0": {
         "dia": `The date is July 2, 1993. You find yourself trudging towards Muldraugh High, the local high school, where you're enrolled in a summer math class, a consequence of not quite making the grade to graduate. The morning air feels heavier today, devoid of the usual chatter and bustle of a typical summer morning. Abandoned cars litter the streets, their once-shiny surfaces now dulled by neglect.
@@ -364,7 +378,7 @@ Type 'help' to see these instructions again.`)
             output = (stu.stu0.dia) + "<br>" + (stu.stu0.opt)
             occupation = 3;
         }
-
+        
         function combat(eattkLev, edefLev, emissLev, userInput) {
             let combatOutput = ""
             let damagedealtp = 0;
@@ -525,17 +539,17 @@ Type 'help' to see these instructions again.`)
                     }
                 } else if (spot === "unemp01") {
                     if (input === "1") {
-                        output = unemp.unemp020.dia + "<br>" + unemp.unemp020.opt.join("<br>");
+                        output = unemp.unemp01.dia + "<br>" + unemp.unemp01.opt.join("<br>");
                         spot = "unemp020";
                     }
                 } else if (spot === "unemp02") {
                     if (input === "1") {
-                        output = unemp.unemp020.dia + "<br>" + unemp.unemp020.opt.join("<br>");
+                        output = unemp.unemp02.dia + "<br>" + unemp.unemp02.opt.join("<br>");
                         spot = "unemp020";
                     }
                 } else if (spot === "unemp020") {
                     if (input === "1") {
-                        output = unemp.unemp0201.dia + "<br>" + unemp.unemp0201.opt.join("<br>");
+                        output = unemp.unemp020.dia + "<br>" + unemp.unemp020.opt.join("<br>");
                         spot = "unemp0201";
                     }
                 } else if (spot === "unemp0201") {
