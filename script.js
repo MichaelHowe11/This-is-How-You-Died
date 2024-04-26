@@ -611,8 +611,11 @@ Type 'help' to see these instructions again.`)
                 spot = "spif0"
                 ischef = true;
             }
+
             if (input === "1") {
                 console.log(spif[spot])
+                isend(spot, 1)
+
 
                 spot = spif[spot].spot[0]
 
