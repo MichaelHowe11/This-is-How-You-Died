@@ -47,7 +47,7 @@ let unem = {
 
 let unemp = {
     "unemp0": {
-        "dia": "After your hours long search for Jack's Storage you need sleep, if you don't sleep you will start to lose defense levels, attack levels, and eventually health points until you find another chance to sleep again. It's also getting late so visibility is decreasing and so are your defense and accuracy with it. If you are low on health it is highly advised to sleep to replenish your health points. If you need an even more in depth explanation of the sleeping system than type 'helpsleep' for more info.",
+        "dia": "After your hours long search for Jack's Storage you need sleep, if you don't sleep you will start to lose defense levels, attack levels, and eventually health points until you find another chance to sleep again. It's also getting late so visibility is decreasing and so are your defense and accuracy with it. If you are low on health it is highly advised to sleep to replenish your health points. If you need an even more in depth explanation of the sleeping system then type 'helpsleep' for more info.",
         "opt": ["Option 1: Sleep", "Option 2: Don't Sleep and keep searching."]
     },
     "unemp01": {
@@ -78,22 +78,22 @@ let unemp = {
     }
 }
 
-let home = {
+let story = {
     "unemhome": {
         "dia": "after recieving radio silence from James you decide it would be best to go back home.",
         'opt': ["Option 1: Continue"],
-        'spot': ['unemalt']
+        'spot': ['home']
     },
     "spifhome": {
         "dia": `You realized that you don't get paid enough to deal with the zombie uprising.`,
         'opt': ["Option 1: Continue"],
-        'spot': ['spifalt']
+        'spot': ['home']
     },
 
     "stuhome": {
         "dia": `You think your chance of survival is better on your own and walk back to your house.  The streets are now sparsely populated with undead shambling mindlessly.  When you  get home you open your map and decide where to go.`,
         "opt": ["Option 1: Continue"],
-        'spot': ['stualt']
+        'spot': ['home']
     },
     // all the continues above should lead to home
     "home": {
@@ -102,9 +102,7 @@ let home = {
         "spot": ["stualt", "spifalt"]
     },//1 ->gostu    2 spifalt
 
-}
-
-let spif = {
+    // spif
     "spif0": {
         "dia": `"The date is July 2, 1993. Your day begins like any other as you set out for your job at Spiffo's, the local diner. However, as you walk, an eerie silence pervades the streets, broken only by the sight of abandoned cars lining the roads. No signs of life are to be found anywhere.
         Approaching Spiffo's, you enter through the backdoor, expecting the usual bustling activity. Instead, you find the diner eerily deserted, with not a soul in sight. Your attention is drawn to a hanging TV, flickering with the image of a news reporter.
@@ -122,7 +120,7 @@ let spif = {
     "spif01": {
         "dia": `You walk outside to talk to the only person you've seen today.  As you open the front door you see a man step out of the car in camo military clothes and an old gas mask.  He's quick to walk over and place another gas mask in your hand and say "Put this on, I don't know how you've managed to survive without one."  You rub the lens of the mask before strapping it around your head.`,
         "opt": ["Option 1: Ask where everyone went", "Option 2: Ask if you can ride along with him"],
-        "spot": ["spif011","spif012"],
+        "spot": ["spif011", "spif012"],
         "isending": false
     },
     "spif02": {
@@ -151,13 +149,13 @@ let spif = {
     "spif01211": {
         "dia": `I see three different ways.  We can enter through the front which will likely require fighting some of those freaks.  We could enter through the back which might save us some trouble.  Or finally, we could take the ladder and enter through the roof.  It's your choice, so choose wisely.`,
         "opt": ["Option 1: Why not, let's fight through the front.", "Option 2: I'll bet the back will be safe.", "Option 3: The roof seems like the smartest choice."],
-        "spot": ["spif012111","spif012112","spif012113"],
+        "spot": ["spif012111", "spif012112", "spif012113"],
         "isending": false
     },
     "spif012111": {
         "dia": `"Might be a dumb choice, but I respect your decision."  You and the man walk towards the front entrance, you open the door to see multiple zombies in your way.  Hopefully your partner puts that knife to good work.`,
         "opt": ["Option 1: Fight"],
-        "spot": [],
+        "spot": ["spif0121111"],
         "incombat": "true",
         "isending": false
     },
@@ -176,6 +174,7 @@ let spif = {
     },
     "spif012113": {
         "dia": `You stick with your gut and decide to scale the building.  You seem to almost forget your fear of heights until you reach the top of the ladder.  You look down and feel intense nausea before losing your grip and falling. unfortunately your chances of surviving a zombie apocalypse don't seem very high with a broken leg, especially when you don't have any crutches or a cast. This is how you died...`,
+        "opt": [],
         "isending": true
     },
     "spif0121121": {
@@ -198,6 +197,7 @@ let spif = {
     "spif012112112": {
         "dia": `The undead quickly rise the stairs and throw themselves against the door.  The lock doesn't hold very long and the door swings open and multiple zombies flood out.  You can hear the whirl of the helicopter blades getting closer behind you but first these zombies will have to be dealt with.`,
         "opt": [`Climb aboard the helicopter`],
+        "spot": ["spif0121121111"],
         "incombat": "true",
         "isending": false
     },// leads to spif0121121111
@@ -207,22 +207,24 @@ let spif = {
         You grip the vial tightly, knowing that the fate of countless lives rests in your hands. The man pats your shoulder reassuringly, and you exchange a determined glance. Together, you face the uncertain future, hopeful that the potential cure you carry can bring an end to the horror that has befallen your world.`,
         "isending": true
     },
-}
 
-let stu = {
+    //student
+
     "stu0": {
         "dia": `The date is July 2, 1993. You find yourself trudging towards Muldraugh High, the local high school, where you're enrolled in a summer math class, a consequence of not quite making the grade to graduate. The morning air feels heavier today, devoid of the usual chatter and bustle of a typical summer morning. Abandoned cars litter the streets, their once-shiny surfaces now dulled by neglect.
         Entering the school's cafeteria to grab a quick breakfast, you notice a small gathering near the TV in the corner. Your classmates and teacher are huddled around, their faces etched with concern. You catch the tail end of a news report, the reporter's voice tinged with urgency.
         "Good morning, Kentucky. This is Veronica Hayes reporting for Channel 7 News. We are receiving unconfirmed reports of an airborne virus infecting the city of Louisville. Those infected are said to be exhibiting violent behavior," the news anchor's words hang in the air before the screen abruptly switches to static, leaving a palpable sense of unease in the room.`,
         "opt": ["Option 1: Continue"],
         "spot": ["stu01"],
+        "isending": false
     },
     "stu01": {
         "dia": `Your teacher, Mr. White, wears a puzzled expression as he gathers his thoughts before addressing the class. "Class is canceled," he announces, his voice betraying his unease. "I can't possibly focus on teaching with this hanging over us. I'll see you all on Monday." With a heavy sigh, he heads towards the exit leading to the parking lot.
         As Mr. White reaches for the door handle, a sudden commotion erupts. An undead creature lunges at him, its grip tight around his arm. Panic fills the room as your classmates react, one rushing to intervene. With a swift stomp, they dispatch the attacker, but it's too late. Mr. White lies on the floor, his breaths labored.
         Summoning his last ounces of strength, Mr. White directs his words to the nearest student. "Take the bus," he urges, his voice strained. "Get out of here while you still can." Using his last bit of strength he reaches into his pocket and grabs a set of keys offering them to the student.`,
         "opt": ["Option 1: Look outside to the parking lot", `Option 2: "I'm not dying with the rest of you" (leave)`], //leave should lead to stuhome
-        "spot": ["stu011", "stuhome"]
+        "spot": ["stu011", "stuhome"],
+        "isending": false
     },
     "stualt": {
         "dia": ` You enter the school cafeteria, ""Hey, you!" a student exclaims, their voice tinged with desperation. "We need your help. The bus, it's out there and we can escape, but it's surrounded by those... things."
@@ -230,50 +232,61 @@ let stu = {
         Their plea is desperate, and you can sense the gravity of the situation weighing heavily on them. It's clear that the safety of everyone depends on your decision to assist them in this perilous task.`,
         "opt": ["Option 1: Continue"],
         "spot": ["stu011"],
+        "isending": false
     },
 
     "stu011": {
         "dia": `The Bus outside is surrounded by zombies, clearly too many for your small group to take out`,
         "opt": [`Option 1: "I'll distract the zombies, the rest of you can get into the bus and escape"`, `Option 2: Look for another car to trigger the alarm on`],
-        "spot": ["stu0111", "stu0112"]
+        "spot": ["stu0111", "stu0112"],
+        "isending": false
     }, // 0113 should go to stuhome
     "stu0111": {
         "dia": `With a mixture of heroism and recklessness, you burst through the door, drawing the attention of the encroaching zombies with your shouts. Swiftly, you make your way to the parking lot gate, urging your classmates to follow as you open it for them, adrenaline coursing through your veins.
         As the others scramble towards safety, you turn to glance behind you, catching a glimpse of the survivors starting up the bus. But your moment of triumph is short-lived as you lose your footing, stumbling in your haste. The zombies close in swiftly, their grasping hands reaching out for you.
         With a sinking feeling, you realize the inevitable as the undead swarm around you, overwhelming your defenses. The world fades into darkness as you succumb to their grasp. Yet, in your final moments, a sense of bittersweet satisfaction washes over you as you catch sight of the bus escaping to safety, knowing that your sacrifice was not in vain`,
+        "isending": "true",
         //ending
     },
     "stu0112": {
         "dia": `As you cautiously approach a solitary sedan nestled in the far corner of the parking lot, your heart skips a beat as you spot a motionless figure sprawled next to the car door. A sense of dread washes over you as you realize it's a zombie lying in wait, ready to pounce at any moment.
         With no other choice but to confront the undead threat, you steel yourself for the impending battle. Adrenaline surges through your veins as you prepare to face the creature head-on, knowing that your survival depends on your ability to fight off this unexpected foe.`,
         "opt": ["Option 1: Fight the zombie"],
+        "spot": ["stu01121"],
         "incombat": "true"
     },
     "stu01121": {
         "dia": `After you finish off the zombie you notice that he must've passed while trying to get in his car as the keys are still in the door.  You open the door and rig the horn to continuously honk before sneaky away again back to the others.  One of them says "What about the gate? It's still closed."`,
-        "opt": [`Option 1: I guess I'll go open it`, `Option 2:We can slam through it with the bus`]
+        "opt": [`Option 1: I guess I'll go open it`, `Option 2:We can slam through it with the bus`],
+        "spot": ["stu011211", "stu011212"],
     },
     "stu011211": {
         "dia": `You sneak over to the gate and lift the latch, possible inviting more undead in.  You then return to the bus and are last to climb aboard.`,
-        "opt": ["Option 1: Continue"]
+        "opt": ["Option 1: Continue"],
+        "spot": ["stu0112111"],
     },//goes to 0112111
     "stu011212": {
         "dia": `Everyone climbs inside the school bus.  The driver shouts "SEATBELTS!" before starting the engine and pressing the gas and breaking down the gate.`,
-        "opt": ["Option 1: Continue"]
+        "opt": ["Option 1: Continue"],
+        "spot": ["stu0112111"],
     },//goes to 0112111
     "stu0112111": {
         "dia": `As you board the bus you take a seat next to your classmates, Peyton, his eyes wide with fear and urgency.  "My grandpa's got this ranch out in the countryside," Peyton continues, his words rushed. "He's been talking about it for ages, saying he's got this bunker stocked with supplies. We could head there, hunker down until all this blows over."
         The idea of safety and supplies is enticing, but uncertainty clouds your mind. `,
-        "opt": [`Option 1: "Lets go for it"`, `Option 2:"I think It'd be best if we left town" `]
+        "opt": [`Option 1: "Lets go for it"`, `Option 2:"I think It'd be best if we left town" `],
+        "spot": ["stu01121111", "stu01121112"],
     },
     "stu01121111": {
         "dia": `As the bus rattles down the desolate streets, the sight of abandoned cars and scattered wreckage serves as a grim reminder of the chaos that has consumed the city. Undead figures roam the sidewalks, their relentless groans echoing through the empty thoroughfares.  As the driver pulls into the ranch everyone sees the police car sitting in the middle of the ranch with its sirens wailing, undead shambling towards it.  The students quickly get off the bus and run inside the building, with just you and Peyton remaining near the exit.  Scrambling for an idea Peyton remarks "the bunkers behind the barn, we have to get past without those zombies seeing us, and it looks like the others won't be joining."`,
-        "opt": ["Option 1: Walk Behind the barn"]
+        "opt": ["Option 1: Walk Behind the barn"],
+        "spot": ["stu011211111"]
+        
     },
     "stu011211111": {
         "dia": `As you cautiously approach the bunker door, Peyton swiftly moves to unlock it, his hands deftly spinning the wheel in an urgent rhythm. However, the sound of metal against metal echoes through the air, drawing the attention of nearby zombies. With a sinking feeling, you realize that you must defend Jake while he works to open the bunker, or risk being overwhelmed by the advancing undead horde.`,
         "opt": ["Option 1: Fight for your life"],
-        "incombat": "true"
+        "incombat": "true",
+        "spot": ["stu0112111111"]
     },
     "stu0112111111": {
         "dia": `As the solitary zombie crumples to the ground, defeated, you catch your breath, relief flooding your senses. But the moment of calm is short-lived as the sound of hurried footsteps echoes from the house behind you. Your classmates emerge, drawn by the commotion, their eyes wide with fear and determination.
@@ -281,21 +294,26 @@ let stu = {
         As the last zombie falls, you share a collective sigh of relief, the air thick with exhaustion and adrenaline. But there's no time to dwell on victory as you hastily make your way towards the bunker entrance, your classmates following close behind.
         Inside the bunker, a wave of relief washes over you as you take in the sight of shelves stocked with supplies, enough to sustain you and your companions for at least a month. The tension that had gripped your shoulders eases, replaced by a sense of cautious optimism for the days ahead.
         Gathering together in the safety of the bunker, you find solace in each other's company, knowing that you are not alone in this fight for survival. As you settle in for the night, the faint hum of the bunker's generators lulling you into a restless sleep, you can't help but feel a glimmer of hope amidst the darkness that surrounds you.`,
+        "isending": true
     },//ending
     "stu01121112": {
         "dia": `Shortly after you respond, the bus driver shouts "I don't know how to operate this thing! Does anyone have a licence?"  You watch for a moment as no one offers, so you're forced to take up the mantle.`,
-        "opt": ["Option 1: Drive to the main road", "Option 2: rethink your decision and head to Peyton's ranch"]
+        "opt": ["Option 1: Drive to the main road", "Option 2: rethink your decision and head to Peyton's ranch"],
+        "spot": ["stu011211121", "stu01121111"]
     },//2 -> stu01121111
     "stu011211121": {
         "dia": `As you maneuver down the main street, you can't ignore the sight of abandoned cars littering the road, creating a tangled mess. Military tents are scattered around an intersection, adding to the chaos. As you carefully navigate around the rubble, a sudden impact rocks the bus, sending it lurching to the side. The screeching of metal fills the air as a military pickup truck slams into the bus, flipping it onto its side with a jolt that sends everyone inside reeling.  Everything around you fades to black as your ears start ringing.  You wake up to see everyone around you missing, however the military truck sits empty next to you.`,
-        "opt": ["Option 1: Walk Away", "Option 2: Search the truck"]
+        "opt": ["Option 1: Walk Away", "Option 2: Search the truck"],
+        "spot": ["stu0112111211","stu0112111212"]
     },
     "stu0112111211": {
         "dia": `You shamble away, still effected by your wounds.  You don't know how you'll do it but your still determined to get out of town with your life intact, however without your strength or any tools this goal seems unlikely.`,
+        "isending": true
     },
     "stu0112111212": {
         "dia": `You pry open the back door of the truck, revealing a stash of weapons and medical supplies. Amid the chaos, you quickly assess your options and select the best weaponry available, ensuring you're armed for the challenges ahead. After grabbing some much-needed bandages, you tend to your wounds, patching yourself up as best as you can. With newfound determination, you set out once more on your journey to escape the town, ready to face whatever lies ahead.`,
-    },
+        "isending": true
+        },
 
 }
 // first value in list is damage, second value is defense, third value is hit chance
@@ -347,11 +365,11 @@ let ismissE = false;
 let ismissP = false;
 let diae;
 let ischef = false;
+let isstudent = false;
 
 let issleep = true;
 
 document.addEventListener("DOMContentLoaded", function () {
-    console.log(randomItem())
 
     let output = "";
     let occupation = 0;
@@ -398,11 +416,11 @@ Type 'help' to see these instructions again.`)
             occupation = 1;
         }
         if (input == "chef" && occupation === 0) {
-            output = (spif.spif0.dia) + "<br>" + (spif.spif0.opt)
+            output = (story.spif0.dia) + "<br>" + (story.spif0.opt)
             occupation = 2;
         }
         if (input == "student" && occupation === 0) {
-            output = (stu.stu0.dia) + "<br>" + (stu.stu0.opt)
+            output = (story.stu0.dia) + "<br>" + (story.stu0.opt)
             occupation = 3;
         }
 
@@ -595,11 +613,11 @@ Type 'help' to see these instructions again.`)
         }
         // chef
         function isend(spot1, innum) {
-            output = spif[spif[spot1].spot[innum - 1]]
+            output = story[story[spot1].spot[innum - 1]]
             output = output.dia
             console.log(output)
             // why, just why.
-            if (spif[spif[spot1].spot[innum - 1]].isending === true) {
+            if (story[story[spot1].spot[innum - 1]].isending === true) {
                 setTimeout(function () {
                     location.reload();
                 }, 15000);
@@ -613,30 +631,99 @@ Type 'help' to see these instructions again.`)
             }
 
             if (input === "1") {
-                console.log(spif[spot])
+                console.log(story[spot])
                 isend(spot, 1)
 
 
-                spot = spif[spot].spot[0]
+                spot = story[spot].spot[0]
 
                 console.log(spot)
 
-                output = spif[spot].dia + "<br>" + spif[spot].opt.join("<br>");
+                output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
 
             } else if (input === "2") {
-                console.log(spif[spot])
+                console.log(story[spot])
                 isend(spot, 2)
                 console.log(output)
 
-                spot = spif[spot].spot[1]
+                spot = story[spot].spot[1]
 
                 console.log(spot)
+                output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
+
+
+
+            } else if (input === "3") {
+                console.log(story[spot])
+                isend(spot, 3)
+                console.log(output)
+
+                spot = story[spot].spot[2]
+
+                console.log(spot)
+                output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
+
+
+
+            } else if (input === "4") {
+                console.log(story[spot])
+                isend(spot, 4)
+                console.log(output)
+
+                spot = story[spot].spot[3]
+
+                console.log(spot)
+                output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
+
 
 
             }
 
         }
+        if (occupation === 3) {
+            if (isstudent === false) {
+                spot = "stu0"
+                isstudent = true;
+            }
 
+            if (input === "1") {
+                console.log(story[spot])
+                isend(spot, 1)
+
+
+                spot = story[spot].spot[0]
+
+                console.log(spot)
+
+                output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
+
+            } else if (input === "2") {
+                console.log(story[spot])
+                isend(spot, 2)
+                console.log(output)
+
+                spot = story[spot].spot[1]
+
+                console.log(spot)
+                output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
+
+
+
+            } else if (input === "3") {
+                console.log(story[spot])
+                isend(spot, 3)
+                console.log(output)
+
+                spot = story[spot].spot[2]
+
+                console.log(spot)
+                output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
+
+
+
+            }
+
+        }
 
         console.log(spot)
 
