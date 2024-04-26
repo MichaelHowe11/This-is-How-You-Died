@@ -7,6 +7,7 @@ let unem = {
     "unem01": {
         "dia": "You try to page James using your pager. You wait an hour and don't hear anything from the home phone.",
         "opt": ["Option 1: Ask around your neighborhood for information about your friend.", "Option 2: Go Back Home"],
+        "spot": ["unem02", "unemhome"],
         "incombat": "false"
     },//option 2 needs to go to homeunem
     "unem02": {
@@ -80,36 +81,27 @@ let unemp = {
 let home = {
     "unemhome": {
         "dia": "after recieving radio silence from James you decide it would be best to go back home.",
-        'opt': ["Option 1: Continue"]
+        'opt': ["Option 1: Continue"],
+        'spot': ['unemalt']
     },
     "spifhome": {
         "dia": `You realized that you don't get paid enough to deal with the zombie uprising.`,
-        'opt': ["Option 1: Continue"]
+        'opt': ["Option 1: Continue"],
+        'spot': ['spifalt']
     },
 
     "stuhome": {
         "dia": `You think your chance of survival is better on your own and walk back to your house.  The streets are now sparsely populated with undead shambling mindlessly.  When you  get home you open your map and decide where to go.`,
-        "opt": ["Option 1: Continue"]
+        "opt": ["Option 1: Continue"],
+        'spot': ['stualt']
     },
     // all the continues above should lead to home
     "home": {
         "dia": `You arrive back at home, you can't stay here though.  You look at your map and four locations stand out to you.  Where do you go?`,
-        "opt": ["Option 1: Go to the school", "Option 2: Go to your friend James' house", "Option 3: Go to the local diner, Spiffo's"]
-    },//1 ->gostu    2 ->gounem          3 -> gospif
-    "gostu": {
-        "dia": ` You enter the school cafeteria, ""Hey, you!" a student exclaims, their voice tinged with desperation. "We need your help. The bus, it's out there and we can escape, but it's surrounded by those... things."
-        Their eyes flicker towards the exit, fear evident in their gaze. "We can't make it out there alone. We need someone to cover us while we make a run for it. Please, we don't stand a chance without you."
-        Their plea is desperate, and you can sense the gravity of the situation weighing heavily on them. It's clear that the safety of everyone depends on your decision to assist them in this perilous task.`,
-        "opt": ["Option 1: Look outside to the parking lot", `Option 2: "I'm not dying with the rest of you" (leave)`],
-    },
-    "gounem": {
-        "dia": `James hasn't been seen by you in days. Last you heard of him he said he was stockpiling because he heard of a deadly virus spreading in Loiusville, it seems he was right. You are suspicious of his sudden disappearance and enter his house using the key under his potted plant to enter.`,
-        "opt": ["Option 1: Page James", "Option 2: Ask around your neighborhood for information about your friend."],
-    },
-    "gospif": {
-        "dia": `"You walk into spiffo's through the front door then walk behind the counter viewing their selection of food.  After grabbing a combo  that was left in a to go bag you sit down and enjoy your cold meal before hearing a car pull into the parking lot.  What will you do?"`,
-        "opt": ["Option 1: Go outside", "Option 2: Hide in the freezer", "Option 3: You've seen enough, run back home"]
-    },
+        "opt": ["Option 1: Go to the school", "Option 2: Go to the local diner, Spiffo's"],
+        "spot": ["stualt","spifalt"]
+    },//1 ->gostu    2 spifalt
+
 }
 
 let spif = {
@@ -118,8 +110,15 @@ let spif = {
         Approaching Spiffo's, you enter through the backdoor, expecting the usual bustling activity. Instead, you find the diner eerily deserted, with not a soul in sight. Your attention is drawn to a hanging TV, flickering with the image of a news reporter.
         "Good morning, Kentucky. This is Veronica Hayes reporting for Channel 7 News. We are receiving unconfirmed reports of an airborne virus infecting the city of Louisville. Those infected are said to be exhibiting violent behavior," the reporter's voice fades as the channel turns to static. You stand still thinking about what the reporter just said before looking out the front window and seeing a car pull into the handicap stall.  You aren't sure whether you should hide or try to approach the stranger.`,
         "opt": ["Option 1: Go outside", "Option 2: Hide in the freezer", "Option 3: You've seen enough, run back home"],
-        "spot": ["spif01", "spif02"]
+        "spot": ["spif01", "spif02","spifhome"]
     },
+
+    "spifalt": {
+        "dia": `You walk into spiffo's through the front door then walk behind the counter viewing their selection of food.  After grabbing a combo  that was left in a to go bag you sit down and enjoy your cold meal before hearing a car pull into the parking lot.  What will you do?`,
+        "opt": ["Option 1: Go outside", "Option 2: Hide in the freezer"],
+        "spot": ["spif01", "spif02",]
+    },//if you enter from home object
+
     "spif01": {
         "dia": `You walk outside to talk to the only person you've seen today.  As you open the front door you see a man step out of the car in camo military clothes and an old gas mask.  He's quick to walk over and place another gas mask in your hand and say "Put this on, I don't know how you've managed to survive without one."  You rub the lens of the mask before strapping it around your head.`,
         "opt": ["Option 1: Ask where everyone went", "Option 2: Ask if you can ride along with him"],
@@ -201,17 +200,28 @@ let stu = {
         "dia": `The date is July 2, 1993. You find yourself trudging towards Muldraugh High, the local high school, where you're enrolled in a summer math class, a consequence of not quite making the grade to graduate. The morning air feels heavier today, devoid of the usual chatter and bustle of a typical summer morning. Abandoned cars litter the streets, their once-shiny surfaces now dulled by neglect.
         Entering the school's cafeteria to grab a quick breakfast, you notice a small gathering near the TV in the corner. Your classmates and teacher are huddled around, their faces etched with concern. You catch the tail end of a news report, the reporter's voice tinged with urgency.
         "Good morning, Kentucky. This is Veronica Hayes reporting for Channel 7 News. We are receiving unconfirmed reports of an airborne virus infecting the city of Louisville. Those infected are said to be exhibiting violent behavior," the news anchor's words hang in the air before the screen abruptly switches to static, leaving a palpable sense of unease in the room.`,
-        "opt": ["Option 1: Continue"]
+        "opt": ["Option 1: Continue"],
+        "spot": ["stu01"],
     },
     "stu01": {
         "dia": `Your teacher, Mr. White, wears a puzzled expression as he gathers his thoughts before addressing the class. "Class is canceled," he announces, his voice betraying his unease. "I can't possibly focus on teaching with this hanging over us. I'll see you all on Monday." With a heavy sigh, he heads towards the exit leading to the parking lot.
         As Mr. White reaches for the door handle, a sudden commotion erupts. An undead creature lunges at him, its grip tight around his arm. Panic fills the room as your classmates react, one rushing to intervene. With a swift stomp, they dispatch the attacker, but it's too late. Mr. White lies on the floor, his breaths labored.
         Summoning his last ounces of strength, Mr. White directs his words to the nearest student. "Take the bus," he urges, his voice strained. "Get out of here while you still can." Using his last bit of strength he reaches into his pocket and grabs a set of keys offering them to the student.`,
-        "opt": ["Option 1: Look outside to the parking lot", `Option 2: "I'm not dying with the rest of you" (leave)`] //leave should lead to stuhome
+        "opt": ["Option 1: Look outside to the parking lot", `Option 2: "I'm not dying with the rest of you" (leave)`], //leave should lead to stuhome
+        "spot": ["stu011", "stuhome"]
     },
+    "stualt": {
+        "dia": ` You enter the school cafeteria, ""Hey, you!" a student exclaims, their voice tinged with desperation. "We need your help. The bus, it's out there and we can escape, but it's surrounded by those... things."
+        Their eyes flicker towards the exit, fear evident in their gaze. "We can't make it out there alone. We need someone to cover us while we make a run for it. Please, we don't stand a chance without you."
+        Their plea is desperate, and you can sense the gravity of the situation weighing heavily on them. It's clear that the safety of everyone depends on your decision to assist them in this perilous task.`,
+        "opt": ["Option 1: Continue"],
+        "spot": ["stu011"],
+    },
+
     "stu011": {
         "dia": `The Bus outside is surrounded by zombies, clearly too many for your small group to take out`,
-        "opt": [`Option 1: "I'll distract the zombies, the rest of you can get into the bus and escape"`, `Option 2: Look for another car to trigger the alarm on`, `Option 3: "There's way too many of them, my chances are better alone" (leave)`]
+        "opt": [`Option 1: "I'll distract the zombies, the rest of you can get into the bus and escape"`, `Option 2: Look for another car to trigger the alarm on`],
+        "spot": ["stu0111", "stu0112"]
     }, // 0113 should go to stuhome
     "stu0111": {
         "dia": `With a mixture of heroism and recklessness, you burst through the door, drawing the attention of the encroaching zombies with your shouts. Swiftly, you make your way to the parking lot gate, urging your classmates to follow as you open it for them, adrenaline coursing through your veins.
