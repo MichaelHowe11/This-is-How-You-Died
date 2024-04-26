@@ -36,7 +36,7 @@ let story = {
     },//need to give weapon
     "unem02111": {
         "dia": "As your going upstairs you hear another noise and stop in fear...Something hits you so hard you fall to the ground<br>You are now in combat! Do 'attack fists' to use your attack with your fists!",
-        "incombat": "true"
+        "incombat": "true",
         "spot": ["unem021110"],
     },
     "unem021110": {
