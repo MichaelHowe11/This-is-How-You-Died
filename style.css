@@ -108,12 +108,13 @@ button:hover {
         font-size: 10px;
     }
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 640px) {
 
     #body {
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        height: 1000px;
     } 
     button {
         width: 25%;
