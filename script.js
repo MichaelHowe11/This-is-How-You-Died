@@ -361,19 +361,27 @@ let story = {
     "stu01121112": {
         "dia": `Shortly after you respond, the bus driver shouts "I don't know how to operate this thing! Does anyone have a licence?"  You watch for a moment as no one offers, so you're forced to take up the mantle.`,
         "opt": ["Option 1: Drive to the main road", "Option 2: rethink your decision and head to Peyton's ranch"],
-        "spot": ["stu011211121", "stu01121111"]
+        "spot": ["stu011211121", "stu01121111"],
+        "isending": false,
+        "incombat": false,
     },//2 -> stu01121111
     "stu011211121": {
         "dia": `As you maneuver down the main street, you can't ignore the sight of abandoned cars littering the road, creating a tangled mess. Military tents are scattered around an intersection, adding to the chaos. As you carefully navigate around the rubble, a sudden impact rocks the bus, sending it lurching to the side. The screeching of metal fills the air as a military pickup truck slams into the bus, flipping it onto its side with a jolt that sends everyone inside reeling.  Everything around you fades to black as your ears start ringing.  You wake up to see everyone around you missing, however the military truck sits empty next to you.`,
         "opt": ["Option 1: Walk Away", "Option 2: Search the truck"],
-        "spot": ["stu0112111211", "stu0112111212"]
+        "spot": ["stu0112111211", "stu0112111212"],
+        "isending": false,
+        "incombat": false,
     },
     "stu0112111211": {
         "dia": `You shamble away, still effected by your wounds.  You don't know how you'll do it but your still determined to get out of town with your life intact, however without your strength or any tools this goal seems unlikely.`,
+        "opt": [],
+        "incombat": false,
         "isending": true
     },
     "stu0112111212": {
         "dia": `You pry open the back door of the truck, revealing a stash of weapons and medical supplies. Amid the chaos, you quickly assess your options and select the best weaponry available, ensuring you're armed for the challenges ahead. After grabbing some much-needed bandages, you tend to your wounds, patching yourself up as best as you can. With newfound determination, you set out once more on your journey to escape the town, ready to face whatever lies ahead.`,
+        "opt": [],
+        "incombat": false,
         "isending": true
     },
 

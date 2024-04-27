@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Creepster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 body {
     display: flex;
     align-items: center;
@@ -10,8 +11,8 @@ body {
     overflow: hidden;
     font-family: "Chakra Petch", sans-serif;
     font-size: 16px;
-  font-weight: 400;
-  font-style: normal;
+    font-weight: 400;
+    font-style: normal;
 }
 
 #pagewrapper {
@@ -88,10 +89,11 @@ button {
     background-color: rgb(184, 165, 153);
     border-width: 5px;
 }
+
 button:hover {
     cursor: pointer;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-    background-color:rgb(148, 132, 121);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(148, 132, 121);
 }
 
 @media only screen and (max-width:1640px) {
@@ -99,8 +101,8 @@ button:hover {
     #body {
         display: flex;
         align-items: center;
-    } 
-    
+    }
+
     #title1,
     #title2 {
         font-family: monospace;
@@ -108,33 +110,60 @@ button:hover {
         font-size: 10px;
     }
 }
+
 @media only screen and (max-width: 640px) {
 
+    #title1,
+    #title2 {
+        font-family: monospace;
+        white-space: pre;
+        font-size: 4px;
+    }
+
+    #asciimenuart {
+        font-size: 3.8px;
+    }
+
     #body {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        padding-top: 25%;
+        display: block;
         height: 1000px;
-    } 
+    }
+
     button {
-        width: 25%;
-        height: 100px;
-    }
-    #userInput {
-        width: 25%;
-        height: 40px;
-        font-size: 24px;
-    }
-    #consoleOutput {
+        width: 125px;
+        height: 60px;
         font-size: 28px;
-        height: 80%;
-        
     }
+
+    #userInput {
+        width: 30%;
+        height: 25px;
+        font-size: 16px;
+    }
+
+    #consoleOutput {
+        font-size: 12px;
+        height: 100%;
+
+    }
+
     .textboxWrapper {
-    
+
         height: 80%;
     }
+
     #instr {
-        font-size: 48px;
+        font-size: 20px;
     }
+}
+@media only screen and (max-width: 911px) {
+
+        #title1,
+    #title2 {
+        font-family: monospace;
+        white-space: pre;
+        font-size: 4px;
+    }
+
 }
