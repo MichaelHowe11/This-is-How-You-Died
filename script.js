@@ -1,6 +1,6 @@
 let story = {
     "unem0": {
-        "dia": "The date is July 2, 1993. You start at James's house (A friend from high-school), James hasn't been seen by you in days. He said he was going to search for food or other valuables to aid in survival. You seem suspicious of his sudden disappearance and go to investigate by stepping outside for the first time in weeks. You find that your town is no longer the bustling city it was known for but now a desolate city with nothing but the wind making a noise. You're not surprised as the relentless news coverage has already made clear, the city is plagued by creatures that feast on unsuspecting prey. In this grim reality, encountering such a monster only serves to confirm what you already know.<br>",
+        "dia": "The date is July 2, 1993. You start at James's house (A friend from high-school), James hasn't been seen by you in days. He said he was going to search for food or other valuables to aid in survival. You seem suspicious of his sudden disappearance and go to investigate by stepping outside for the first time in weeks. You find that your town is no longer the bustling city it was known for but now a desolate city with nothing but the wind making a noise. You're not surprised as the relentless news coverage has already made clear, the city is plagued by creatures that feast on unsuspecting prey. In this grim reality, encountering such a monster only serves to confirm what you already know.",
         "opt": ["Option 1: Page James.<br>", "Option 2: Ask around your neighborhood for information about your friend."],
         "incombat": false,
         "spot": ["unem01", "unem02"],
@@ -13,22 +13,29 @@ let story = {
         "spot": ["unem02", "unemhome"],
         "isending": false
     },
+    "unemalt": {
+        "dia": "You arrive at your friend Jame's house and find that he's missing, which is strange considering he told you he was stockpiling for a sitation like this.",
+        "opt": ["Option 1: Ask around your neighborhood"],
+        "incombat": false,
+        "spot": ["unem02"],
+        "isending": false
+    },
     "unem02": {
-        "dia": "You go to your neighbor, James, and knock on the door. You feel a very uneasy feeling while doing this. You wait at least three minutes for a response but no one seems to be home.",
+        "dia": "You go to your neighbor, Owen, and knock on the door. You feel a very uneasy feeling while doing this. You wait at least three minutes for a response but no one seems to be home.",
         "opt": ["Option 1: Try to open the door."],
         "incombat": false,
         "spot": ["unem021"],
         "isending": false
     },
     "unem021": {
-        "dia": "You're worried about your neighbor James, come to think of it you haven't really heard from him in a long time either. This seems serious and your curiosity gets the best of you so you try to force yourself into his house. You get the same uneasy feeling from when you first knocked on the door but this time it's more intense. The house seems quiet, too quiet...",
+        "dia": "You're worried about your neighbor Owen come to think of it you haven't really heard from him in a long time either. This seems serious and your curiosity gets the best of you so you try to force yourself into his house. You get the same uneasy feeling from when you first knocked on the door but this time it's more intense. The house seems quiet, too quiet...",
         "opt": ["Option 1: Investigate<br>"],
         "incombat": false,
         "spot": ["unem0211"],
         "isending": false
     },
     "unem0211": {
-        "dia": "You decide to investigate and see if your neighbor James is in trouble. You search the entire first floor but find nothing suspicious but suddenly you hear a noise upstairs.",
+        "dia": "You decide to investigate and see if your neighbor Owen is in trouble. You search the entire first floor but find nothing suspicious but suddenly you hear a noise upstairs.",
         "opt": ["Option 1: Investigate", "Option 2: Search for a weapon so you're prepared."],
         "incombat": false,
         "spot": ["unem02111", "unem021110"],
@@ -42,14 +49,14 @@ let story = {
         "isending": false
     },
     "unem021110": {
-        "dia": "In the aftermath of your victory, a stark truth sinks in, the creature you defeated was no mere mortal. Its grotesque form, barely resembling anything human.",
+        "dia": "In the aftermath of your victory, a stark truth sinks in, the creature you defeated was once your neighbor. His new grotesque form, barely resembling anything human.",
         "opt": ["Option 1: Search the house for valuables"],
         "incombat": false,
         "spot": ["unem0211101"],
         "isending": false
     },
     "unem0211101": {
-        "dia": `You search the house for valuables but find nothing of use to defend yourself but you did find a note that looked to be in James' handwriting. You read it and it says, "I'm leaving to go to the Jack's Storage, I will not be back. I want to be alone." You're perplexed on this very short note, you're also confused about why he didn't tell you either.`,
+        "dia": `You search the house for valuables but find nothing of use to defend yourself but you did find a note that was written to Owen from James. You read it and it says, "I'm leaving to go to the Jack's Storage, I will not be back. I want to be alone." You're perplexed on this very short note, you're also confused about why he didn't tell you either.`,
         "opt": ["Option 1: Search 'empty' houses in your neighborhood", "Option 2: Go to find Jack's Storage"],
         "incombat": false,
         "spot": ["unem02111011", "unem02111012"],
@@ -134,7 +141,7 @@ let story = {
     "home": {
         "dia": `You arrive back at home, you can't stay here though.  You look at your map and four locations stand out to you.  Where do you go?`,
         "opt": ["Option 1: Go to the school", "Option 2: Go to the local diner, Spiffo's", "Option 3: Head to your stockpiling friend James' House"],
-        "spot": ["stualt", "spifalt", "unem02"]
+        "spot": ["stualt", "spifalt", "unemalt"]
     },//1 ->gostu    2 spifalt
 
     // spif
@@ -142,13 +149,13 @@ let story = {
         "dia": `"The date is July 2, 1993. Your day begins like any other as you set out for your job at Spiffo's, the local diner. However, as you walk, an eerie silence pervades the streets, broken only by the sight of abandoned cars lining the roads. No signs of life are to be found anywhere.
         Approaching Spiffo's, you enter through the backdoor, expecting the usual bustling activity. Instead, you find the diner eerily deserted, with not a soul in sight. Your attention is drawn to a hanging TV, flickering with the image of a news reporter.
         "Good morning, Kentucky. This is Veronica Hayes reporting for Channel 7 News. We are receiving unconfirmed reports of an airborne virus infecting the city of Louisville. Those infected are said to be exhibiting violent behavior," the reporter's voice fades as the channel turns to static. You stand still thinking about what the reporter just said before looking out the front window and seeing a car pull into the handicap stall.  You aren't sure whether you should hide or try to approach the stranger.`,
-        "opt": ["Option 1: Go outside", "Option 2: Hide in the freezer", "Option 3: You've seen enough, run back home"],
+        "opt": ["Option 1: Go outside <br>", "Option 2: Hide in the freezer <br>", "Option 3: You've seen enough, run back home<br>"],
         "spot": ["spif01", "spif02", "spifhome"],
         "isending": false
     },
     "spifalt": {
         "dia": `You walk into Spiffo's through the front door then walk behind the counter viewing their selection of food.  After grabbing a combo that was left in a to-go bag you sit down and enjoy your cold meal before hearing a car pull into the parking lot.  What will you do?`,
-        "opt": ["Option 1: Go outside", "Option 2: Hide in the freezer"],
+        "opt": ["Option 1: Go outside <br>", "Option 2: Hide in the freezer"],
         "spot": ["spif01", "spif02"],
         "isending": false
     },
@@ -414,7 +421,7 @@ let defLev = 1;
 let misslev = 1;
 let turnNum = 0;
 let incombat = false;
-let ehp = 18;
+let ehp = 8;
 let spot = "unem0";
 let ismissE = false;
 let ismissP = false;
@@ -468,17 +475,17 @@ Type 'help' to see these instructions again.`)
         }
 
         if (input == "unemployed" && occupation === 0) {
-            output = (story.unem0.dia) + "<br>" + (story.unem0.opt)
+            output = (story.unem0.dia) + "<br> <br>" + (story.unem0.opt)
             occupation = 1;
             isunem = true
         }
         if (input == "chef" && occupation === 0) {
-            output = (story.spif0.dia) + "<br>" + (story.spif0.opt)
+            output = (story.spif0.dia) + "<br> <br>" + (story.spif0.opt)
             occupation = 2;
             ischef === true
         }
         if (input == "student" && occupation === 0) {
-            output = (story.stu0.dia) + "<br>" + (story.stu0.opt)
+            output = (story.stu0.dia) + "<br> <br>" + (story.stu0.opt)
             occupation = 3;
             isstu === true
         }
@@ -620,7 +627,7 @@ Type 'help' to see these instructions again.`)
 
                 console.log(spot)
 
-                output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
+                output = story[spot].dia + "<br> <br>" + story[spot].opt.join("<br>");
 
             } else if (input === "2") {
                 console.log(story[spot])
@@ -630,7 +637,7 @@ Type 'help' to see these instructions again.`)
                 spot = story[spot].spot[1]
 
                 console.log(spot)
-                output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
+                output = story[spot].dia + "<br> <br>" + story[spot].opt.join("<br>");
 
 
 
@@ -642,7 +649,7 @@ Type 'help' to see these instructions again.`)
                 spot = story[spot].spot[2]
 
                 console.log(spot)
-                output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
+                output = story[spot].dia + "<br> <br>" + story[spot].opt.join("<br>");
 
 
 
@@ -654,7 +661,7 @@ Type 'help' to see these instructions again.`)
                 spot = story[spot].spot[3]
 
                 console.log(spot)
-                output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
+                output = story[spot].dia + "<br> <br>" + story[spot].opt.join("<br>");
 
             } else if (story[spot].incombat === true) {
                 output = story[spot].dia
