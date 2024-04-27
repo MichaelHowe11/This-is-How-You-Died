@@ -576,7 +576,7 @@ Type 'help' to see these instructions again.`)
                     output = "You were defeated...";
                     incombat = false;
                 } else if (ehp - attacklist[1] <= 0) {
-                    output = "You've defeated the zombie. " + enddia;
+                    output = "You've defeated the zombie. " + story[story[spot].spot[0]].dia + "<br>" + story[story[spot].spot[0]].opt.join("<br>");
                     incombat = false;
                     spot = goto
                 }
