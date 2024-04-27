@@ -39,13 +39,14 @@ let story = {
         "isending": false,
         "randomItem": false
     },
+
     "unem02112": {
-        "dia": "",
+        "dia": "You go into the downstairs bedroom and find a weapon!  Armed with this weapon you are much more confident to face whatever threat awaits you.<br> (You can know type attack (weapon) in combat to attack with the weapon)",
+        "opt": ["Option 1: Investigate"],
         "incombat": false,
-        "opt": ["Continue"],
-        "spot": ["unem0211"],
+        "spot": ["unem02111"],
         "isending": false,
-        "randomItem": true
+        "randomItem": true,
     },
     "unem02111": {
         "dia": "As you're going upstairs you hear another noise and stop in fear...Something hits you so hard you fall to the ground<br>You are now in combat! Do 'attack fists' to use your attack with your fists or use a weapon you found earlier.",
@@ -219,8 +220,9 @@ let story = {
         "randomItem": false
     },
     "spif012111": {
-        "dia": `"Might be a dumb choice, but I respect your decision."  You and the man walk towards the front entrance, you open the door to see multiple zombies in your way.  Hopefully your partner puts that knife to good work.`,
-        "opt": ["Option 1: Fight"],
+        "dia": `"Might be a dumb choice, but I respect your decision."  You and the man walk towards the front entrance, you open the door to see multiple zombies in your way.  Hopefully your partner puts that knife to good work.<br><br>
+        You are now in combat! Type 'attack fists' or 'attack knife' to attack with either weapon!`,
+        "opt": [],
         "spot": ["spif0121111"],
         "incombat": true,
         "isending": false,
@@ -268,8 +270,9 @@ let story = {
         "randomItem": false
     },
     "spif012112112": {
-        "dia": `The undead quickly rise the stairs and throw themselves against the door.  The lock doesn't hold very long and the door swings open and multiple zombies flood out.  You can hear the whirl of the helicopter blades getting closer behind you but first these zombies will have to be dealt with.`,
-        "opt": [`Climb aboard the helicopter`],
+        "dia": `The undead quickly rise the stairs and throw themselves against the door.  The lock doesn't hold very long and the door swings open and multiple zombies flood out.  You can hear the whirl of the helicopter blades getting closer behind you but first these zombies will have to be dealt with.<br><br>
+        You are now in combat! Type 'attack fists' or 'attack knife' to attack with either weapon!`,
+        "opt": [``],
         "spot": ["spif0121121111"],
         "incombat": true,
         "isending": false,
@@ -333,10 +336,11 @@ let story = {
     },
     "stu0112": {
         "dia": `As you cautiously approach a solitary sedan nestled in the far corner of the parking lot, your heart skips a beat as you spot a motionless figure sprawled next to the car door. A sense of dread washes over you as you realize it's a zombie lying in wait, ready to pounce at any moment.
-        With no other choice but to confront the undead threat, you steel yourself for the impending battle. Adrenaline surges through your veins as you prepare to face the creature head-on, knowing that your survival depends on your ability to fight off this unexpected foe.`,
-        "opt": ["Option 1: Fight the zombie"],
+        With no other choice but to confront the undead threat, you steel yourself for the impending battle. Adrenaline surges through your veins as you prepare to face the creature head-on, knowing that your survival depends on your ability to fight off this unexpected foe.<br><br>
+        You are now in combat! Type 'attack fists' or 'attack pencil' to attack with either weapon!`,
+        "opt": [],
         "spot": ["stu01121"],
-        "incombat": false,
+        "incombat": true,
         "isending": false,
         "randomItem": false
     },
@@ -384,10 +388,11 @@ let story = {
 
     },
     "stu011211111": {
-        "dia": `As you cautiously approach the bunker door, Peyton swiftly moves to unlock it, his hands deftly spinning the wheel in an urgent rhythm. However, the sound of metal against metal echoes through the air, drawing the attention of nearby zombies. With a sinking feeling, you realize that you must defend Jake while he works to open the bunker, or risk being overwhelmed by the advancing undead horde.`,
-        "opt": ["Option 1: Fight for your life"],
+        "dia": `As you cautiously approach the bunker door, Peyton swiftly moves to unlock it, his hands deftly spinning the wheel in an urgent rhythm. However, the sound of metal against metal echoes through the air, drawing the attention of nearby zombies. With a sinking feeling, you realize that you must defend Jake while he works to open the bunker, or risk being overwhelmed by the advancing undead horde.<br><br>
+        You are now in combat! Type 'attack fists' or 'attack pencil' to attack with either weapon!`,
+        "opt": [],
         "spot": ["stu0112111111"],
-        "incombat": false,
+        "incombat": true,
         "isending": false,
         "randomItem": false
     },
