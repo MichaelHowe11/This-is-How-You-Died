@@ -787,7 +787,7 @@ Type 'help' to see these instructions again.`)
             let weaponout = ""
 
 
-            if (input === "1" & story[spot].incombat === false) {
+            if (input === "1") {
                 console.log(story[spot])
                 isend(spot, 1)
 
