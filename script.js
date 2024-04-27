@@ -82,6 +82,13 @@ let story = {
     },
 
     // unem part 2
+    "unemp0": {
+        "dia": "You've been searching for Jack's storage for hours at this point, would you like to sleep?",
+        "opt": ["Option 1: Sleep", "Option 2: Don't Sleep"],
+        "spot": ["unemp01", "unemp02"],
+        "isending": false,
+        "randomItem": false
+    },
 
     "unemp01": {
         "dia": "You decide to sleep, although James could be in trouble you want to also protect yourself from getting in trouble as well. If you die than James could die with you. The continuation of your search begins now ... Press Enter to continue",
