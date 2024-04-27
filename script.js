@@ -49,7 +49,7 @@ let story = {
         "randomItem": true,
     },
     "unem02111": {
-        "dia": "As you're going upstairs you hear another noise and stop in fear...Something hits you so hard you fall to the ground<br>You are now in combat! Do 'attack fists' to use your attack with your fists or use a weapon you found earlier.",
+        "dia": "As you're going upstairs you hear another noise and stop in fear...Something hits you so hard you fall to the ground<br><br>You are now in combat! Do 'attack fists' to use your attack with your fists or use a weapon you found earlier.",
         "incombat": true,
         "opt": [],
         "spot": ["unem021110"],
@@ -68,7 +68,7 @@ let story = {
         "dia": `You search the house for valuables but find nothing of use to defend yourself but you did find a note that looked to be in James' handwriting. You read it and it says, "I'm leaving to go to the Jack's Storage, I will not be back. I want to be alone." You're perplexed on this very short note, you're also confused about why he didn't tell you either.`,
         "opt": ["Option 1: Search 'empty' houses in your neighborhood", "Option 2: Go to find Jack's Storage"],
         "incombat": false,
-        "spot": ["unem02111011", "unem02111012"],
+        "spot": ["unem02111011", "unemp0"],
         "isending": false,
         "randomItem": false
     },
@@ -80,18 +80,34 @@ let story = {
         "isending": false,
         "randomItem": false
     },
-
-    // unem part 2
     "unemp0": {
-        "dia": "You've been searching for Jack's storage for hours at this point, would you like to sleep?",
-        "opt": ["Option 1: Sleep", "Option 2: Don't Sleep"],
+        "dia": "You've been searching for multiple hours already and are feeling quite sluggish, maybe James could wait a little bit longer so you could rest and gather your strength in case you need to save him.  Or maybe making him wait any longer could lead to his untimely end.  Do you want to sleep?",
+        "opt": ["Option 1: Sleep in an abandoned house", "Option 2: Continue searching for James"],
         "spot": ["unemp01", "unemp02"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
-
+//
     "unemp01": {
-        "dia": "You decide to sleep, although James could be in trouble you want to also protect yourself from getting in trouble as well. If you die than James could die with you. The continuation of your search begins now ... Press Enter to continue",
+        "dia": "You decide to sleep, although James could be in trouble you want to also protect yourself from getting in trouble as well. If you die than James could die with you. The continuation of your search begins now",
+        "opt": ["Option 1: Continue"],
+        "spot": ["unemp011"],
+        "incombat": false,
+        "isending": false,
+        "randomItem": false
+    },
+    "unemp011" : {
+        "dia": "You rise to here an unexpected visitor pounding on the door.  You quickly get out of the bed and prepare yourself to fight.  As the door slowly creaks open you're thankful its just a single undead, nothing you can't handle.<br><br>  You are now in combat! Type 'attack fists' or use another weapon if you found one earlier.",
+        "incombat": true,
+        "opt": [],
+        "spot": ["unemp0111"],
+        "isending": false,
+        "randomItem": false
+    },
+    "unemp0111": {
+        "dia": "You quickly reassess yourself and realize how much time you wasted.  James could be dead by now, or worse.  It's time to continue searching for Jack's Warehouse.",
+        "incombat": false,
         "opt": ["Option 1: Continue"],
         "spot": ["unemp020"],
         "isending": false,
@@ -101,13 +117,23 @@ let story = {
         "dia": "You decide not to sleep, James is more important than sleep. Sleeping could be between James surviving a potential danger or not surviving it. Press Enter to continue",
         "opt": ["Option 1: Continue"],
         "spot": ["unemp020"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
     "unemp020": {
         "dia": "You've finally found it, Jack's storage. Your eyes lay upon a massive warehouse, Jack's Storage dwarfs even a Home Depot in size. You wonder why James wanted such a ginormous base if it brought all of the dangers of killing so many zombies in such a big building like this.",
         "opt": ["Option 1: Enter Jack's Storage", "Option 2: Search the surrounding area"],
-        "spot": ["unemp0201", "unemp02011"],
+        "spot": ["unemp0201", "unemp0202"],
+        "incombat": false,
+        "isending": false,
+        "randomItem": false
+    },
+    "unemp0202": {
+        "dia": "You notice a trail of undead bodies around the backside of the building leading to an armored door.  You believe this could've been James' doing and attempt to open the door but it doesn't budge.  Hopefully the front isn't locked.",
+        "opt":  ["Option 1: Enter Jack's Storage through the front"],
+        "spot": ["unemp02011"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
@@ -115,6 +141,7 @@ let story = {
         "dia": "As you enter it feels like you're still outside, the building is ginormous. It has obvious signs of decay due to neglect but its original glory still shines within.",
         "opt": ["Option 1: Search Jack's Storage"],
         "spot": ["unemp02011"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
@@ -122,6 +149,7 @@ let story = {
         "dia": "You found James! However it's not sunshine and rainbows. He's on the ground showing signs of exhaustion and physical injuries. There are a couple of dead zombies around him. You yell his name and hear no response. He seems to show no signs of zombification but there is still a chance...",
         "opt": ["Option 1: See if you can help James", "Option 2: Leave him there"],
         "spot": ["unemp020111", "unemp020112"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
@@ -129,6 +157,7 @@ let story = {
         "dia": `You go up to James and see if he is still alive. To your surprise James wakes up in confusion. You ask him what happened and he says "The last thing I remember was fighting some zombies and being really tired." You evaluate his injuries and deem them non-life threatening. You explain how yourself and James need to leave Kentucky because of a radio signal explaining how there is a military base on the outskirts of Muldraugh. You and James leave happily ever after in the military base of Muldraugh :).`,
         "opt": [],
         "spot": [],
+        "incombat": false,
         "isending": true,
         "randomItem": false
     },
@@ -136,6 +165,7 @@ let story = {
         "dia": `You decide to leave James there because you fear that he might be a zombie, James is a tall muscular man and if he were to be a zombie you would be in a lot of danger. After you leave Jack's Storage you head to the military base on the outskirts of Muldraugh to seek refuge from the ongoing apocalypse`,
         "opt": [],
         "spot": [],
+        "incombat": false,
         "isending": true,
         "randomItem": false
     },
@@ -144,12 +174,16 @@ let story = {
         "dia": "after recieving radio silence from James you decide it would be best to go back home.",
         'opt': ["Option 1: Continue"],
         'spot': ['home'],
+        "incombat": false,
+        "isending": false,
         "randomItem": false
     },
     "spifhome": {
         "dia": `You realized that you don't get paid enough to deal with the zombie uprising.`,
         'opt': ["Option 1: Continue"],
         'spot': ['home'],
+        "incombat": false,
+        "isending": false,
         "randomItem": false
     },
 
@@ -157,6 +191,8 @@ let story = {
         "dia": `You think your chance of survival is better on your own and walk back to your house.  The streets are now sparsely populated with undead shambling mindlessly.  When you  get home you open your map and decide where to go.`,
         "opt": ["Option 1: Continue"],
         'spot': ['home'],
+        "incombat": false,
+        "isending": false,
         "randomItem": false
     },
     // all the continues above should lead to home
@@ -164,6 +200,8 @@ let story = {
         "dia": `You arrive back at home, you can't stay here though.  You look at your map and four locations stand out to you.  Where do you go?`,
         "opt": ["Option 1: Go to the school", "Option 2: Go to the local diner, Spiffo's", "Option 3: Head to your stockpiling friend James' House"],
         "spot": ["stualt", "spifalt", "unem02"],
+        "incombat": false,
+        "isending": false,
         "randomItem": false
     },//1 ->gostu    2 spifalt
 
@@ -172,8 +210,9 @@ let story = {
         "dia": `"The date is July 2, 1993. Your day begins like any other as you set out for your job at Spiffo's, the local diner. However, as you walk, an eerie silence pervades the streets, broken only by the sight of abandoned cars lining the roads. No signs of life are to be found anywhere.
         Approaching Spiffo's, you enter through the backdoor, expecting the usual bustling activity. Instead, you find the diner eerily deserted, with not a soul in sight. Your attention is drawn to a hanging TV, flickering with the image of a news reporter.
         "Good morning, Kentucky. This is Veronica Hayes reporting for Channel 7 News. We are receiving unconfirmed reports of an airborne virus infecting the city of Louisville. Those infected are said to be exhibiting violent behavior," the reporter's voice fades as the channel turns to static. You stand still thinking about what the reporter just said before looking out the front window and seeing a car pull into the handicap stall.  You aren't sure whether you should hide or try to approach the stranger.`,
-        "opt": ["Option 1: Go outside", "Option 2: Hide in the freezer", "Option 3: You've seen enough, run back home"],
+        "opt": ["Option 1: Go outside <br>", "Option 2: Hide in the freezer <br>", "Option 3: You've seen enough, run back home"],
         "spot": ["spif01", "spif02", "spifhome"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
@@ -181,6 +220,7 @@ let story = {
         "dia": `You walk into Spiffo's through the front door then walk behind the counter viewing their selection of food.  After grabbing a combo that was left in a to-go bag you sit down and enjoy your cold meal before hearing a car pull into the parking lot.  What will you do?`,
         "opt": ["Option 1: Go outside", "Option 2: Hide in the freezer"],
         "spot": ["spif01", "spif02"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
@@ -188,20 +228,23 @@ let story = {
         "dia": `You walk outside to talk to the only person you've seen today.  As you open the front door you see a man step out of the car in camo military clothes and an old gas mask.  He's quick to walk over and place another gas mask in your hand and say "Put this on, I don't know how you've managed to survive without one."  You rub the lens of the mask before strapping it around your head.`,
         "opt": ["Option 1: Ask where everyone went", "Option 2: Ask if you can ride along with him"],
         "spot": ["spif011", "spif012"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
     "spif02": {
         "dia": `As you walk inside of the freezer the door slams behind you, locking from the outside.  Your co-workers can't help you this time.  As you sit down and fall asleep you wonder what could've been if you made better choices.`,
         "spot": [],
-        "isending": true,
         "opt": [],
+        "incombat": false,
+        "isending": true,
         "randomItem": false
     },
     "spif011": {
         "dia": `"Ever since the event in Louisville yesterday most people were quarantining inside their homes, didn't seem to help though." He pauses for a moment before pulling out a photo card showing a man who looks like a corpse with parts of his skin falling off, "You see, almost everyone exposed to the air here passed away but their bodies stayed alive.  They're feral instincts must've kicked in because they try to eat anything they see, including us.`,
         "opt": ["Option 1: Ask if you can ride along with him"],
         "spot": ["spif012"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
@@ -209,6 +252,7 @@ let story = {
         "dia": `"Well our chances are probably better together.  I can't think too well on an empty stomach so lets load up and I'll share my story in the car." The man walks inside of Spiffo's and grabs some food out of the fridge before walking back to the car and gesturing for you to get in.`,
         "opt": ["Option 1: Get in the car"],
         "spot": ["spif0121"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
@@ -216,6 +260,7 @@ let story = {
         "dia": `"We're headed to the police station, before all of this the military set up a research camp to develop a cure, which we want.  Long story short someone got infected inside and it rapidly spread.  I was actually the only survivor thanks to this here." He points as his mask then continues, "It seems that some people are also just immune to it such as yourself.  The only others that I saw were surrounded by a horde in Muldraugh High." The car comes to a halt on the side of the road, you see that you stopped right before the police station.  "Here's our stop." He says before grabbing a combat knife out of the glovebox and stepping out of the car.`,
         "opt": ["Option 1: How are we going to get in?"],
         "spot": ["spif01211"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
@@ -223,12 +268,13 @@ let story = {
         "dia": `I see three different ways.  We can enter through the front which will likely require fighting some of those freaks.  We could enter through the back which might save us some trouble.  Or finally, we could take the ladder and enter through the roof.  It's your choice, so choose wisely.`,
         "opt": ["Option 1: Why not, let's fight through the front.", "Option 2: I'll bet the back will be safe.", "Option 3: The roof seems like the smartest choice."],
         "spot": ["spif012111", "spif012112", "spif012113"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
     "spif012111": {
         "dia": `"Might be a dumb choice, but I respect your decision."  You and the man walk towards the front entrance, you open the door to see multiple zombies in your way.  Hopefully your partner puts that knife to good work.<br><br>
-        You are now in combat! Type 'attack fists' or 'attack knife' to attack with either weapon!`,
+        You are now in combat! Do 'attack fists' to use your attack with your fists or use a weapon you found earlier.`,
         "opt": [],
         "spot": ["spif0121111"],
         "incombat": true,
@@ -247,12 +293,14 @@ let story = {
         "dia": `"Alright I'll take the lead" You follow the man as he sneaks behind the building without drawing the attention of any undead, you get to the back door and he pulls a key off his belt and opens it.  "The research is in this room to the left" the man whispers to you before discreetly turning the handle and entering the room. "Look for the vial number 1.81 I'll radio in for the helicopter`,
         "opt": ["Option 1: Search for the vial"],
         "spot": ["spif0121121"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
     "spif012113": {
         "dia": `You stick with your gut and decide to scale the building.  You seem to almost forget your fear of heights until you reach the top of the ladder.  You look down and feel intense nausea before losing your grip and falling. unfortunately your chances of surviving a zombie apocalypse don't seem very high with a broken leg, especially when you don't have any crutches or a cast. This is how you died...`,
         "opt": [],
+        "incombat": false,
         "isending": true,
         "randomItem": false
     },
@@ -260,6 +308,7 @@ let story = {
         "dia": `You search through the cupboard filled with vials realizing that they're ordered in a pattern.  You look to row 8 and grab the first vial, numbered 1.81.  You hear the man say something into the police radio across the room.  He then walks over and confidently shares "The helicopter'll be here in 10 minutes, we gotta get up to the helipad on the roof.`,
         "opt": ["Option 1: Let's get moving"],
         "spot": ["spif01211211"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
@@ -267,18 +316,20 @@ let story = {
         "dia": `As you and the man rush to the rooftop helipad, the silence of the deserted building is broken by the sound of growls and screams. The infected have caught your scent and are in closing in. You both sprint up the stairs, the vial gripped in your hand.  Reaching the roof, you can hear the distant whirl of the helicopter blades cutting through the air. But the infected are closing in fast, their sound almost drowning out that of the helicopter as they swarm the building.`,
         "opt": ["Option 1: Block the door ", "Option 2: Prepare to fight"],
         "spot": ["spif012112111", "pif012112112"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
     "spif012112111": {
         "dia": `You look around for anything to barricade the door and decide to grab the conveniently positioned sand bags that the military positioned around the roof.  After stacking the last bag onto the door you hear the roars of the undead on the other side as they begin throwing themselves against the door.  The helicopter swiftly descends onto the roof.`,
         "opt": [`Climb aboard the helicopter`],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
     "spif012112112": {
         "dia": `The undead quickly rise the stairs and throw themselves against the door.  The lock doesn't hold very long and the door swings open and multiple zombies flood out.  You can hear the whirl of the helicopter blades getting closer behind you but first these zombies will have to be dealt with.<br><br>
-        You are now in combat! Type 'attack fists' or 'attack knife' to attack with either weapon!`,
+        You are now in combat! Do 'attack fists' to use your attack with your fists or use a weapon you found earlier.`,
         "opt": [``],
         "spot": ["spif0121121111"],
         "incombat": true,
@@ -289,6 +340,7 @@ let story = {
         "dia": `As the helicopter lands, you and the man rush to meet it, the relentless pounding of the infected against the door intensifying with each moment. The pilot beckons you aboard, his expression one of urgency. You quickly scramble into the helicopter, the man right behind you.
         With the door sealed shut, the pilot lifts off just as the door bursts open, and the rooftop becomes overrun with the infected. You watch as the rooftop falls away, your heart pounding in relief and fear. The city below, once familiar, now looks like a war zone, the infected spreading like a dark cloud.
         You grip the vial tightly, knowing that the fate of countless lives rests in your hands. The man pats your shoulder reassuringly, and you exchange a determined glance. Together, you face the uncertain future, hopeful that the potential cure you carry can bring an end to the horror that has befallen your world.`,
+        "incombat": false,
         "isending": true,
         "randomItem": false
     },
@@ -301,6 +353,7 @@ let story = {
         "Good morning, Kentucky. This is Veronica Hayes reporting for Channel 7 News. We are receiving unconfirmed reports of an airborne virus infecting the city of Louisville. Those infected are said to be exhibiting violent behavior," the news anchor's words hang in the air before the screen abruptly switches to static, leaving a palpable sense of unease in the room.`,
         "opt": ["Option 1: Continue"],
         "spot": ["stu01"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
@@ -310,6 +363,7 @@ let story = {
         Summoning his last ounces of strength, Mr. White directs his words to the nearest student. "Take the bus," he urges, his voice strained. "Get out of here while you still can." Using his last bit of strength he reaches into his pocket and grabs a set of keys offering them to the student.`,
         "opt": ["Option 1: Look outside to the parking lot", `Option 2: "I'm not dying with the rest of you" (leave)`], //leave should lead to stuhome
         "spot": ["stu011", "stuhome"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
@@ -319,6 +373,7 @@ let story = {
         Their plea is desperate, and you can sense the gravity of the situation weighing heavily on them. It's clear that the safety of everyone depends on your decision to assist them in this perilous task.`,
         "opt": ["Option 1: Continue"],
         "spot": ["stu011"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     },
@@ -327,6 +382,7 @@ let story = {
         "dia": `The Bus outside is surrounded by zombies, clearly too many for your small group to take out`,
         "opt": [`Option 1: "I'll distract the zombies, the rest of you can get into the bus and escape"`, `Option 2: Look for another car to trigger the alarm on`],
         "spot": ["stu0111", "stu0112"],
+        "incombat": false,
         "isending": false,
         "randomItem": false
     }, // 0113 should go to stuhome
@@ -344,7 +400,7 @@ let story = {
     "stu0112": {
         "dia": `As you cautiously approach a solitary sedan nestled in the far corner of the parking lot, your heart skips a beat as you spot a motionless figure sprawled next to the car door. A sense of dread washes over you as you realize it's a zombie lying in wait, ready to pounce at any moment.
         With no other choice but to confront the undead threat, you steel yourself for the impending battle. Adrenaline surges through your veins as you prepare to face the creature head-on, knowing that your survival depends on your ability to fight off this unexpected foe.<br><br>
-        You are now in combat! Type 'attack fists' or 'attack pencil' to attack with either weapon!`,
+        You are now in combat! Do 'attack fists' to use your attack with your fists or use a weapon you found earlier.`,
         "opt": [],
         "spot": ["stu01121"],
         "incombat": true,
@@ -396,7 +452,7 @@ let story = {
     },
     "stu011211111": {
         "dia": `As you cautiously approach the bunker door, Peyton swiftly moves to unlock it, his hands deftly spinning the wheel in an urgent rhythm. However, the sound of metal against metal echoes through the air, drawing the attention of nearby zombies. With a sinking feeling, you realize that you must defend Jake while he works to open the bunker, or risk being overwhelmed by the advancing undead horde.<br><br>
-        You are now in combat! Type 'attack fists' or 'attack pencil' to attack with either weapon!`,
+        You are now in combat! Do 'attack fists' to use your attack with your fists or use a weapon you found earlier.`,
         "opt": [],
         "spot": ["stu0112111111"],
         "incombat": true,
@@ -419,18 +475,23 @@ let story = {
         "dia": `Shortly after you respond, the bus driver shouts "I don't know how to operate this thing! Does anyone have a licence?"  You watch for a moment as no one offers, so you're forced to take up the mantle.`,
         "opt": ["Option 1: Drive to the main road", "Option 2: rethink your decision and head to Peyton's ranch"],
         "spot": ["stu011211121", "stu01121111"],
+        "incombat": false,
+        "isending": false,
         "randomItem": false
     },//2 -> stu01121111
     "stu011211121": {
         "dia": `As you maneuver down the main street, you can't ignore the sight of abandoned cars littering the road, creating a tangled mess. Military tents are scattered around an intersection, adding to the chaos. As you carefully navigate around the rubble, a sudden impact rocks the bus, sending it lurching to the side. The screeching of metal fills the air as a military pickup truck slams into the bus, flipping it onto its side with a jolt that sends everyone inside reeling.  Everything around you fades to black as your ears start ringing.  You wake up to see everyone around you missing, however the military truck sits empty next to you.`,
         "opt": ["Option 1: Walk Away", "Option 2: Search the truck"],
         "spot": ["stu0112111211", "stu0112111212"],
+        "incombat": false,
+        "isending": false,
         "randomItem": false
     },
     "stu0112111211": {
         "dia": `You shamble away, still effected by your wounds.  You don't know how you'll do it but your still determined to get out of town with your life intact, however without your strength or any tools this goal seems unlikely.`,
         "opt": [],
         "spot": [],
+        "incombat": false,
         "isending": true,
         "randomItem": false
     },
@@ -438,6 +499,7 @@ let story = {
         "dia": `You pry open the back door of the truck, revealing a stash of weapons and medical supplies. Amid the chaos, you quickly assess your options and select the best weaponry available, ensuring you're armed for the challenges ahead. After grabbing some much-needed bandages, you tend to your wounds, patching yourself up as best as you can. With newfound determination, you set out once more on your journey to escape the town, ready to face whatever lies ahead.`,
         "opt": [],
         "spot": [],
+        "incombat": false,
         "isending": true,
         "randomItem": false
     },
@@ -446,13 +508,13 @@ let story = {
 // first value in list is damage, second value is defense, third value is hit chance
 const itemnames = ["fists", "bat", "knife", "pencil", "katana", "crowbar", "axe"]
 const items = {
-    "fists": [1, 1, 1],
-    "bat": [2, 3, 1],
-    "knife": [1.5, 2, 1],
-    "pencil": [0.5, 1, 5],
+    "fists": [2, 1, 1],
+    "bat": [3, 3, 1],
+    "knife": [3, 2, 1],
+    "pencil": [1, 1, 5],
     "katana": [6, 6, 0],
-    "crowbar": [3, 2, 1],
-    "axe": [3, 2, 1]
+    "crowbar": [4, 2, 1],
+    "axe": [4, 2, 1]
 }
 
 let inv = {
@@ -472,7 +534,7 @@ function start() {
     document.getElementById('consoleOutput').classList.remove('hidden')
 }
 // player health points
-let php = 10;
+let php = 8;
 // player attack level, rewritten if player has uses weapon
 let attkLev = 1;
 // player defense level, rewritten if player has uses weapon
@@ -495,6 +557,7 @@ let ismissP = false;
 let ischef = false;
 let isstu = false;
 let isunem = false;
+// checks that player doesn't have an occupation so they can be placed in the correct starting position later
 
 let issleep = false;
 
@@ -603,7 +666,7 @@ Type 'help' to see these instructions again.`)
                     combatOutput = ("You did " + damagedealte + " damage on the zombie!<br>The zombie now has " + ehp + " health!")
                     ismissP = false
                 } else {
-                    output = "You missed."
+                    output = "You missed.  Type 'attack' to continue."
                     ismissP = true
                 }
 
@@ -656,13 +719,13 @@ Type 'help' to see these instructions again.`)
                 console.log("turn num: " + turnNum)
 
                 if ((turnNum % 2 != 0) && ismissP === false) {
-                    output = ("You did " + attacklist[1] + " damage on the zombie!<br>The zombie now has " + (ehp - attacklist[1]) + " health!"); 3
+                    output = ("You did " + attacklist[1] + " damage on the zombie!<br>The zombie now has " + (ehp - attacklist[1]) + " health! <br> Type attack to continue."); 3
                 } else if ((turnNum % 2 === 0) && ismissE === false) {
-                    output = "The zombie did " + attacklist[0] + " damage to you! You now have " + php + " health!"
+                    output = "The zombie did " + attacklist[0] + " damage to you! You now have " + php + " health!<br> Type 'attack (weapon of choice)' to continue"
                 } else if (ismissE === true) {
-                    output = "The zombie missed."
+                    output = "The zombie missed. Type 'attack (weapon of choice)' to continue"
                 } else if (ismissP === true) {
-                    output = "You missed."
+                    output = "You missed. Type 'attack' to continue."
                 }
 
 
@@ -724,7 +787,7 @@ Type 'help' to see these instructions again.`)
             let weaponout = ""
 
 
-            if (input === "1") {
+            if (input === "1" & story[spot].incombat === false) {
                 console.log(story[spot])
                 isend(spot, 1)
 
