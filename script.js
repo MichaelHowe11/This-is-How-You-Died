@@ -656,12 +656,11 @@ Type 'help' to see these instructions again.`)
                 console.log(spot)
                 output = story[spot].dia + "<br>" + story[spot].opt.join("<br>");
 
-            }
-            if (story[spot].incombat === true) {
-                output = story[story[spot].spot[0]].dia
+            } else if (story[spot].incombat === true) {
+                output = story[spot].dia
+                console.log(output)
                 incombat = true;
                 startcombat(1, 1, 1, story[spot].spot[0], story[spot].dia)
-                console.log("bruh")
             }
         }
 
